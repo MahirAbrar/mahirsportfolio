@@ -8,10 +8,13 @@ const AnimatedTitle = ({ strings }) => {
     const typed = new Typed(el.current, {
       strings: strings,
       typeSpeed: 70,
-      backSpeed: 70,
-      loop: true,
-      loopCount: Infinity,
+      backSpeed: 0,
+      loop: false,
+      loopCount: 1,
       cursorChar: "|",
+      onComplete: (self) => {
+        self.cursor.remove();
+      },
     });
 
     return () => {
@@ -21,7 +24,7 @@ const AnimatedTitle = ({ strings }) => {
 
   return (
     <div className="h-[60px] overflow-hidden">
-      <h1 className="text-5xl font-bold">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
         <span ref={el} />
       </h1>
     </div>

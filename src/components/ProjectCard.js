@@ -24,7 +24,13 @@ const ProjectCard = ({
   return (
     <>
       <div
-        className="flex flex-col md:flex-row bg-base-100 rounded-lg shadow-lg overflow-hidden w-full cursor-pointer hover:shadow-xl transition-shadow duration-300"
+        className="flex flex-col md:flex-row bg-base-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden w-full cursor-pointer 
+        transition-all duration-300 ease-in-out
+        hover:shadow-2xl 
+        hover:scale-[1.02] 
+      
+        hover:border-blue-500 dark:hover:border-blue-400
+        border-2 border-transparent"
         onClick={() => setIsOpen(true)}
       >
         <div className="w-full md:w-1/2 h-64 md:h-96">
@@ -64,16 +70,30 @@ const ProjectCard = ({
                   GitHub
                 </button>
               )}
-
-              <button
-                className="btn bg-green-500 hover:bg-green-600 text-white dark:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(liveLink, "_blank");
-                }}
-              >
-                Live Website
-              </button>
+              {liveLink && (
+                <button
+                  className="btn bg-green-500 hover:bg-green-600 text-white dark:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(liveLink, "_blank");
+                  }}
+                >
+                  Live Website
+                </button>
+              )}
+              :
+              {!liveLink && (
+                <button
+                  className="btn bg-green-500 hover:bg-green-600 text-white dark:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200 disabled"
+                  disabled
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(liveLink, "_blank");
+                  }}
+                >
+                  Live Website
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -101,7 +121,7 @@ const ProjectCard = ({
                 className="mx-auto max-w-4xl rounded bg-white p-6 w-full max-h-[90vh] overflow-y-auto"
               >
                 <div className="flex justify-between items-center mb-4 sticky top-0 bg-white py-2">
-                  <Dialog.Title className="text-2xl font-bold">
+                  <Dialog.Title className="text-2xl font-bold text-gray-800">
                     {title}
                   </Dialog.Title>
                   <button
@@ -154,17 +174,25 @@ const ProjectCard = ({
                   transition={{ delay: 0.6, duration: 0.5 }}
                   className="space-y-4"
                 >
-                  <h3 className="text-xl font-semibold">Project Overview</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    Project Overview
+                  </h3>
                   <div className="space-y-2">{dialectDescription}</div>
 
-                  <h3 className="text-xl font-semibold">Tools Used</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    Tools Used
+                  </h3>
                   <ul className="list-disc list-inside">
                     {allTools.map((tool, index) => (
-                      <li key={index}>{tool}</li>
+                      <li key={index} className="text-gray-800">
+                        {tool}
+                      </li>
                     ))}
                   </ul>
 
-                  <h3 className="text-xl font-semibold">More Information</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    More Information
+                  </h3>
                   <div className="space-y-2">{moreInformation}</div>
                 </motion.div>
               </Dialog.Panel>

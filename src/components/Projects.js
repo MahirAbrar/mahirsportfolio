@@ -12,7 +12,7 @@ const Projects = () => {
       tools: ["Next.js", "Tailwind CSS", "MongoDB", "Firebase", "And more"],
       dialectDescription: (
         <>
-          <p>
+          <p className="text-gray-800 mb-4">
             AttireAlley is a comprehensive e-commerce platform with distinct
             views for admins and customers. Admins have full control over
             product management, including adding, removing, updating, and
@@ -20,8 +20,8 @@ const Projects = () => {
             products through a user-friendly interface.
           </p>
 
-          <p>Key Features:</p>
-          <ul className="list-disc pl-5 space-y-1">
+          <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800 ">
             <li>User authentication and authorization</li>
             <li>Product browsing and searching</li>
             <li>Shopping cart functionality</li>
@@ -52,53 +52,54 @@ const Projects = () => {
         "Stripe API",
       ],
       dialectImages: [
-        `${process.env.PUBLIC_URL}/attirealleyimage.png`,
-        `${process.env.PUBLIC_URL}/attirealleyimage.png`,
+        `${process.env.PUBLIC_URL}/aapageshow.gif`,
+        `${process.env.PUBLIC_URL}/aalogin.gif`,
+        `${process.env.PUBLIC_URL}/aacheckout.gif`,
       ],
       githubLink: "https://github.com/MahirAbrar/AttireAlley",
       liveLink: "https://attirealley.vercel.app/",
       moreInformation: (
         <>
-          <p>
+          <p className="text-gray-800">
             AttireAlley leverages a robust tech stack to deliver a seamless
             e-commerce experience:
           </p>
 
-          <ul className="list-disc pl-5 space-y-1">
-            <li>
+          <ul className="list-disc pl-5 space-y-1 ">
+            <li className="text-gray-800">
               Next.js provides server-side rendering for improved SEO and faster
               initial page loads.
             </li>
-            <li>
+            <li className="text-gray-800">
               Tailwind CSS and daisyUI create a responsive and visually
               appealing design.
             </li>
-            <li>
+            <li className="text-gray-800">
               MongoDB stores user data and product information, with Mongoose as
               the ODM.
             </li>
-            <li>
+            <li className="text-gray-800">
               Firebase handles image storage for efficient media management.
             </li>
-            <li>
+            <li className="text-gray-800">
               User authentication is secured using bcryptjs for password
               encryption.
             </li>
-            <li>
+            <li className="text-gray-800">
               Joi is utilized for data validation, ensuring data integrity and
               acting as a runtime type checker.
             </li>
-            <li>
+            <li className="text-gray-800">
               GSAP (GreenSock Animation Platform) adds smooth animations to
               enhance user experience.
             </li>
-            <li>
+            <li className="text-gray-800">
               Stripe API integration enables secure and reliable payment
               processing.
             </li>
           </ul>
 
-          <p className="mt-4">
+          <p className="mt-4 text-gray-800">
             The application's architecture supports scalability and performance,
             with features like lazy loading for optimized resource usage. The
             admin panel provides powerful tools for inventory and discount
@@ -124,7 +125,7 @@ const Projects = () => {
       ],
       dialectDescription: (
         <>
-          <p>
+          <p className="text-gray-800">
             PriceWise M5 is a comprehensive pricing optimization tool that
             leverages advanced data analysis techniques to provide actionable
             insights for retail businesses. It combines price elasticity
@@ -132,26 +133,34 @@ const Projects = () => {
             pricing decisions.
           </p>
 
-          <p>Key Features:</p>
+          <p className="text-gray-800">Key Features:</p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Price elasticity modeling using polynomial regression</li>
-            <li>Predictive analysis incorporating SNAP and special events</li>
-            <li>
+            <li className="text-gray-800">
+              Price elasticity modeling using polynomial regression
+            </li>
+            <li className="text-gray-800">
+              Predictive analysis incorporating SNAP and special events
+            </li>
+            <li className="text-gray-800">
               User-friendly web interface for easy data input and visualization
             </li>
-            <li>
+            <li className="text-gray-800">
               Interactive graphs for price elasticity models and optimization
               results
             </li>
-            <li>
+            <li className="text-gray-800">
               Calculation of optimal price points for maximum revenue and
               profitability
             </li>
-            <li>
+            <li className="text-gray-800">
               Flexible inputs for SNAP values, event counts, and discounts
             </li>
-            <li>Store and product selection functionality</li>
-            <li>Year-based prediction capabilities</li>
+            <li className="text-gray-800">
+              Store and product selection functionality
+            </li>
+            <li className="text-gray-800">
+              Year-based prediction capabilities
+            </li>
           </ul>
         </>
       ),
@@ -174,55 +183,69 @@ const Projects = () => {
       ],
       githubLink: "https://github.com/MahirAbrar/FIT3164-Backend",
       githubLink2: "https://github.com/MahirAbrar/PriceWise.M5",
-      liveLink: "https://priceopt.com",
+      // liveLink: "https://priceopt.com",
       moreInformation: (
         <>
-          <p>
+          <p className="text-gray-800">
             PriceWise M5 was developed as a final year data science project at
             Monash University by a team of four students. It utilizes the M5
             competition dataset to provide robust analysis and predictions for
             retail pricing strategies.
           </p>
 
-          <p>The project's architecture includes:</p>
+          <p className="text-gray-800">The project's architecture includes:</p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>
+            <li className="text-gray-800">
               A React frontend with Tailwind CSS and DaisyUI for a responsive
               and intuitive user interface
             </li>
-            <li>
+            <li className="text-gray-800">
               A Python backend using Flask and Scikit-learn for data processing
               and model creation
             </li>
-            <li>AWS S3 for secure and scalable data storage</li>
-            <li>AWS DynamoDB for caching predicted data</li>
-            <li>Chart.js for interactive data visualizations</li>
+            <li className="text-gray-800">
+              AWS S3 for secure and scalable data storage
+            </li>
+            <li className="text-gray-800">
+              AWS DynamoDB for caching predicted data
+            </li>
+            <li className="text-gray-800">
+              Chart.js for interactive data visualizations
+            </li>
           </ul>
 
-          <p className="mt-4">
+          <p className="mt-4 text-gray-800">
             While the current implementation provides valuable insights, there
             are opportunities for future improvements, including:
           </p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>
+            <li className="text-gray-800">
               Enhancing model accuracy to address current RMSE limitations
             </li>
-            <li>
+            <li className="text-gray-800">
               Incorporating seasonal analysis for more precise predictions
             </li>
-            <li>Improving the speed at which the predictions are made</li>
-            <li>Enhancing data management and security features</li>
-            <li>Predict price demand if price is increased</li>
-            <li>Improve UI for a modern aesthetic</li>
-            <li>
+            <li className="text-gray-800">
+              Improving the speed at which the predictions are made
+            </li>
+            <li className="text-gray-800">
+              Enhancing data management and security features
+            </li>
+            <li className="text-gray-800">
+              Predict price demand if price is increased
+            </li>
+            <li className="text-gray-800">Improve UI for a modern aesthetic</li>
+            <li className="text-gray-800">
               Create an About page explaining how the model functions for
               transparency
             </li>
           </ul>
 
           <div className="mt-6  rounded-lg p-4">
-            <h3 className="text-lg font-semibold mb-2">Project Team</h3>
-            <p className="mb-4">
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">
+              Project Team
+            </h3>
+            <p className="mb-4 text-gray-800">
               The collaborative effort of the following team members has
               resulted in this powerful tool that can significantly impact
               retail pricing strategies:
@@ -249,7 +272,7 @@ const Projects = () => {
               ].map((member, index) => (
                 <li
                   key={index}
-                  className=" rounded p-3 shadow flex items-center justify-between"
+                  className=" rounded p-3 shadow flex items-center justify-between text-gray-800"
                 >
                   <span>{member.name}</span>
                   {member.linkedin && (
@@ -273,7 +296,9 @@ const Projects = () => {
               ))}
             </ul>
 
-            <h3 className="text-lg font-semibold mb-2">Project Links</h3>
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">
+              Project Links
+            </h3>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="https://github.com/MahirAbrar/PriceWise.M5"
@@ -325,23 +350,119 @@ const Projects = () => {
       title: "Traffic Collision Problem at New York",
       baseImage: `${process.env.PUBLIC_URL}/trafficimage.png`,
       baseDescription:
-        "This is a pricing optimization tool for retail businesses. It integrates price elasticity modeling and predictive analysis through a web application, analyzing historical data to estimate product demand at different price points.",
+        "This visualization project analyzes traffic collision data in New York City to provide actionable insights for city policymakers, traffic planners, and the general public. It aims to enhance understanding of collision causes and patterns to reduce risks and improve public safety.",
       tools: [
-        "React",
-        "Tailwind CSS",
-        "Scikit-learn",
-        "Python (Flask)",
-        "And more",
+        "R",
+        "Tableau",
+        "Spatial Data Analysis",
+        "Data Visualization",
+        "Statistical Analysis",
       ],
-      dialectDescription:
-        "The Price Optimisation tool leverages advanced machine learning algorithms to predict optimal pricing strategies. It analyzes historical sales data, market trends, and competitor pricing to provide actionable insights.",
-      dialectImages: ["/api/placeholder/600/400"],
-      allTools: ["Next.js", "Tailwind CSS", "MongoDB", "Firebase", "And more"],
+      dialectDescription: (
+        <>
+          <p className="text-gray-800">
+            The Traffic Collision Problem at New York project utilizes
+            comprehensive data analysis and visualization techniques to uncover
+            patterns and insights in traffic collision data across New York
+            City. This project aims to inform decision-making processes for
+            improving road safety and urban planning.
+          </p>
+
+          <p className="text-gray-800">Key Features:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Interactive heatmap of collision hotspots across NYC boroughs
+            </li>
+            <li className="text-gray-800">
+              Bubble chart highlighting vehicle types most involved in
+              collisions
+            </li>
+            <li className="text-gray-800">
+              Time-series analysis of injury and fatality trends
+            </li>
+            <li className="text-gray-800">
+              Visualization of safest travel times
+            </li>
+            <li className="text-gray-800">
+              Detailed analysis of collision causes and contributing factors
+            </li>
+            <li className="text-gray-800">
+              Color-blind accessible visualizations for improved accessibility
+            </li>
+            <li className="text-gray-800">
+              Storytelling elements to guide users through the data narrative
+            </li>
+          </ul>
+        </>
+      ),
+      dialectImages: [`${process.env.PUBLIC_URL}/trafficprob.gif`],
+      allTools: [
+        "R (for data preprocessing)",
+        "Tableau (for data visualization)",
+        "NYC Open Data (Motor Vehicle Collisions - Crashes)",
+        "Kaggle (New York Motor Vehicle Collisions 2014 - 2023)",
+        "NYC Open Data (Borough Boundaries for spatial data)",
+      ],
       githubLink: "",
       liveLink:
         "https://public.tableau.com/app/profile/hamid.abrar.mahir/viz/Book1_16931793449790/Dashboard1?publish=yes",
-      moreInformation:
-        "This project was developed in collaboration with retail industry experts. It includes features such as real-time demand forecasting, competitor price monitoring, and customizable optimization parameters.",
+      moreInformation: (
+        <>
+          <p className="text-gray-800">
+            This project analyzes traffic collision data in New York City from
+            2018 to 2022, utilizing a rich dataset of over 2.1 million
+            police-reported motor collisions. The data was preprocessed using R
+            to handle inconsistencies, typos, and missing values, and to format
+            time data for visualization purposes.
+          </p>
+
+          <p className="text-gray-800">
+            The visualization dashboard includes several key components:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              A heatmap showcasing collision counts by area and year
+            </li>
+            <li className="text-gray-800">
+              A bubble chart emphasizing vehicle types most involved in
+              collisions
+            </li>
+            <li className="text-gray-800">
+              Line graphs presenting trends in injuries and fatalities
+            </li>
+            <li className="text-gray-800">
+              An area chart displaying the safest times to travel
+            </li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            Special attention was given to the design aspects:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Color-blind accessible color schemes for clarity
+            </li>
+            <li className="text-gray-800">
+              Strategic use of red to symbolize danger or caution
+            </li>
+            <li className="text-gray-800">
+              Clear typography using Open Sans font for readability
+            </li>
+            <li className="text-gray-800">
+              Storytelling elements through annotations and contextual
+              information
+            </li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            This project demonstrates the power of data visualization in
+            understanding complex urban issues. By presenting traffic collision
+            data in an accessible and engaging format, it aims to support
+            evidence-based decision-making for improving road safety in New York
+            City.
+          </p>
+        </>
+      ),
     },
   ];
 

@@ -2,7 +2,7 @@ import React from "react";
 import AnimatedTitle from "./AnimatedTitle";
 
 const About = () => {
-  const titles = ["Web Developer", "Data Scientist", "Software Engineer"];
+  const titles = ["Full Stack Developer | Data Scientist"];
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center gap-8 p-8 bg-base-200 mt-10">
       <div className="flex flex-col text-center gap-6 lg:w-1/3">
