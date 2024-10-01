@@ -108,30 +108,222 @@ const Projects = () => {
         </>
       ),
     },
+    // 2nd project
     {
-      title: "Price Optimisation and Elasticity Model",
+      title: "PriceWise M5",
       baseImage: `${process.env.PUBLIC_URL}/priceopt.png`,
       baseDescription:
-        "This is a pricing optimization tool for retail businesses. It integrates price elasticity modeling and predictive analysis through a web application, analyzing historical data to estimate product demand at different price points.",
+        "PriceWise M5 is an advanced pricing optimization tool for retail businesses. It integrates price elasticity modeling and predictive analysis through a web application, analyzing historical data from the M5 competition to estimate product demand at different price points.",
       tools: [
         "React",
         "Tailwind CSS",
-        "Scikit-learn",
         "Python (Flask)",
-        "And more",
+        "Scikit-learn",
+        "AWS S3",
+        "and more",
       ],
-      dialectDescription:
-        "The Price Optimisation tool leverages advanced machine learning algorithms to predict optimal pricing strategies. It analyzes historical sales data, market trends, and competitor pricing to provide actionable insights.",
+      dialectDescription: (
+        <>
+          <p>
+            PriceWise M5 is a comprehensive pricing optimization tool that
+            leverages advanced data analysis techniques to provide actionable
+            insights for retail businesses. It combines price elasticity
+            modeling with predictive analysis to help businesses make informed
+            pricing decisions.
+          </p>
+
+          <p>Key Features:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Price elasticity modeling using polynomial regression</li>
+            <li>Predictive analysis incorporating SNAP and special events</li>
+            <li>
+              User-friendly web interface for easy data input and visualization
+            </li>
+            <li>
+              Interactive graphs for price elasticity models and optimization
+              results
+            </li>
+            <li>
+              Calculation of optimal price points for maximum revenue and
+              profitability
+            </li>
+            <li>
+              Flexible inputs for SNAP values, event counts, and discounts
+            </li>
+            <li>Store and product selection functionality</li>
+            <li>Year-based prediction capabilities</li>
+          </ul>
+        </>
+      ),
       dialectImages: [`${process.env.PUBLIC_URL}/pricewise.gif`],
-      allTools: ["Next.js", "Tailwind CSS", "MongoDB", "Firebase", "And more"],
-      githubLink: "https://github.com/yourusername/price-optimisation",
+      allTools: [
+        "React",
+        "Tailwind CSS",
+        "DaisyUI",
+        "Chart.js",
+        "Python",
+        "Flask",
+        "Scikit-learn",
+        "AWS S3",
+        "AWS Secret Manager",
+        "AWS DynamoDB",
+        "Pandas",
+        "NumPy",
+        "Git",
+        "GitHub",
+      ],
+      githubLink: "https://github.com/MahirAbrar/FIT3164-Backend",
+      githubLink2: "https://github.com/MahirAbrar/PriceWise.M5",
       liveLink: "https://priceopt.com",
-      moreInformation:
-        "This project was developed in collaboration with retail industry experts. It includes features such as real-time demand forecasting, competitor price monitoring, and customizable optimization parameters.",
+      moreInformation: (
+        <>
+          <p>
+            PriceWise M5 was developed as a final year data science project at
+            Monash University by a team of four students. It utilizes the M5
+            competition dataset to provide robust analysis and predictions for
+            retail pricing strategies.
+          </p>
+
+          <p>The project's architecture includes:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>
+              A React frontend with Tailwind CSS and DaisyUI for a responsive
+              and intuitive user interface
+            </li>
+            <li>
+              A Python backend using Flask and Scikit-learn for data processing
+              and model creation
+            </li>
+            <li>AWS S3 for secure and scalable data storage</li>
+            <li>AWS DynamoDB for caching predicted data</li>
+            <li>Chart.js for interactive data visualizations</li>
+          </ul>
+
+          <p className="mt-4">
+            While the current implementation provides valuable insights, there
+            are opportunities for future improvements, including:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>
+              Enhancing model accuracy to address current RMSE limitations
+            </li>
+            <li>
+              Incorporating seasonal analysis for more precise predictions
+            </li>
+            <li>Improving the speed at which the predictions are made</li>
+            <li>Enhancing data management and security features</li>
+            <li>Predict price demand if price is increased</li>
+            <li>Improve UI for a modern aesthetic</li>
+            <li>
+              Create an About page explaining how the model functions for
+              transparency
+            </li>
+          </ul>
+
+          <div className="mt-6  rounded-lg p-4">
+            <h3 className="text-lg font-semibold mb-2">Project Team</h3>
+            <p className="mb-4">
+              The collaborative effort of the following team members has
+              resulted in this powerful tool that can significantly impact
+              retail pricing strategies:
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              {[
+                {
+                  name: "Hamid Abrar Mahir",
+                  linkedin: "https://www.linkedin.com/in/hamid-abrar-mahir/",
+                },
+                {
+                  name: "Setyawan Prayogo",
+                  linkedin:
+                    "https://www.linkedin.com/in/setyawan-prayogo-645981191/",
+                },
+                {
+                  name: "Yuan She (Grant)",
+                  linkedin: "https://www.linkedin.com/in/grant-she/",
+                },
+                {
+                  name: "Regina Lim",
+                  linkedin: "https://www.linkedin.com/in/reginalim27/",
+                },
+              ].map((member, index) => (
+                <li
+                  key={index}
+                  className=" rounded p-3 shadow flex items-center justify-between"
+                >
+                  <span>{member.name}</span>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-600 transition-colors duration-300"
+                    >
+                      <svg
+                        className="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="text-lg font-semibold mb-2">Project Links</h3>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://github.com/MahirAbrar/PriceWise.M5"
+                className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.167 22 16.42 22 12c0-5.523-4.477-10-10-10z"
+                  />
+                </svg>
+                Frontend Repository
+              </a>
+              <a
+                href="https://github.com/MahirAbrar/FIT3164-Backend"
+                className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.167 22 16.42 22 12c0-5.523-4.477-10-10-10z"
+                  />
+                </svg>
+                Backend Repository
+              </a>
+            </div>
+          </div>
+        </>
+      ),
     },
+    // 3rd project
     {
-      title: "Price Optimisation and Elasticity Model",
-      baseImage: `${process.env.PUBLIC_URL}/priceopt.png`,
+      title: "Traffic Collision Problem at New York",
+      baseImage: `${process.env.PUBLIC_URL}/trafficimage.png`,
       baseDescription:
         "This is a pricing optimization tool for retail businesses. It integrates price elasticity modeling and predictive analysis through a web application, analyzing historical data to estimate product demand at different price points.",
       tools: [
@@ -145,8 +337,9 @@ const Projects = () => {
         "The Price Optimisation tool leverages advanced machine learning algorithms to predict optimal pricing strategies. It analyzes historical sales data, market trends, and competitor pricing to provide actionable insights.",
       dialectImages: ["/api/placeholder/600/400"],
       allTools: ["Next.js", "Tailwind CSS", "MongoDB", "Firebase", "And more"],
-      githubLink: "https://github.com/yourusername/price-optimisation",
-      liveLink: "https://priceopt.com",
+      githubLink: "",
+      liveLink:
+        "https://public.tableau.com/app/profile/hamid.abrar.mahir/viz/Book1_16931793449790/Dashboard1?publish=yes",
       moreInformation:
         "This project was developed in collaboration with retail industry experts. It includes features such as real-time demand forecasting, competitor price monitoring, and customizable optimization parameters.",
     },

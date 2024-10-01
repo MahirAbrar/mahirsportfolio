@@ -4,7 +4,7 @@ import AnimatedTitle from "./AnimatedTitle";
 const About = () => {
   const titles = ["Web Developer", "Data Scientist", "Software Engineer"];
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-8 p-8 bg-base-200">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-8 p-8 bg-base-200 mt-10">
       <div className="flex flex-col text-center gap-6 lg:w-1/3">
         <img
           src={`${process.env.PUBLIC_URL}/IMG_2631.jpg`}

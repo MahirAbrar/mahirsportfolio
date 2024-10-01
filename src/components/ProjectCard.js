@@ -13,6 +13,7 @@ const ProjectCard = ({
   dialectDescription,
   dialectImages,
   githubLink,
+  githubLink2,
   liveLink,
   moreInformation,
   allTools,
@@ -48,18 +49,24 @@ const ProjectCard = ({
               </ul>
             </div>
             <div className="flex space-x-4 items-end">
+              {githubLink && (
+                <button
+                  className="btn bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors duration-200"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(githubLink, "_blank");
+                    if (githubLink2) {
+                      window.open(githubLink2, "_blank");
+                    }
+                  }}
+                >
+                  <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                  GitHub
+                </button>
+              )}
+
               <button
-                className="btn btn-primary"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(githubLink, "_blank");
-                }}
-              >
-                <FontAwesomeIcon icon={faGithub} className="mr-2" />
-                GitHub
-              </button>
-              <button
-                className="btn btn-secondary"
+                className="btn bg-green-500 hover:bg-green-600 text-white dark:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200"
                 onClick={(e) => {
                   e.stopPropagation();
                   window.open(liveLink, "_blank");

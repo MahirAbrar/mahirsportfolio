@@ -49,17 +49,17 @@ const Divider = ({ title, note }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="border-black border-y-2 pb-2 relative">
-        <h3 className="text-center text-5xl font-bold text-con w-full">
+        <h3 className="text-center text-3xl md:text-5xl font-bold text-con w-full py-2">
           {title}
         </h3>
         {note && (
-          <span
-            className={`absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-500 italic transition-opacity duration-300 ${
-              isVisible ? "opacity-100" : "opacity-0"
+          <p
+            className={`text-center md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2 text-sm text-gray-500 italic transition-opacity duration-300 mt-2 md:mt-0 ${
+              isVisible ? "md:opacity-100" : "md:opacity-0"
             }`}
           >
             {note}
-          </span>
+          </p>
         )}
       </div>
     </div>
