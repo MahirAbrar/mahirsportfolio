@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        // if scroll down hide the navbar
+        setShow(false);
+      } else {
+        // if scroll up show the navbar
+        setShow(true);
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
-    <div className="navbar bg-white dark:bg-slate-900">
+    <div
+      className={`navbar bg-white dark:bg-slate-900 fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -22,7 +55,7 @@ const Navbar = () => {
             </svg>
           </div>
         </div>
-        <a className="btn btn-ghost text-xl text-base-content">
+        <a href="#top" className="btn btn-ghost text-xl text-base-content">
           Mahir's Portfolio
         </a>
       </div>
