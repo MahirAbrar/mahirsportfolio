@@ -18,6 +18,7 @@ const ProjectCard = ({
   allTools,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [featuredImage, setFeaturedImage] = useState(dialectImages[0]);
 
   return (
     <>
@@ -103,59 +104,62 @@ const ProjectCard = ({
                     <XIcon size={24} />
                   </button>
                 </div>
-                <div className="flex flex-col md:flex-row gap-6">
+
+                {dialectImages.length > 0 && (
                   <motion.div
-                    initial={{ x: -50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
-                    className="w-full md:w-1/2 space-y-4"
+                    className="w-full mb-6"
+                  >
+                    <img
+                      src={featuredImage}
+                      alt={`${title} featured image`}
+                      className="w-full rounded-lg shadow-md"
+                    />
+                  </motion.div>
+                )}
+
+                {dialectImages.length > 1 && (
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6"
                   >
                     {dialectImages.map((image, index) => (
                       <img
                         key={index}
                         src={image}
-                        alt={`${title} screenshot ${index + 1}`}
-                        className="w-full rounded-lg shadow-md"
+                        alt={`${title} image ${index + 1}`}
+                        className={`w-full h-24 object-cover rounded-lg shadow-md cursor-pointer ${
+                          image === featuredImage ? "ring-2 ring-blue-500" : ""
+                        }`}
+                        onClick={() => setFeaturedImage(image)}
                       />
                     ))}
                   </motion.div>
-                  <motion.div
-                    initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                    className="w-full md:w-1/2 space-y-4"
-                  >
-                    <h3 className="text-xl font-semibold">Project Overview</h3>
-                    <motion.div
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.4, duration: 0.5 }}
-                      className="space-y-2"
-                    >
-                      {dialectDescription}
-                    </motion.div>
-                    <h3 className="text-xl font-semibold">Tools Used</h3>
-                    <motion.ul
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.6, duration: 0.5 }}
-                      className="list-disc list-inside"
-                    >
-                      {allTools.map((tool, index) => (
-                        <li key={index}>{tool}</li>
-                      ))}
-                    </motion.ul>
-                    <h3 className="text-xl font-semibold">More Information</h3>
-                    <motion.div
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.8, duration: 0.5 }}
-                      className="space-y-2"
-                    >
-                      {moreInformation}
-                    </motion.div>
-                  </motion.div>
-                </div>
+                )}
+
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                  className="space-y-4"
+                >
+                  <h3 className="text-xl font-semibold">Project Overview</h3>
+                  <div className="space-y-2">{dialectDescription}</div>
+
+                  <h3 className="text-xl font-semibold">Tools Used</h3>
+                  <ul className="list-disc list-inside">
+                    {allTools.map((tool, index) => (
+                      <li key={index}>{tool}</li>
+                    ))}
+                  </ul>
+
+                  <h3 className="text-xl font-semibold">More Information</h3>
+                  <div className="space-y-2">{moreInformation}</div>
+                </motion.div>
               </Dialog.Panel>
             </div>
           </Dialog>

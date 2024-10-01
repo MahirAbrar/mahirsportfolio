@@ -31,6 +31,7 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   return (
+    // added animation to hide and show the navbar
     <div
       className={`navbar bg-white dark:bg-slate-900 fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${
         show ? "translate-y-0" : "-translate-y-full"

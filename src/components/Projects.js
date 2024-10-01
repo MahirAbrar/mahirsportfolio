@@ -1,5 +1,7 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
@@ -120,6 +122,27 @@ const Projects = () => {
       ],
       dialectDescription:
         "The Price Optimisation tool leverages advanced machine learning algorithms to predict optimal pricing strategies. It analyzes historical sales data, market trends, and competitor pricing to provide actionable insights.",
+      dialectImages: [`${process.env.PUBLIC_URL}/pricewise.gif`],
+      allTools: ["Next.js", "Tailwind CSS", "MongoDB", "Firebase", "And more"],
+      githubLink: "https://github.com/yourusername/price-optimisation",
+      liveLink: "https://priceopt.com",
+      moreInformation:
+        "This project was developed in collaboration with retail industry experts. It includes features such as real-time demand forecasting, competitor price monitoring, and customizable optimization parameters.",
+    },
+    {
+      title: "Price Optimisation and Elasticity Model",
+      baseImage: `${process.env.PUBLIC_URL}/priceopt.png`,
+      baseDescription:
+        "This is a pricing optimization tool for retail businesses. It integrates price elasticity modeling and predictive analysis through a web application, analyzing historical data to estimate product demand at different price points.",
+      tools: [
+        "React",
+        "Tailwind CSS",
+        "Scikit-learn",
+        "Python (Flask)",
+        "And more",
+      ],
+      dialectDescription:
+        "The Price Optimisation tool leverages advanced machine learning algorithms to predict optimal pricing strategies. It analyzes historical sales data, market trends, and competitor pricing to provide actionable insights.",
       dialectImages: ["/api/placeholder/600/400"],
       allTools: ["Next.js", "Tailwind CSS", "MongoDB", "Firebase", "And more"],
       githubLink: "https://github.com/yourusername/price-optimisation",
@@ -129,11 +152,49 @@ const Projects = () => {
     },
   ];
 
+  const [visibleProjects, setVisibleProjects] = useState(2);
+  const [animateIndex, setAnimateIndex] = useState(2);
+
+  const showMoreProjects = () => {
+    setAnimateIndex(visibleProjects);
+    setVisibleProjects((prev) => Math.min(prev + 2, projects.length));
+  };
+
+  const showLessProjects = () => {
+    setVisibleProjects(2);
+    setAnimateIndex(2);
+  };
+
+  const isShowingAll = visibleProjects === projects.length;
+
   return (
     <div className="flex flex-col items-center gap-y-8 mx-auto max-w-7xl px-4">
-      {projects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
+      {projects.slice(0, visibleProjects).map((project, index) => (
+        <AnimatePresence key={index}>
+          {index < animateIndex ? (
+            <ProjectCard {...project} />
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <ProjectCard {...project} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       ))}
+
+      {projects.length > 2 && (
+        <motion.button
+          className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={isShowingAll ? showLessProjects : showMoreProjects}
+        >
+          {isShowingAll ? "Show Less" : "See More Projects"}
+        </motion.button>
+      )}
     </div>
   );
 };

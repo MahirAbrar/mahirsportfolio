@@ -10,7 +10,10 @@ const App = () => {
       <Navbar />
       <main className="min-h-screen flex flex-col bg-base-300">
         <About />
-        <Divider title="Key Projects" />
+        <Divider
+          title="Key Projects"
+          note="Click on the cards to learn more about each project."
+        />
         <Projects />
       </main>
     </div>
