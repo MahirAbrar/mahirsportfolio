@@ -10,19 +10,17 @@ module.exports = {
     themes: [
       {
         light: {
-          primary: "#570DF8",
-          secondary: "#F000B8",
-          accent: "#37CDBE",
+          primary: "#100357",
+          secondary: "#a7c7af",
+          accent: "#162dd2",
           neutral: "#3D4451",
           "base-100": "#FFFFFF",
-          "base-200": "#FFFFFF",
-          "base-300": "#FFFFFF",
           info: "#3ABFF8",
           success: "#36D399",
           warning: "#FBBD23",
           error: "#F87272",
+          "base-content": "#1F2937", // gray-800
           background: "#fafafa",
-          "base-content": "#1F2937", // This is gray-800
         },
       },
       {
@@ -36,7 +34,8 @@ module.exports = {
           success: "#36D399",
           warning: "#FBBD23",
           error: "#F87272",
-          "base-content": "#F3F4F6", // This is gray-100
+          "base-content": "#F3F4F6", // gray-100
+          background: "#001220",
         },
       },
     ],

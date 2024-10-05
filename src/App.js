@@ -4,17 +4,18 @@ import About from "./components/About";
 import Divider from "./components/Divider";
 import Projects from "./components/Projects";
 import WorkExperience from "./components/WorkExperience";
+import Lightsvg from "./components/assets/Lightsvg";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(isDarkMode);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
@@ -22,24 +23,19 @@ const App = () => {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevMode) => !prevMode);
   };
 
   return (
     <div className={darkMode ? "dark" : ""}>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main className="min-h-screen flex flex-col bg-base-200 dark:bg-gray-900">
-        <div
-          style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/${
-              darkMode ? "darksvg.svg" : "lightsvg.svg"
-            })`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+      <main className="min-h-screen flex flex-col bg-base-200 dark:bg-gray-900 z-0">
+        <div className="container mx-auto px-4">
           <About />
           <Divider
             title="Key Projects"

@@ -26,9 +26,9 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
   return (
     <div
-      className={`navbar bg-white dark:bg-slate-900 fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${
+      className={`navbar fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${
         show ? "translate-y-0" : "-translate-y-full"
-      }`}
+      } ${darkMode ? "bg-gray-800 text-white" : "bg-primary text-base-100"}`}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -49,11 +49,10 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             </svg>
           </div>
         </div>
-        <a href="#top" className="btn btn-ghost text-xl text-base-content">
+        <a href="#top" className="btn btn-ghost text-xl text-base-100">
           Mahir's Portfolio
         </a>
       </div>
-
       <div className="navbar-end">
         <label className="swap swap-rotate mr-4">
           <input
@@ -65,7 +64,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
           {/* sun icon */}
           <svg
-            className="swap-on h-10 w-10 fill-current"
+            className="swap-on h-10 w-10 fill-current text-base-100"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -74,7 +73,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
           {/* moon icon */}
           <svg
-            className="swap-off h-10 w-10 fill-current"
+            className="swap-off h-10 w-10 fill-current text-base-100"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >

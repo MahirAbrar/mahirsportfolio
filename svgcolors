@@ -1,9 +1,10 @@
 dark
 
 background
-001220
+bg- 001220
 162dd2
-100357
+accent - 100357
+secondary - #d69d9d
 
 
 light
