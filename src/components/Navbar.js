@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Navbar = ({ darkMode, toggleDarkMode }) => {
+const Navbar = ({ theme, handleToggle }) => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -28,7 +28,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     <div
       className={`navbar fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${
         show ? "translate-y-0" : "-translate-y-full"
-      } ${darkMode ? "bg-gray-800 text-white" : "bg-primary text-base-100"}`}
+      } bg-base-100 text-base-content`}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -49,7 +49,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             </svg>
           </div>
         </div>
-        <a href="#top" className="btn btn-ghost text-xl text-base-100">
+        <a href="#top" className="btn btn-ghost text-xl">
           Mahir's Portfolio
         </a>
       </div>
@@ -57,14 +57,14 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
         <label className="swap swap-rotate mr-4">
           <input
             type="checkbox"
-            onChange={toggleDarkMode}
-            checked={darkMode}
+            onChange={handleToggle}
+            checked={theme === "dark"}
             className="theme-controller"
           />
 
           {/* sun icon */}
           <svg
-            className="swap-on h-10 w-10 fill-current text-base-100"
+            className="swap-on h-10 w-10 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -73,14 +73,14 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
           {/* moon icon */}
           <svg
-            className="swap-off h-10 w-10 fill-current text-base-100"
+            className="swap-off h-10 w-10 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
           </svg>
         </label>
-        <a className="btn bg-base-200 dark:bg-gray-700">Contact Me</a>
+        <a className="btn btn-primary">Contact Me</a>
       </div>
     </div>
   );

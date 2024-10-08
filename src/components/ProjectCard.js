@@ -24,13 +24,13 @@ const ProjectCard = ({
   return (
     <>
       <div
-        className="flex flex-col md:flex-row bg-base-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden w-full cursor-pointer 
+        className="flex flex-col md:flex-row  rounded-lg shadow-xl overflow-hidden w-full cursor-pointer 
         transition-all duration-300 ease-in-out
         hover:shadow-2xl 
         hover:scale-[1.02] 
       
         hover:border-blue-500 dark:hover:border-blue-400
-        border-2 border-transparent"
+        border-2 "
         onClick={() => setIsOpen(true)}
       >
         <div className="w-full md:w-1/2 h-64 md:h-96">

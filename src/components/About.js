@@ -11,9 +11,7 @@ const About = () => {
           className="w-full h-full object-cover rounded-full shadow-2xl max-w-[384px] max-h-[384px] mx-auto"
           alt="Profile"
         />
-        <h3 className="text-5xl font-extrabold text-gray-800">
-          Hamid Abrar Mahir
-        </h3>
+        <h3 className="text-5xl font-extrabold">Hamid Abrar Mahir</h3>
       </div>
       <div className="flex flex-col lg:w-2/3 max-w-3xl">
         <AnimatedTitle strings={titles} />
@@ -28,7 +26,7 @@ const About = () => {
           <span className="font-bold">communication</span> skills to every
           project.
         </p>
-        <p className="text-lg text-gray-800">
+        <p className="text-lg ">
           Ready to leverage my{" "}
           <span className="font-bold">fast-learning ability</span> and{" "}
           <span className="italic ">passion for emerging technologies</span> to

@@ -54,7 +54,7 @@ const Divider = ({ title, note }) => {
         </h3>
         {note && (
           <p
-            className={`text-center md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2 text-sm text-gray-500 italic transition-opacity duration-300 mt-2 md:mt-0 ${
+            className={`text-center md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2 text-base italic transition-opacity duration-300 mt-2 md:mt-0 ${
               isVisible ? "md:opacity-100" : "md:opacity-0"
             }`}
           >

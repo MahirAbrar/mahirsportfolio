@@ -4,58 +4,42 @@ import About from "./components/About";
 import Divider from "./components/Divider";
 import Projects from "./components/Projects";
 import WorkExperience from "./components/WorkExperience";
-import Lightsvg from "./components/assets/Lightsvg";
+import "./App.css"; // Import App.css instead of lightsvg.css
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem("darkMode");
-    return savedMode ? JSON.parse(savedMode) : false;
-  });
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
 
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
+  // update state on toggle
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      setTheme("light");
     }
-  }, [darkMode]);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
   };
 
+  // set theme state in localstorage on mount & also update localstorage on state change
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    // add custom data-theme attribute to html tag required to update theme using DaisyUI
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main className="min-h-screen flex flex-col bg-base-200 dark:bg-gray-900 z-0">
-        <div className="container mx-auto px-4">
-          <About />
-          <Divider
-            title="Key Projects"
-            note="Click on the cards to learn more about each project."
-          />
-        </div>
-        <div
-          style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/${
-              darkMode ? "darksecondsvg.svg" : "lightsecondsvg.svg"
-            })`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <Projects />
-          <Divider title="Work Experience" />
-        </div>
-        <WorkExperience />
+    <div>
+      <Navbar theme={theme} handleToggle={handleToggle} />
+      <main className="min-h-screen flex flex-col">
+        <About />
+        <Divider
+          title="Key Projects"
+          note="Click below to learn more about each project."
+        />
+        <Projects />
+        <Divider title="Work Experience" />
+        <WorkExperience theme={theme} />
         <Divider title="Education" />
         <Divider title="Contact Me" />
       </main>
