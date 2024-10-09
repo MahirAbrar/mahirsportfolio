@@ -118,9 +118,12 @@ const ProjectCard = ({
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="mx-auto max-w-4xl rounded bg-white p-6 w-full max-h-[90vh] overflow-y-auto"
+                className="mx-auto max-w-4xl rounded bg-white p-6 pt-0 w-full max-h-[90vh] overflow-y-auto"
               >
-                <div className="flex justify-between items-center mb-4 sticky top-0 bg-white py-2">
+                <div
+                  className="flex justify-between items-center mb-4 sticky top-0 bg-white py-2 z-10"
+                  onClick={() => setIsOpen(false)}
+                >
                   <Dialog.Title className="text-2xl font-bold text-gray-800">
                     {title}
                   </Dialog.Title>

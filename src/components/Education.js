@@ -72,14 +72,25 @@ const CategoryCard = ({ category, unitCodes }) => (
 const Education = () => {
   return (
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl font-bold  flex items-center">
-        <BookOpen className="mr-2" />
-        Bachelor of Computer Science in Data Science, Monash University
-        Australia.
-      </h2>
-      <h2 className="text-xl font-semibold mb-6 flex items-center">
-        Minor: Mobile Apps Development
-      </h2>
+      <div className="mb-8">
+        <div className="flex flex-rowitems-start sm:items-center mb-4">
+          <BookOpen className="text-primary mb-2 sm:mb-2 mr-4" size={48} />
+          <div>
+            <h2 className="text-md sm:text-xl md:text-4xl font-bold leading-tight">
+              Bachelor of Computer Science in Data Science
+            </h2>
+            <p className="text-lg sm:text-xl text-accent mt-1">
+              Monash University Australia
+            </p>
+          </div>
+        </div>
+        <div className="ml-0 sm:ml-16">
+          <h3 className="text-md sm:text-xl  font-semibold ">
+            Minor: Mobile Apps Development
+          </h3>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {Object.entries(categories).map(([category, unitCodes]) => (
           <CategoryCard

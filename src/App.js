@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import WorkExperience from "./components/WorkExperience";
 import "./App.css"; // Import App.css instead of lightsvg.css
 import Education from "./components/Education";
+import ContactMe from "./components/ContactMe";
 
 const App = () => {
   const [theme, setTheme] = useState(
@@ -44,6 +45,7 @@ const App = () => {
         <Divider title="Education" />
         <Education />
         <Divider title="Contact Me" />
+        <ContactMe />
       </main>
     </div>
   );
