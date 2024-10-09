@@ -43,7 +43,7 @@ const Divider = ({ title, note }) => {
 
   return (
     <div
-      className="w-screen mx-auto my-8 bg-none"
+      className="min-w-screen mx-auto my-8 bg-none"
       ref={dividerRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

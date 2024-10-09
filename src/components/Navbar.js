@@ -26,7 +26,7 @@ const Navbar = ({ theme, handleToggle }) => {
 
   return (
     <div
-      className={`navbar fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${
+      className={`navbar fixed top-0 left-0 right-0 transition-transform duration-300 z-50  w-auto ${
         show ? "translate-y-0" : "-translate-y-full"
       } bg-base-100 text-base-content`}
     >

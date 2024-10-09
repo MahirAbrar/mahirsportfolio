@@ -4,7 +4,7 @@ import About from "./components/About";
 import Divider from "./components/Divider";
 import Projects from "./components/Projects";
 import WorkExperience from "./components/WorkExperience";
-import "./App.css"; // Import App.css instead of lightsvg.css
+import "./App.css";
 import Education from "./components/Education";
 import ContactMe from "./components/ContactMe";
 
@@ -13,7 +13,6 @@ const App = () => {
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
 
-  // update state on toggle
   const handleToggle = (e) => {
     if (e.target.checked) {
       setTheme("dark");
@@ -22,30 +21,30 @@ const App = () => {
     }
   };
 
-  // set theme state in localstorage on mount & also update localstorage on state change
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
-    // add custom data-theme attribute to html tag required to update theme using DaisyUI
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
   return (
-    <div>
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar theme={theme} handleToggle={handleToggle} />
-      <main className="min-h-screen flex flex-col">
-        <About />
-        <Divider
-          title="Key Projects"
-          note="Click below to learn more about each project."
-        />
-        <Projects />
-        <Divider title="Work Experience" />
-        <WorkExperience theme={theme} />
-        <Divider title="Education" />
-        <Education />
-        <Divider title="Contact Me" />
-        <ContactMe />
+      <main className="flex flex-col px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto w-full">
+          <About />
+          <Divider
+            title="Key Projects"
+            note="Click below to learn more about each project."
+          />
+          <Projects />
+          <Divider title="Work Experience" />
+          <WorkExperience theme={theme} />
+          <Divider title="Education" />
+          <Education />
+          <Divider title="Contact Me" />
+          <ContactMe />
+        </div>
       </main>
     </div>
   );
