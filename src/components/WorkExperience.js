@@ -11,7 +11,7 @@ const WorkExperienceItem = ({
   references,
 }) => (
   <div className="card bg-base-100 shadow-xl md:mb-8 mb-2">
-    <div className="card-body">
+    <div className="card-body p-4 sm:p-8">
       <div className="flex items-center mb-2">
         <Briefcase className="w-5 h-5 mr-2 text-primary" />
         <h3 className="card-title text-xl">{title}</h3>
@@ -47,18 +47,18 @@ const WorkExperienceItem = ({
         <div className="mt-6 border-t pt-4">
           <h4 className="font-semibold mb-2">References:</h4>
           {references.map((reference, index) => (
-            <div key={index} className="mb-2 last:mb-0">
+            <div key={index} className="mb-2 last:mb-0 ">
               <div className="flex items-center">
                 <User className="w-4 h-4 mr-2 text-primary" />
                 <span className="font-medium">{reference.name}</span>
               </div>
-              <div className="text-sm ml-6">
+              <div className="text-sm ml-6 mb-1">
                 {reference.position}{" "}
                 {reference.company && <span>at {reference.company}</span>}
               </div>
               {reference.email && (
-                <div className="text-sm ml-6 flex items-center">
-                  <Mail className="w-3 h-3 mr-1 text-primary" />
+                <div className="text-sm flex items-center mb-1">
+                  <Mail className="w-4 h-4 mr-2 text-primary" />
                   <a
                     href={`mailto:${reference.email}`}
                     className="hover:underline"
@@ -68,8 +68,8 @@ const WorkExperienceItem = ({
                 </div>
               )}
               {reference.phone && (
-                <div className="text-sm ml-6 flex items-center">
-                  <Phone className="w-3 h-3 mr-1 text-primary" />
+                <div className="text-sm  flex items-center">
+                  <Phone className="w-4 h-4 mr-2 text-primary" />
                   <a
                     href={`tel:${reference.phone}`}
                     className="hover:underline"
@@ -78,6 +78,9 @@ const WorkExperienceItem = ({
                   </a>
                 </div>
               )}
+              <div className="justify-center items-center text-center">
+                <div className="divider w-52 m-2" />
+              </div>
             </div>
           ))}
         </div>
@@ -104,8 +107,15 @@ const WorkExperience = () => {
           name: "Mahbubul Kabir",
           position: "Chief Operating Officer",
           company: "BDTax",
-          email: "",
-          phone: "",
+          email: "kabir.mahbubul@bdtax.com.bd",
+          phone: "+880 1929 988 001",
+        },
+        {
+          name: "Zulfikar Ali",
+          position: "Founder | Chief Product Officer",
+          company: "BDTax",
+          email: "zulfikar.ali@bdtax.com.bd",
+          phone: "+1(651)331-1140",
         },
       ],
     },

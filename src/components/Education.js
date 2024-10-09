@@ -72,8 +72,8 @@ const CategoryCard = ({ category, unitCodes }) => (
 const Education = () => {
   return (
     <div className="container mx-auto px-4">
-      <div className="mb-8">
-        <div className="flex flex-rowitems-start sm:items-center mb-4">
+      <div className="mb-4">
+        <div className="flex flex-rowitems-start sm:items-center mb-2">
           <BookOpen className="text-primary mb-2 sm:mb-2 mr-4" size={48} />
           <div>
             <h2 className="text-md sm:text-xl md:text-4xl font-bold leading-tight">
