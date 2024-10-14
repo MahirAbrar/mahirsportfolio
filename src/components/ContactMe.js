@@ -11,6 +11,7 @@ const ContactMe = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="max-w-4xl mx-auto rounded-lg shadow-md p-6"
+      id="contact"
     >
       <div className="flex flex-col sm:flex-row sm:justify-between sm:space-x-4">
         <ContactItem

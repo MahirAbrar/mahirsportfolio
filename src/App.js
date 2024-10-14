@@ -7,6 +7,7 @@ import WorkExperience from "./components/WorkExperience";
 import "./App.css";
 import Education from "./components/Education";
 import ContactMe from "./components/ContactMe";
+import Skills from "./components/Skills";
 
 const App = () => {
   const [theme, setTheme] = useState(
@@ -33,6 +34,8 @@ const App = () => {
       <main className="flex flex-col px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto w-full">
           <About />
+          <Divider title="Skills" />
+          <Skills />
           <Divider
             title="Key Projects"
             note="Click below to learn more about each project."
