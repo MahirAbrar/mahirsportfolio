@@ -27,10 +27,18 @@ const About = () => {
           project.
         </p>
         <p className="text-lg ">
+          As a <span className="font-bold">dedicated self-learner</span>, I am{" "}
+          <span className="italic">committed to lifelong learning</span> and
+          constantly expanding my skillset. I'm always eager to explore new
+          technologies and methodologies to stay at the forefront of the
+          industry.
+        </p>
+        <p className="text-lg ">
           Ready to leverage my{" "}
           <span className="font-bold">fast-learning ability</span> and{" "}
-          <span className="italic ">passion for emerging technologies</span> to
-          drive <span className="font-bold">impactful results</span>.
+          <span className="italic">passion for emerging technologies</span> to
+          drive <span className="font-bold">impactful results</span> and
+          contribute to innovative projects.
         </p>
       </div>
     </div>
