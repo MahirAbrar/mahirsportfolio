@@ -30,19 +30,7 @@ const WorkExperienceItem = ({
           </li>
         ))}
       </ul>
-      {/* {githubLink && (
-        <div className="mt-4">
-          <a
-            href={githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-outline btn-sm"
-          >
-            <GitHub className="w-4 h-4 mr-2" />
-            View on GitHub
-          </a>
-        </div>
-      )} */}
+
       {references && references.length > 0 && (
         <div className="mt-6 border-t pt-4">
           <h4 className="font-semibold mb-2">References:</h4>
@@ -119,13 +107,28 @@ const WorkExperience = () => {
         },
       ],
     },
+    {
+      title: "AI Model Training - Independent Contractor",
+      company: "Outlier AI",
+      location: "Remote",
+      date: "Nov 2023 – Present",
+      responsibilities: [
+        "Train and fine-tune AI language models through advanced prompting techniques to ensure adherence to AI principles and ethical guidelines.",
+        "Process and validate API responses using JavaScript, Python, YAML, XML, and JSON to maintain data integrity and model performance.",
+        "Develop and implement quality assurance protocols for model outputs, ensuring consistency and reliability across different use cases.",
+        "Optimize model responses through systematic testing and refinement of prompting strategies, improving accuracy and maintaining ethical compliance.",
+        "Analyze and document model behavior patterns to identify areas for improvement and ensure alignment with established AI principles.",
+      ],
+    },
     // You can add more work experiences here
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:px-8 p-2 ">
+    <div className="flex flex-col items-center justify-center gap-8 sm:px-8 p-2 w-full">
       {experience.map((job, index) => (
-        <WorkExperienceItem key={index} {...job} />
+        <div key={index} className="w-full">
+          <WorkExperienceItem {...job} />
+        </div>
       ))}
     </div>
   );
