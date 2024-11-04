@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import GlowingButton from "./GlowingButton";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 const Projects = () => {
@@ -500,14 +501,11 @@ const Projects = () => {
       ))}
 
       {projects.length > 2 && (
-        <motion.button
-          className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <GlowingButton
           onClick={isShowingAll ? showLessProjects : showMoreProjects}
         >
           {isShowingAll ? "Show Less" : "See More Projects"}
-        </motion.button>
+        </GlowingButton>
       )}
     </div>
   );
