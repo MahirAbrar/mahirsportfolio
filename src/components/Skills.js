@@ -49,7 +49,6 @@ const Skills = () => {
         "JSON Web Token (JWT)",
         "Joi",
         "Flask",
-        "Stripe API",
       ],
     },
     {
@@ -65,10 +64,7 @@ const Skills = () => {
         "SymPy",
         "Matplotlib",
         "Excel",
-        "SQL",
         "SQLite",
-        "MySQL",
-        "MongoDB",
       ],
     },
     {
@@ -96,7 +92,6 @@ const Skills = () => {
         "XML",
         "YAML",
         "Restful APIs",
-        "Postman API",
       ],
     },
   ];
