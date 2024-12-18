@@ -99,9 +99,9 @@ const WorkExperience = () => {
       location: "Dhaka, Bangladesh",
       date: "Dec 2023 – Jan 2024",
       responsibilities: [
-        "Conducted in-depth data analysis with Pandas, Matplotlib and R to derive marketing insights, driving informed decision making and contributing to company growth.",
+        "Conducted in-depth data analysis in a 400,000-row table with Pandas, Matplotlib and R to derive marketing insights, driving informed decision making.",
         "Crafted dynamic Visualizations with Matplotlib and IPyWidgets, enhancing the marketing team's ability to make understand the information.",
-        "Applied Gestalt principles in UI/UX design to enhance user engagement and streamline decision processes.",
+        "Applied Gestalt principles in UI/UX design to enhance user engagement and streamline decision processes in Figma.",
       ],
       githubLink: "",
       references: [

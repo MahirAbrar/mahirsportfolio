@@ -189,9 +189,12 @@ const Projects = () => {
         <>
           <p className="text-gray-800">
             PriceWise M5 was developed as a final year data science project at
-            Monash University by a team of four students. It utilizes the M5
-            competition dataset to provide robust analysis and predictions for
-            retail pricing strategies.
+            Monash University by a team of four students. It uses the M5
+            competition dataset, a 1.2 million row dataset. The team combined
+            multiple datasets and filtered by year to improve model predictions.
+            Caching was introduced to reduce prediction time from over 15
+            seconds to less than 200 ms. This tool provides robust analysis and
+            predictions for retail pricing strategies.
           </p>
 
           <p className="text-gray-800">The project's architecture includes:</p>
