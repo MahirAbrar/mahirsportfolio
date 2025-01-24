@@ -34,6 +34,7 @@ const Skills = () => {
         "GSAP",
         "Chart.js",
         "Framer Motion",
+        "Figma",
       ],
     },
     {
@@ -65,6 +66,8 @@ const Skills = () => {
         "Matplotlib",
         "Excel",
         "SQLite",
+        "PyTorch",
+        "TensorFlow",
       ],
     },
     {

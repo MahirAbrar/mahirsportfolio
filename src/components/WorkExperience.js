@@ -80,16 +80,16 @@ const WorkExperienceItem = ({
 const WorkExperience = () => {
   const experience = [
     {
-      title: "AI Model Trainer - Independent Contractor",
+      title: "Tier 2 Coder: AI Model Trainer - Independent Contractor",
       company: "Outlier AI",
       location: "Melbourne, Victoria",
       date: "Oct 2024 – Current",
       responsibilities: [
-        "Conduct comprehensive prompt engineering and response reviews across multiple projects, utilizing TypeScript, R, JSON, YAML, HTML, Markdown, CSS, XML, JavaScript while maintaining high quality ratings",
-        "Create advanced prompting strategies for image analysis models that outperformed SOTA benchmarks, demonstrating expertise in improving model performance",
-        "Perform thorough testing and quality assurance of web applications built with JavaScript, React, Next.js, Bootstrap and Tailwind CSS, ensuring high accuracy and optimal functionality",
-        "Conduct in-depth reviews of mathematical models using Python ecosystem including Sympy, NumPy, Matplotlib, scikit-learn and other machine learning/deep learning libraries for validation of complex calculations and data analysis",
-        "Demonstrate expertise in testing AI-generated solutions and maintaining consistent high-quality output across diverse projects",
+        "Conducted comprehensive RLHF across multiple projects, directly contributing to model improvements for clients including Meta, OpenAI and other clients.",
+        "Specialising in Python, JavaScript, TypeScript, R, HTML, CSS, JavaScript and other web frameworks while maintaining an average of above 4 out of 5 ratings.",
+        "Created advanced prompts to challenge image generative models to conduct RLHF, identifying edge cases and potential failure modes.",
+        "Performed thorough testing and quality assurance of web applications built with JavaScript, React, Next.js ensuring high accuracy and optimal functionality",
+        "Conducted in-depth reviews of mathematical models using Python ecosystem including Sympy, NumPy, Matplotlib, scikit-learn and other machine learning/deep learning libraries for validation of complex calculations and data analysis",
       ],
     },
 
