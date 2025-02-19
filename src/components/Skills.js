@@ -1,23 +1,72 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Code, Server, BarChart, Wrench, Cloud } from "lucide-react";
+import { motion } from "framer-motion";
+import BubbleCursor from "./cursor/BubbleCursor";
 
-const SkillCategory = ({ title, skills, Icon }) => (
-  <div className="mb-6">
-    <h3 className="text-xl font-bold mb-2 flex items-center">
-      <Icon className="mr-2" size={24} />
-      {title}
-    </h3>
-    <ul className="list-disc list-inside">
-      {skills.map((skill, index) => (
-        <li key={index} className="mb-1">
-          {skill}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const SkillCategory = ({ title, skills, Icon, index }) => {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.2, // Stagger the categories
+      },
+    },
+  };
+
+  const skillVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: index * 0.2 + i * 0.1, // Stagger the skills within each category
+        duration: 0.3,
+      },
+    }),
+  };
+
+  return (
+    <motion.div
+      className="mb-6 text-center p-6 rounded-xl backdrop-blur-sm bg-opacity-50 bg-base-100 shadow-lg hover:shadow-xl transition-shadow"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+    >
+      <motion.h3
+        className="text-xl font-bold mb-4 flex items-center justify-center"
+        whileHover={{ scale: 1.05 }}
+      >
+        <Icon className="mr-2" size={24} />
+        {title}
+      </motion.h3>
+      <ul className="list-none space-y-2">
+        {skills.map((skill, i) => (
+          <motion.li
+            key={i}
+            className="mb-1 py-1 px-3 rounded-full hover:bg-base-200 transition-colors inline-block m-1"
+            variants={skillVariants}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05 }}
+          >
+            {skill}
+          </motion.li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+};
 
 const Skills = () => {
+  const skillsRef = useRef(null);
+  const [isHovering, setIsHovering] = React.useState(false);
+
   const skillCategories = [
     {
       title: "Frontend",
@@ -27,12 +76,9 @@ const Skills = () => {
         "Next.js",
         "Angular",
         "Tailwind CSS",
-        "DaisyUI",
-        "Bootstrap",
         "Material UI",
         "HeadlessUI",
         "GSAP",
-        "Chart.js",
         "Framer Motion",
         "Figma",
       ],
@@ -45,11 +91,11 @@ const Skills = () => {
         "Express.js",
         "Django",
         "Django Rest Framework",
-        "bcryptjs",
-        "Passport js",
         "JSON Web Token (JWT)",
-        "Joi",
         "Flask",
+        "PostgreSQL",
+        "SQLite",
+        "MongoDB",
       ],
     },
     {
@@ -65,7 +111,6 @@ const Skills = () => {
         "SymPy",
         "Matplotlib",
         "Excel",
-        "SQLite",
         "PyTorch",
         "TensorFlow",
       ],
@@ -75,10 +120,9 @@ const Skills = () => {
       Icon: Cloud,
       skills: [
         "AWS S3",
-        "AWS Secret Manager",
         "AWS DynamoDB",
         "MongoDB",
-        "Firebase",
+        "Firebase Realtime Database",
         "Git",
         "GitHub",
       ],
@@ -87,31 +131,50 @@ const Skills = () => {
       title: "General Skills",
       Icon: Wrench,
       skills: [
-        "Microsoft Office Suite",
         "Data Analysis",
         "Technical Writing",
         "Problem Solving",
-        "JSON",
-        "XML",
-        "YAML",
         "Restful APIs",
+        "Agile Methodologies",
+        "Collaboration Tools",
       ],
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
-    <div className="container mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+    <motion.div
+      ref={skillsRef}
+      className="w-full px-4 text-center relative"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={containerVariants}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      {isHovering && <BubbleCursor wrapperElement={skillsRef.current} />}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skillCategories.map((category, index) => (
           <SkillCategory
             key={index}
             title={category.title}
             skills={category.skills}
             Icon={category.Icon}
+            index={index}
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

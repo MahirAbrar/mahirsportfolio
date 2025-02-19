@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
 import { Dialog } from "@headlessui/react";
 import { XIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,27 +18,62 @@ const ProjectCard = ({
   liveLink,
   moreInformation,
   allTools,
+  isFirst,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [featuredImage, setFeaturedImage] = useState(dialectImages[0]);
+  const [showClickAnimation, setShowClickAnimation] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState({});
+
+  useEffect(() => {
+    if (isFirst) {
+      setTimeout(() => setShowClickAnimation(true), 500);
+      setTimeout(() => setShowClickAnimation(false), 5000);
+    }
+  }, [isFirst]);
+
+  // Function to handle image load
+  const handleImageLoad = (imageUrl) => {
+    setImagesLoaded((prev) => ({ ...prev, [imageUrl]: true }));
+  };
+
+  // Reset loaded state when dialog opens
+  useEffect(() => {
+    if (isOpen) {
+      setImagesLoaded({});
+    }
+  }, [isOpen]);
 
   return (
     <>
       <div
-        className="flex flex-col md:flex-row  rounded-lg shadow-xl overflow-hidden w-full cursor-pointer 
+        className={`flex flex-col md:flex-row rounded-lg shadow-xl overflow-hidden w-full max-w-full cursor-pointer 
         transition-all duration-300 ease-in-out
         hover:shadow-2xl 
         hover:scale-[1.02] 
-      
         hover:border-blue-500 dark:hover:border-blue-400
-        border-2 "
+        border-2 
+        ${showClickAnimation ? "relative" : ""}`}
         onClick={() => setIsOpen(true)}
       >
+        {showClickAnimation && (
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-4 right-4 flex items-center gap-2">
+              <FontAwesomeIcon
+                icon={faHandPointer}
+                className="text-blue-500 text-2xl animate-click-pointer"
+              />
+              <span className="bg-blue-500 text-white px-4 py-2 rounded-full whitespace-nowrap animate-pulse-opacity">
+                Click to see more!
+              </span>
+            </div>
+          </div>
+        )}
         <div className="w-full md:w-1/2 h-64 md:h-96">
           <img
             src={baseImage}
             alt={`${title} Project`}
-            className="w-full h-full object-cover"
+            className="w-full h-full max-h-full object-cover"
           />
         </div>
         <div className="w-full md:w-1/2 p-6 flex flex-col justify-between">
@@ -140,12 +176,19 @@ const ProjectCard = ({
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
-                    className="w-full mb-6"
+                    className="w-full mb-6 relative"
                   >
+                    {!imagesLoaded[featuredImage] && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg">
+                        <span className="loading loading-spinner loading-lg text-primary"></span>
+                      </div>
+                    )}
                     <img
                       src={featuredImage}
-                      alt={`${title} featured image`}
+                      alt={title}
                       className="w-full rounded-lg shadow-md"
+                      onLoad={() => handleImageLoad(featuredImage)}
+                      style={{ minHeight: "200px" }}
                     />
                   </motion.div>
                 )}
@@ -158,15 +201,24 @@ const ProjectCard = ({
                     className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6"
                   >
                     {dialectImages.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`${title} image ${index + 1}`}
-                        className={`w-full h-24 object-cover rounded-lg shadow-md cursor-pointer ${
-                          image === featuredImage ? "ring-2 ring-blue-500" : ""
-                        }`}
-                        onClick={() => setFeaturedImage(image)}
-                      />
+                      <div key={index} className="relative">
+                        {!imagesLoaded[image] && (
+                          <div className="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg">
+                            <span className="loading loading-spinner loading-md text-primary"></span>
+                          </div>
+                        )}
+                        <img
+                          src={image}
+                          alt={`${title} ${index + 1}`}
+                          className={`w-full h-24 object-cover rounded-lg shadow-md cursor-pointer ${
+                            image === featuredImage
+                              ? "ring-2 ring-blue-500"
+                              : ""
+                          }`}
+                          onClick={() => setFeaturedImage(image)}
+                          onLoad={() => handleImageLoad(image)}
+                        />
+                      </div>
                     ))}
                   </motion.div>
                 )}

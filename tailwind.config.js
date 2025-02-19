@@ -2,7 +2,28 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        "click-pointer": {
+          "0%, 100%": {
+            transform: "translateY(-50%) scale(1)",
+            opacity: 1,
+          },
+          "50%": {
+            transform: "translateY(-50%) scale(0.95)",
+            opacity: 0.8,
+          },
+        },
+        "pulse-opacity": {
+          "0%, 100%": { opacity: 1 },
+          "50%": { opacity: 0.7 },
+        },
+      },
+      animation: {
+        "click-pointer": "click-pointer 1s ease-in-out infinite",
+        "pulse-opacity": "pulse-opacity 2s ease-in-out infinite",
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {

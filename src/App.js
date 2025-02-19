@@ -32,7 +32,7 @@ const App = () => {
     <div className="min-h-screen overflow-x-hidden">
       <Navbar theme={theme} handleToggle={handleToggle} />
       <main className="flex flex-col px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto w-full">
+        <div className="w-full">
           <About />
           <Divider title="Skills" />
           <Skills />
