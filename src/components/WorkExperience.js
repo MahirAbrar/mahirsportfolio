@@ -12,20 +12,25 @@ const WorkExperienceItem = ({
 }) => (
   <div className="card bg-base-100 shadow-xl md:mb-8 mb-2">
     <div className="card-body p-4 sm:p-8">
-      <div className="flex items-center mb-2">
-        <Briefcase className="w-5 h-5 mr-2 text-primary" />
-        <h3 className="card-title text-xl">{title}</h3>
+      <div className="flex items-center mb-4 sm:mb-2">
+        <Briefcase className="w-5 h-5 mr-2 text-primary dark:text-white" />
+        <h3 className="card-title text-2xl sm:text-3xl ">{title}</h3>
       </div>
-      <div className="flex items-center text-sm opacity-70 mb-1">
-        <Building2 className="w-4 h-4 mr-2 text-primary" />
-        <span className="font-semibold">{company}</span>
+      <div className="flex items-center text-base sm:text-lg dark:opacity-70 opacity-80 mb-3 sm:mb-1">
+        <Building2 className="w-4 h-4 mr-2 text-primary dark:text-white" />
+        <span className="font-semibold ">{company}</span>
         <span className="mx-2">|</span>
         <span>{location}</span>
       </div>
-      <div className="text-sm opacity-60 mb-3 ml-6">{date}</div>
-      <ul className="list-disc list-inside space-y-2 sm:ml-6 ml-2">
+      <div className="text-base sm:text-lg dark:opacity-60 opacity-75 mb-4 sm:mb-3 ml-6">
+        {date}
+      </div>
+      <ul className="list-disc list-inside space-y-3 sm:space-y-2 sm:ml-6 ml-2">
         {responsibilities.map((responsibility, index) => (
-          <li key={index} className="text-sm">
+          <li
+            key={index}
+            className="text-base sm:text-lg dark:opacity-100 opacity-90"
+          >
             {responsibility}
           </li>
         ))}
@@ -37,7 +42,7 @@ const WorkExperienceItem = ({
           {references.map((reference, index) => (
             <div key={index} className="mb-2 last:mb-0 ">
               <div className="flex items-center">
-                <User className="w-4 h-4 mr-2 text-primary" />
+                <User className="w-4 h-4 mr-2 text-primary dark:text-white" />
                 <span className="font-medium">{reference.name}</span>
               </div>
               <div className="text-sm ml-6 mb-1">
@@ -46,7 +51,7 @@ const WorkExperienceItem = ({
               </div>
               {reference.email && (
                 <div className="text-sm flex items-center mb-1">
-                  <Mail className="w-4 h-4 mr-2 text-primary" />
+                  <Mail className="w-4 h-4 mr-2 text-primary dark:text-white" />
                   <a
                     href={`mailto:${reference.email}`}
                     className="hover:underline"
@@ -57,7 +62,7 @@ const WorkExperienceItem = ({
               )}
               {reference.phone && (
                 <div className="text-sm  flex items-center">
-                  <Phone className="w-4 h-4 mr-2 text-primary" />
+                  <Phone className="w-4 h-4 mr-2 text-primary dark:text-white" />
                   <a
                     href={`tel:${reference.phone}`}
                     className="hover:underline"

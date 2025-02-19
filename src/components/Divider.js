@@ -48,7 +48,7 @@ const Divider = ({ title, note }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="border-black border-y-2 pb-2 relative">
+      <div className="border-black dark:border-gray-500 border-y-2 pb-2 relative">
         <h3 className="text-center text-3xl md:text-5xl font-bold text-con w-full py-2">
           {title}
         </h3>
