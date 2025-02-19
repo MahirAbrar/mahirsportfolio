@@ -471,7 +471,7 @@ const Projects = () => {
     // 4th project
     {
       title: "FitSync",
-      baseImage: `${process.env.PUBLIC_URL}/FitSync.png`,
+      baseImage: `${process.env.PUBLIC_URL}/fitsync.png`,
       baseDescription:
         "FitSync is a workout tracking app designed for fitness enthusiasts. Currently under development, it will offer customizable exercise templates, progress tracking, and support for various training styles including weights, bodyweight, cardio and yoga workouts.",
       tools: ["Django", "PostgreSQL", "React", "TypeScript"],
