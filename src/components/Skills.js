@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { Code, Server, BarChart, Wrench, Cloud } from "lucide-react";
 import { motion } from "framer-motion";
-import BubbleCursor from "./cursor/BubbleCursor";
 
 const SkillCategory = ({ title, skills, Icon, index }) => {
   const containerVariants = {
@@ -11,7 +10,7 @@ const SkillCategory = ({ title, skills, Icon, index }) => {
       y: 0,
       transition: {
         duration: 0.5,
-        delay: index * 0.2, // Stagger the categories
+        delay: index * 0.05, // Stagger the categories
       },
     },
   };
@@ -22,7 +21,7 @@ const SkillCategory = ({ title, skills, Icon, index }) => {
       opacity: 1,
       x: 0,
       transition: {
-        delay: index * 0.2 + i * 0.1, // Stagger the skills within each category
+        delay: index * 0.1 + i * 0.05, // Stagger the skills within each category
         duration: 0.3,
       },
     }),
@@ -162,7 +161,6 @@ const Skills = () => {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {isHovering && <BubbleCursor wrapperElement={skillsRef.current} />}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skillCategories.map((category, index) => (
           <SkillCategory

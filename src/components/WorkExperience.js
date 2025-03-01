@@ -1,5 +1,7 @@
 import React from "react";
 import { Briefcase, Building2, User, Mail, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const WorkExperienceItem = ({
   title,
@@ -9,78 +11,130 @@ const WorkExperienceItem = ({
   responsibilities,
   githubLink,
   references,
-}) => (
-  <div className="card bg-base-100 shadow-xl md:mb-8 mb-2">
-    <div className="card-body p-4 sm:p-8">
-      <div className="flex items-center mb-4 sm:mb-2">
-        <Briefcase className="w-5 h-5 mr-2 text-primary dark:text-white" />
-        <h3 className="card-title text-2xl sm:text-3xl ">{title}</h3>
-      </div>
-      <div className="flex items-center text-base sm:text-lg dark:opacity-70 opacity-80 mb-3 sm:mb-1">
-        <Building2 className="w-4 h-4 mr-2 text-primary dark:text-white" />
-        <span className="font-semibold ">{company}</span>
-        <span className="mx-2">|</span>
-        <span>{location}</span>
-      </div>
-      <div className="text-base sm:text-lg dark:opacity-60 opacity-75 mb-4 sm:mb-3 ml-6">
-        {date}
-      </div>
-      <ul className="list-disc list-inside space-y-3 sm:space-y-2 sm:ml-6 ml-2">
-        {responsibilities.map((responsibility, index) => (
-          <li
-            key={index}
-            className="text-base sm:text-lg dark:opacity-100 opacity-90"
-          >
-            {responsibility}
-          </li>
-        ))}
-      </ul>
+  index,
+}) => {
+  // Create a ref for each work experience item with threshold 0.1
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
-      {references && references.length > 0 && (
-        <div className="mt-6 border-t pt-4">
-          <h4 className="font-semibold mb-2">References:</h4>
-          {references.map((reference, index) => (
-            <div key={index} className="mb-2 last:mb-0 ">
-              <div className="flex items-center">
-                <User className="w-4 h-4 mr-2 text-primary dark:text-white" />
-                <span className="font-medium">{reference.name}</span>
-              </div>
-              <div className="text-sm ml-6 mb-1">
-                {reference.position}{" "}
-                {reference.company && <span>at {reference.company}</span>}
-              </div>
-              {reference.email && (
-                <div className="text-sm flex items-center mb-1">
-                  <Mail className="w-4 h-4 mr-2 text-primary dark:text-white" />
-                  <a
-                    href={`mailto:${reference.email}`}
-                    className="hover:underline"
-                  >
-                    {reference.email}
-                  </a>
-                </div>
-              )}
-              {reference.phone && (
-                <div className="text-sm  flex items-center">
-                  <Phone className="w-4 h-4 mr-2 text-primary dark:text-white" />
-                  <a
-                    href={`tel:${reference.phone}`}
-                    className="hover:underline"
-                  >
-                    {reference.phone}
-                  </a>
-                </div>
-              )}
-              <div className="justify-center items-center text-center">
-                <div className="divider w-52 m-2" />
-              </div>
-            </div>
-          ))}
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.2, // Stagger the animations
+        ease: "easeOut",
+      }}
+      className="w-full"
+    >
+      <div className="card bg-base-100 shadow-xl md:mb-8 mb-2">
+        <div className="card-body p-4 sm:p-8">
+          <div className="flex items-center mb-4 sm:mb-2">
+            <Briefcase className="w-5 h-5 mr-2 text-primary dark:text-white" />
+            <h3 className="card-title text-2xl sm:text-3xl ">{title}</h3>
+          </div>
+          <div className="flex items-center text-base sm:text-lg dark:opacity-70 opacity-80 mb-3 sm:mb-1">
+            <Building2 className="w-4 h-4 mr-2 text-primary dark:text-white" />
+            <span className="font-semibold ">{company}</span>
+            <span className="mx-2">|</span>
+            <span>{location}</span>
+          </div>
+          <div className="text-base sm:text-lg dark:opacity-60 opacity-75 mb-4 sm:mb-3 ml-6">
+            {date}
+          </div>
+
+          {/* Animate each responsibility item */}
+          <ul className="list-disc list-inside space-y-3 sm:space-y-2 sm:ml-6 ml-2">
+            {responsibilities.map((responsibility, respIndex) => (
+              <motion.li
+                key={respIndex}
+                initial={{ opacity: 0, x: -20 }}
+                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                transition={{
+                  duration: 0.3,
+                  delay: index * 0.2 + 0.1 + respIndex * 0.1, // Additional staggering
+                  ease: "easeOut",
+                }}
+                className="text-base sm:text-lg dark:opacity-100 opacity-90"
+              >
+                {responsibility}
+              </motion.li>
+            ))}
+          </ul>
+
+          {/* References section with animations */}
+          {references && references.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.2 + 0.5, // Appear after responsibilities
+                ease: "easeOut",
+              }}
+              className="mt-6 border-t pt-4"
+            >
+              <h4 className="font-semibold mb-2">References:</h4>
+              {references.map((reference, refIndex) => (
+                <motion.div
+                  key={refIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={
+                    inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
+                  }
+                  transition={{
+                    duration: 0.3,
+                    delay: index * 0.2 + 0.6 + refIndex * 0.15,
+                    ease: "easeOut",
+                  }}
+                  className="mb-2 last:mb-0"
+                >
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2 text-primary dark:text-white" />
+                    <span className="font-medium">{reference.name}</span>
+                  </div>
+                  <div className="text-sm ml-6 mb-1">
+                    {reference.position}{" "}
+                    {reference.company && <span>at {reference.company}</span>}
+                  </div>
+                  {reference.email && (
+                    <div className="text-sm flex items-center mb-1">
+                      <Mail className="w-4 h-4 mr-2 text-primary dark:text-white" />
+                      <a
+                        href={`mailto:${reference.email}`}
+                        className="hover:underline"
+                      >
+                        {reference.email}
+                      </a>
+                    </div>
+                  )}
+                  {reference.phone && (
+                    <div className="text-sm flex items-center">
+                      <Phone className="w-4 h-4 mr-2 text-primary dark:text-white" />
+                      <a
+                        href={`tel:${reference.phone}`}
+                        className="hover:underline"
+                      >
+                        {reference.phone}
+                      </a>
+                    </div>
+                  )}
+                  <div className="justify-center items-center text-center">
+                    <div className="divider w-52 m-2" />
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
         </div>
-      )}
-    </div>
-  </div>
-);
+      </div>
+    </motion.div>
+  );
+};
 
 const WorkExperience = () => {
   const experience = [
@@ -133,9 +187,7 @@ const WorkExperience = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-8 sm:px-8 p-2 w-full">
       {experience.map((job, index) => (
-        <div key={index} className="w-full">
-          <WorkExperienceItem {...job} />
-        </div>
+        <WorkExperienceItem key={index} {...job} index={index} />
       ))}
     </div>
   );

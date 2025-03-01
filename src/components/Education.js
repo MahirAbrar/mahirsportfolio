@@ -1,6 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { BookOpen } from "lucide-react";
+import { useRef } from "react";
 
 const categories = {
   "Data Science": [
@@ -51,23 +52,32 @@ const units = {
   MAT1841: "CONTINUOUS MATHEMATICS FOR COMPUTER SCIENCE",
 };
 
-const CategoryCard = ({ category, unitCodes }) => (
-  <motion.div
-    className="bg-base-200 p-4 rounded-lg shadow-md"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-  >
-    <h3 className="text-lg font-semibold mb-2">{category}</h3>
-    <ul className="space-y-1">
-      {unitCodes.map((unitCode) => (
-        <li key={unitCode} className="text-sm">
-          <span className="font-medium">{unitCode}:</span> {units[unitCode]}
-        </li>
-      ))}
-    </ul>
-  </motion.div>
-);
+const CategoryCard = ({ category, unitCodes, index }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="bg-base-200 p-4 rounded-lg shadow-md"
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{
+        duration: 0.3,
+        delay: index * 0.05, // Stagger effect based on index
+      }}
+    >
+      <h3 className="text-lg font-semibold mb-2">{category}</h3>
+      <ul className="space-y-1">
+        {unitCodes.map((unitCode) => (
+          <li key={unitCode} className="text-sm">
+            <span className="font-medium">{unitCode}:</span> {units[unitCode]}
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+};
 
 const Education = () => {
   return (
@@ -92,11 +102,12 @@ const Education = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Object.entries(categories).map(([category, unitCodes]) => (
+        {Object.entries(categories).map(([category, unitCodes], index) => (
           <CategoryCard
             key={category}
             category={category}
             unitCodes={unitCodes}
+            index={index}
           />
         ))}
       </div>
