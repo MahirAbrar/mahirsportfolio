@@ -5,6 +5,7 @@ import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
 import { Dialog } from "@headlessui/react";
 import { XIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedButton from "./AnimatedButton";
 
 const ProjectCard = ({
   title,
@@ -51,7 +52,7 @@ const ProjectCard = ({
         transition-all duration-300 ease-in-out
         hover:shadow-2xl 
         hover:scale-[1.02] 
-        hover:border-blue-500 dark:hover:border-blue-400
+        hover:border-blue-500 dark:hover:border-secondary
         border-2 
         ${showClickAnimation ? "relative" : ""}`}
         onClick={() => setIsOpen(true)}
@@ -79,7 +80,7 @@ const ProjectCard = ({
         <div className="w-full md:w-1/2 p-6 flex flex-col justify-between">
           <div>
             <h2 className="text-3xl font-bold mb-4">{title}</h2>
-            <p className="mb-4">{baseDescription}</p>
+            <p className="mb-4 text-lg">{baseDescription}</p>
           </div>
           <div className="flex flex-col sm:flex-row justify-between">
             <div className="mb-4 sm:mb-0">
@@ -92,8 +93,9 @@ const ProjectCard = ({
             </div>
             <div className="flex space-x-4 items-end">
               {githubLink && (
-                <button
-                  className="btn bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors duration-200"
+                <AnimatedButton
+                  text="GitHub"
+                  icon={faGithub}
                   onClick={(e) => {
                     e.stopPropagation();
                     window.open(githubLink, "_blank");
@@ -101,34 +103,26 @@ const ProjectCard = ({
                       window.open(githubLink2, "_blank");
                     }
                   }}
-                >
-                  <FontAwesomeIcon icon={faGithub} className="mr-2" />
-                  GitHub
-                </button>
+                />
               )}
               {liveLink && (
-                <button
-                  className="btn bg-green-500 hover:bg-green-600 text-white dark:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200"
+                <AnimatedButton
+                  text="Live Website"
                   onClick={(e) => {
                     e.stopPropagation();
                     window.open(liveLink, "_blank");
                   }}
-                >
-                  Live Website
-                </button>
+                />
               )}
-              :
               {!liveLink && (
-                <button
-                  className="btn bg-green-500 hover:bg-green-600 text-white dark:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200 disabled"
-                  disabled
+                <AnimatedButton
+                  text="Live Website"
                   onClick={(e) => {
                     e.stopPropagation();
                     window.open(liveLink, "_blank");
                   }}
-                >
-                  Live Website
-                </button>
+                  className="opacity-50 cursor-not-allowed"
+                />
               )}
             </div>
           </div>

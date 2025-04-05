@@ -39,14 +39,16 @@ module.exports = {
           success: "#36D399",
           warning: "#FBBD23",
           error: "#F87272",
-          "base-content": "#1F2937", // gray-800
           background: "#fafafa",
+          background2: "#f5f5f5",
+          background3: "#f0f0f0",
+          background4: "#e8e8e8",
         },
       },
       {
         dark: {
-          primary: "#661AE6",
-          secondary: "#D926AA",
+          primary: "#100357",
+          secondary: "#a7c7af",
           accent: "#1FB2A5",
           neutral: "#191D24",
           "base-100": "#2A303C",
@@ -54,8 +56,10 @@ module.exports = {
           success: "#36D399",
           warning: "#FBBD23",
           error: "#F87272",
-          "base-content": "#F3F4F6", // gray-100
           background: "#001220",
+          background2: "#001a2e",
+          background3: "#000e18",
+          background4: "#00213b",
         },
       },
     ],

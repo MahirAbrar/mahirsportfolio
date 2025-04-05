@@ -31,24 +31,24 @@ const WorkExperienceItem = ({
       }}
       className="w-full"
     >
-      <div className="card bg-base-100 shadow-xl md:mb-8 mb-2">
+      <div className="card bg-base-100 shadow-xl md:mb-8 mb-4">
         <div className="card-body p-4 sm:p-8">
-          <div className="flex items-center mb-4 sm:mb-2">
-            <Briefcase className="w-5 h-5 mr-2 text-primary dark:text-white" />
-            <h3 className="card-title text-2xl sm:text-3xl ">{title}</h3>
+          <div className="flex items-center mb-4">
+            <Briefcase className="w-5 h-5 mr-1.5 text-primary dark:text-white" />
+            <h3 className="card-title text-2xl sm:text-3xl">{title}</h3>
           </div>
-          <div className="flex items-center text-base sm:text-lg dark:opacity-70 opacity-80 mb-3 sm:mb-1">
-            <Building2 className="w-4 h-4 mr-2 text-primary dark:text-white" />
-            <span className="font-semibold ">{company}</span>
+          <div className="flex items-center text-base sm:text-lg dark:opacity-90 opacity-80">
+            <Building2 className="w-4 h-4 mr-2.5 text-primary dark:text-white" />
+            <span className="font-semibold text-lg sm:text-xl">{company}</span>
             <span className="mx-2">|</span>
             <span>{location}</span>
           </div>
-          <div className="text-base sm:text-lg dark:opacity-60 opacity-75 mb-4 sm:mb-3 ml-6">
+          <div className="text-base sm:text-lg dark:opacity-60 opacity-75 mb-4 ml-6">
             {date}
           </div>
 
           {/* Animate each responsibility item */}
-          <ul className="list-disc list-inside space-y-3 sm:space-y-2 sm:ml-6 ml-2">
+          <ul className="space-y-4 sm:space-y-2 ml-6 list-none">
             {responsibilities.map((responsibility, respIndex) => (
               <motion.li
                 key={respIndex}
@@ -76,9 +76,9 @@ const WorkExperienceItem = ({
                 delay: index * 0.2 + 0.5, // Appear after responsibilities
                 ease: "easeOut",
               }}
-              className="mt-6 border-t pt-4"
+              className="mt-8 border-t pt-4"
             >
-              <h4 className="font-semibold mb-2">References:</h4>
+              <h4 className="font-semibold mb-4 ml-6">References:</h4>
               {references.map((reference, refIndex) => (
                 <motion.div
                   key={refIndex}
@@ -91,19 +91,19 @@ const WorkExperienceItem = ({
                     delay: index * 0.2 + 0.6 + refIndex * 0.15,
                     ease: "easeOut",
                   }}
-                  className="mb-2 last:mb-0"
+                  className="mb-4 last:mb-0"
                 >
                   <div className="flex items-center">
-                    <User className="w-4 h-4 mr-2 text-primary dark:text-white" />
+                    <User className="w-4 h-4 mr-2.5 text-primary dark:text-white" />
                     <span className="font-medium">{reference.name}</span>
                   </div>
-                  <div className="text-sm ml-6 mb-1">
+                  <div className="text-sm ml-6 mb-2">
                     {reference.position}{" "}
                     {reference.company && <span>at {reference.company}</span>}
                   </div>
                   {reference.email && (
-                    <div className="text-sm flex items-center mb-1">
-                      <Mail className="w-4 h-4 mr-2 text-primary dark:text-white" />
+                    <div className="text-sm flex items-center mb-2">
+                      <Mail className="w-4 h-4 mr-2.5 text-primary dark:text-white" />
                       <a
                         href={`mailto:${reference.email}`}
                         className="hover:underline"
@@ -114,7 +114,7 @@ const WorkExperienceItem = ({
                   )}
                   {reference.phone && (
                     <div className="text-sm flex items-center">
-                      <Phone className="w-4 h-4 mr-2 text-primary dark:text-white" />
+                      <Phone className="w-4 h-4 mr-2.5 text-primary dark:text-white" />
                       <a
                         href={`tel:${reference.phone}`}
                         className="hover:underline"
@@ -144,11 +144,11 @@ const WorkExperience = () => {
       location: "Melbourne, Victoria",
       date: "Oct 2024 – Current",
       responsibilities: [
-        "Conducted comprehensive RLHF across multiple projects, directly contributing to model improvements for clients including Meta, OpenAI and other clients.",
+        "Built and optimized full-stack web applications (React, Next.js, Node.js, Tailwind CSS) for Fortune 500 clients, enabling scalable data pipelines to enhance LLM training and fine-tuning.",
+        "Conducted comprehensive RLHF across multiple projects, directly contributing to model improvements for clients including Meta, OpenAI and other clients",
         "Specialising in Python, JavaScript, TypeScript, R, HTML, CSS, JavaScript and other web frameworks while maintaining an average of above 4 out of 5 ratings.",
-        "Created advanced prompts to challenge image generative models to conduct RLHF, identifying edge cases and potential failure modes.",
-        "Performed thorough testing and quality assurance of web applications built with JavaScript, React, Next.js ensuring high accuracy and optimal functionality",
-        "Conducted in-depth reviews of mathematical models using Python ecosystem including Sympy, NumPy, Matplotlib, scikit-learn and other machine learning/deep learning libraries for validation of complex calculations and data analysis",
+        "Performed thorough testing and quality assurance of web applications built with JavaScript, React, Next.js ensuring high accuracy and optimal functionality.",
+        "Conducted in-depth reviews of mathematical models using comprehensive Python ecosystem including SymPy, NumPy, Matplotlib, scikit-learn, PyTorch and other machine learning/deep learning libraries for validation of complex calculations and data analysis.",
       ],
     },
 

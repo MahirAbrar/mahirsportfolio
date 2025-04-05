@@ -20,25 +20,31 @@ const About = () => {
           <span className="font-bold">
             Bachelors of Computer Science in Data Science
           </span>{" "}
-          from <span className="italic">Monash University</span>. I bring strong{" "}
+          from <span className="italic">Monash University</span>.
+        </p>
+        <p className="text-lg">
+          I bring strong{" "}
           <span className="font-bold">problem-solving</span>,{" "}
           <span className="font-bold">leadership</span>, and{" "}
-          <span className="font-bold">communication</span> skills to every
-          project.
+          <span className="font-bold">communication</span> skills to every project.
         </p>
         <p className="text-lg">
           As a <span className="font-bold">dedicated self-learner</span>, I am{" "}
-          <span className="italic">committed to lifelong learning</span> and
-          constantly expanding my skillset. I'm always eager to explore new
-          technologies and methodologies to stay at the forefront of the
-          industry.
+          <span className="italic">committed to lifelong learning</span>.
+        </p>
+        <p className="text-lg">
+          Constantly expanding my skillset and exploring new technologies to stay
+          at the forefront of the industry.
         </p>
         <p className="text-lg">
           Ready to leverage my{" "}
           <span className="font-bold">fast-learning ability</span> and{" "}
-          <span className="italic">passion for emerging technologies</span> to
-          drive <span className="font-bold">impactful results</span> and
-          contribute to innovative projects.
+          <span className="italic">passion for emerging technologies</span>.
+        </p>
+        <p className="text-lg">
+          Driven to deliver{" "}
+          <span className="font-bold">impactful results</span> and contribute to
+          innovative projects.
         </p>
       </div>
     </div>

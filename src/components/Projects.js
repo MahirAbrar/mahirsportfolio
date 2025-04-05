@@ -3,6 +3,8 @@ import ProjectCard from "./ProjectCard";
 import GlowingButton from "./GlowingButton";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import MagneticElement from "./MagneticElement";
+
 const Projects = () => {
   const projects = [
     {
@@ -351,6 +353,68 @@ const Projects = () => {
     },
     // 3rd project
     {
+      title: "FitSync",
+      baseImage: `${process.env.PUBLIC_URL}/fitsync.png`,
+      baseDescription:
+        "FitSync is a workout tracking app designed for fitness enthusiasts. Currently under development, it will offer customizable exercise templates, progress tracking, and support for various training styles including weights, bodyweight, cardio and yoga workouts.",
+      tools: ["Django", "PostgreSQL", "React", "TypeScript"],
+      dialectDescription: (
+        <>
+          <p className="text-gray-800 mb-4">
+            FitSync is currently in active development. The backend
+            infrastructure has been largely completed using Django and
+            PostgreSQL, providing a robust foundation for the application. The
+            frontend development in React and TypeScript will commence shortly,
+            focusing on creating an intuitive and responsive user interface.
+          </p>
+
+          <p className="text-gray-800 font-semibold mb-2">Planned Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800">
+            <li>Customizable workout templates and exercise logging</li>
+            <li>Progress tracking with visual analytics</li>
+            <li>Personal record management and milestone tracking</li>
+            <li>Support for multiple exercise types and training styles</li>
+            <li>Rest timer and workout scheduling</li>
+            <li>AI Agent to help with workout</li>
+          </ul>
+        </>
+      ),
+      allTools: ["Django", "PostgreSQL", "React", "TypeScript"],
+      dialectImages: [
+        // `${process.env.PUBLIC_URL}/image1.gif`,
+        // `${process.env.PUBLIC_URL}/image2.gif`,
+      ],
+      githubLink: "https://github.com/MahirAbrar/workerback",
+      // githubLink2: "Frontend is being built",
+      // liveLink: "https://project-demo.com",
+      moreInformation: (
+        <>
+          {/* <p className="text-gray-800">
+            Additional detailed information about the project, including
+            technical details, challenges overcome, and implementation
+            specifics.
+          </p>
+
+          <p className="text-gray-800">Technical Architecture:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">Architecture component 1</li>
+            <li className="text-gray-800">Architecture component 2</li>
+            <li className="text-gray-800">Architecture component 3</li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            Future improvements and potential enhancements:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">Potential improvement 1</li>
+            <li className="text-gray-800">Potential improvement 2</li>
+            <li className="text-gray-800">Potential improvement 3</li>
+          </ul> */}
+        </>
+      ),
+    },
+    // 4th project
+    {
       title: "Traffic Collision Problem at New York",
       baseImage: `${process.env.PUBLIC_URL}/trafficimage.png`,
       baseDescription:
@@ -468,68 +532,6 @@ const Projects = () => {
         </>
       ),
     },
-    // 4th project
-    {
-      title: "FitSync",
-      baseImage: `${process.env.PUBLIC_URL}/fitsync.png`,
-      baseDescription:
-        "FitSync is a workout tracking app designed for fitness enthusiasts. Currently under development, it will offer customizable exercise templates, progress tracking, and support for various training styles including weights, bodyweight, cardio and yoga workouts.",
-      tools: ["Django", "PostgreSQL", "React", "TypeScript"],
-      dialectDescription: (
-        <>
-          <p className="text-gray-800 mb-4">
-            FitSync is currently in active development. The backend
-            infrastructure has been largely completed using Django and
-            PostgreSQL, providing a robust foundation for the application. The
-            frontend development in React and TypeScript will commence shortly,
-            focusing on creating an intuitive and responsive user interface.
-          </p>
-
-          <p className="text-gray-800 font-semibold mb-2">Planned Features:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-800">
-            <li>Customizable workout templates and exercise logging</li>
-            <li>Progress tracking with visual analytics</li>
-            <li>Personal record management and milestone tracking</li>
-            <li>Support for multiple exercise types and training styles</li>
-            <li>Rest timer and workout scheduling</li>
-            <li>AI Agent to help with workout</li>
-          </ul>
-        </>
-      ),
-      allTools: ["Django", "PostgreSQL", "React", "TypeScript"],
-      dialectImages: [
-        // `${process.env.PUBLIC_URL}/image1.gif`,
-        // `${process.env.PUBLIC_URL}/image2.gif`,
-      ],
-      githubLink: "https://github.com/MahirAbrar/workerback",
-      // githubLink2: "Frontend is being built",
-      // liveLink: "https://project-demo.com",
-      moreInformation: (
-        <>
-          {/* <p className="text-gray-800">
-            Additional detailed information about the project, including
-            technical details, challenges overcome, and implementation
-            specifics.
-          </p>
-
-          <p className="text-gray-800">Technical Architecture:</p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">Architecture component 1</li>
-            <li className="text-gray-800">Architecture component 2</li>
-            <li className="text-gray-800">Architecture component 3</li>
-          </ul>
-
-          <p className="mt-4 text-gray-800">
-            Future improvements and potential enhancements:
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">Potential improvement 1</li>
-            <li className="text-gray-800">Potential improvement 2</li>
-            <li className="text-gray-800">Potential improvement 3</li>
-          </ul> */}
-        </>
-      ),
-    },
   ];
 
   const [visibleProjects, setVisibleProjects] = useState(2);
@@ -567,11 +569,13 @@ const Projects = () => {
       ))}
 
       {projects.length > 2 && (
-        <GlowingButton
-          onClick={isShowingAll ? showLessProjects : showMoreProjects}
-        >
-          {isShowingAll ? "Show Less" : "See More Projects"}
-        </GlowingButton>
+        <MagneticElement magneticStrength={0.1} nearAreaSize={80}>
+          <GlowingButton
+            onClick={isShowingAll ? showLessProjects : showMoreProjects}
+          >
+            {isShowingAll ? "Show Less" : "See More Projects"}
+          </GlowingButton>
+        </MagneticElement>
       )}
     </div>
   );

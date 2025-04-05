@@ -2,7 +2,16 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-const GlowingButton = ({ onClick, children }) => {
+const GlowingButton = ({ 
+  onClick, 
+  children,
+  width = "auto",
+  height = "auto",
+  borderRadius = "full",
+  bgColor = "bg-primary",
+  textColor = "text-white",
+  glowColor = "rgba(255, 255, 255, 1)"
+}) => {
   const [hovering, setHovering] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const buttonRef = useRef(null);
@@ -20,7 +29,8 @@ const GlowingButton = ({ onClick, children }) => {
   return (
     <motion.button
       ref={buttonRef}
-      className="mt-4 px-6 py-2 bg-gradient-to-r from-primary to-accent text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform relative overflow-hidden"
+      className={`px-6 py-2 ${bgColor} ${textColor} rounded-${borderRadius} shadow-lg hover:shadow-xl transition-all duration-300 transform relative overflow-hidden`}
+      style={{ width, height }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
@@ -37,7 +47,7 @@ const GlowingButton = ({ onClick, children }) => {
             width: "2px",
             height: "2px",
             background: "rgba(255, 255, 255, 0.55)",
-            boxShadow: "0 0 30px 0.7rem rgba(255, 255, 255, 1)",
+            boxShadow: `0 0 30px 0.7rem ${glowColor}`,
             transform: "translate(-50%, -50%)",
           }}
         />

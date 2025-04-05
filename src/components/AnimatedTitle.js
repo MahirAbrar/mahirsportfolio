@@ -7,7 +7,7 @@ const AnimatedTitle = ({ strings }) => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: strings,
-      typeSpeed: 70,
+      typeSpeed: 20,
       backSpeed: 0,
       loop: false,
       loopCount: 1,
@@ -23,8 +23,8 @@ const AnimatedTitle = ({ strings }) => {
   }, [strings]);
 
   return (
-    <div className="h-[60px] overflow-hidden ">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+    <div className="overflow-hidden ">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold h-[60px] mb-4">
         <span ref={el} />
       </h1>
     </div>

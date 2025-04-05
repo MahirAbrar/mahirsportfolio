@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import GlowingButton from "./GlowingButton";
 
 const Navbar = ({ theme, handleToggle }) => {
   const [show, setShow] = useState(true);
@@ -31,12 +32,12 @@ const Navbar = ({ theme, handleToggle }) => {
       } bg-base-100 text-base-content`}
     >
       <div className="navbar-start">
-        <a href="#top" className="btn btn-ghost text-xl flex items-center">
-          <img src="/favicon.ico" alt="Portfolio Icon" className="w-6 h-6" />
+        <a href="#top" className="btn btn-ghost text-2xl sm:text-3xl flex items-center">
+          <img src="/favicon.ico" alt="Portfolio Icon" className="w-10 h-10" />
           Mahir's Portfolio
         </a>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end flex items-center">
         <label className="swap swap-rotate mr-4">
           <input
             type="checkbox"
@@ -47,7 +48,7 @@ const Navbar = ({ theme, handleToggle }) => {
 
           {/* sun icon */}
           <svg
-            className="swap-on h-10 w-10 fill-current"
+            className="swap-on h-8 w-8 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -56,19 +57,36 @@ const Navbar = ({ theme, handleToggle }) => {
 
           {/* moon icon */}
           <svg
-            className="swap-off h-10 w-10 fill-current"
+            className="swap-off h-8 w-8 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
           </svg>
         </label>
-        <a className="btn btn-primary" href="#contact">
-          Contact Me
-        </a>
+        <GlowingButton
+          className="btn btn-primary"
+          borderRadius="lg"
+          height="40px"
+          onClick={() => window.location.href = '#contact'}
+        >
+          <span className="text-md tracking-wider font-semibold">Contact Me</span>
+        </GlowingButton>
       </div>
+        {/* 
+          Other Tailwind border-radius options you can use:
+          - "none" - No border radius (0px)
+          - "sm" - Small border radius (0.125rem)
+          - "md" - Medium border radius (0.375rem)
+          - "lg" - Large border radius (0.5rem)
+          - "xl" - Extra large border radius (0.75rem)
+          - "2xl" - 2x large border radius (1rem)
+          - "3xl" - 3x large border radius (1.5rem)
+          - "full" - Full circular border radius (9999px)
+        */}
     </div>
   );
+
 };
 
 export default Navbar;

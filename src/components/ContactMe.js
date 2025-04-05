@@ -13,7 +13,7 @@ const ContactMe = () => {
       className="max-w-4xl mx-auto rounded-lg shadow-md p-6"
       id="contact"
     >
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:space-x-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:space-x-4 text-lg">
         <ContactItem
           icon={
             <FontAwesomeIcon icon={faLinkedin} className="mr-2" size="lg" />

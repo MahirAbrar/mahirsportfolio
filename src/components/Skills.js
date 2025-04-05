@@ -36,7 +36,7 @@ const SkillCategory = ({ title, skills, Icon, index }) => {
       viewport={{ once: true, margin: "-50px" }}
     >
       <motion.h3
-        className="text-xl font-bold mb-4 flex items-center justify-center"
+        className="text-xl tracking-wide font-bold mb-4 flex items-center justify-center"
         whileHover={{ scale: 1.05 }}
       >
         <Icon className="mr-2" size={24} />
@@ -46,7 +46,7 @@ const SkillCategory = ({ title, skills, Icon, index }) => {
         {skills.map((skill, i) => (
           <motion.li
             key={i}
-            className="mb-1 py-1 px-3 rounded-full hover:bg-base-200 transition-colors inline-block m-1"
+            className=" py-1 px-3 rounded-full hover:bg-base-200 transition-colors inline-block text-lg tracking-wide"
             variants={skillVariants}
             custom={i}
             initial="hidden"
