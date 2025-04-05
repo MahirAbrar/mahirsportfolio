@@ -82,18 +82,18 @@ const Education = () => {
     <div className="container mx-auto px-4">
       <div className="mb-4">
         <div className="flex flex-rowitems-start sm:items-center mb-2">
-          <BookOpen className="text-primary mb-2 sm:mb-2 mr-4" size={48} />
+          <BookOpen className="mb-2 sm:mb-2 mr-4" size={48} />
           <div>
             <h2 className="text-md sm:text-xl md:text-4xl font-bold leading-tight">
               Bachelor of Computer Science in Data Science
             </h2>
-            <p className="text-lg sm:text-xl text-accent mt-1">
+            <p className="text-lg sm:text-xl mt-1 font-semibold">
               Monash University Australia
             </p>
           </div>
         </div>
         <div className="ml-0 sm:ml-16">
-          <h3 className="text-md sm:text-xl  font-semibold ">
+          <h3 className="text-md sm:text-xl">
             Minor: Mobile Apps Development
           </h3>
         </div>
