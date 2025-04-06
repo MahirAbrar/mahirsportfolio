@@ -4,6 +4,7 @@ import GlowingButton from "./GlowingButton";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticElement from "./MagneticElement";
+import AnimatedButton from "./AnimatedButton";
 
 const Projects = () => {
   const projects = [
@@ -569,13 +570,11 @@ const Projects = () => {
       ))}
 
       {projects.length > 2 && (
-        <MagneticElement magneticStrength={0.1} nearAreaSize={80}>
-          <GlowingButton
-            onClick={isShowingAll ? showLessProjects : showMoreProjects}
-          >
-            {isShowingAll ? "Show Less" : "See More Projects"}
-          </GlowingButton>
-        </MagneticElement>
+        <AnimatedButton
+          text={isShowingAll ? "Show Less" : "More Projects"}
+          onClick={isShowingAll ? showLessProjects : showMoreProjects}
+          className="font-semibold"
+        />
       )}
     </div>
   );
