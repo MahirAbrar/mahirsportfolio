@@ -32,12 +32,12 @@ const Navbar = ({ theme, handleToggle }) => {
       } bg-base-100 text-base-content`}
     >
       <div className="navbar-start">
-        <a href="#top" className="btn btn-ghost text-2xl sm:text-3xl flex items-center">
-          <img src="/favicon.ico" alt="Portfolio Icon" className="w-10 h-10" />
+        <a href="#top" className="btn btn-ghost text-xl sm:text-3xl flex items-center">
+          <img src="/favicon.ico" alt="Portfolio Icon" className="w-6 h-6 sm:w-10 sm:h-10" />
           Mahir's Portfolio
         </a>
       </div>
-      <div className="navbar-end flex items-center">
+      <div className="navbar-end flex items-center ">
         <label className="swap swap-rotate mr-4">
           <input
             type="checkbox"
@@ -48,7 +48,7 @@ const Navbar = ({ theme, handleToggle }) => {
 
           {/* sun icon */}
           <svg
-            className="swap-on h-8 w-8 fill-current"
+            className="swap-on h-6 w-6 sm:h-8 sm:w-8 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -57,7 +57,7 @@ const Navbar = ({ theme, handleToggle }) => {
 
           {/* moon icon */}
           <svg
-            className="swap-off h-8 w-8 fill-current"
+            className="swap-off h-6 w-6 sm:h-8 sm:w-8 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -65,12 +65,11 @@ const Navbar = ({ theme, handleToggle }) => {
           </svg>
         </label>
         <GlowingButton
-          className="btn btn-primary"
+          className="btn btn-primary h-8 sm:h-10"
           borderRadius="lg"
-          height="40px"
           onClick={() => window.location.href = '#contact'}
         >
-          <span className="text-md tracking-wider font-semibold">Contact Me</span>
+          <span className="text-sm  font-semibold">Contact Me</span>
         </GlowingButton>
       </div>
         {/* 

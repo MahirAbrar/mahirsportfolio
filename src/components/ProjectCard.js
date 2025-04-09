@@ -48,7 +48,7 @@ const ProjectCard = ({
   return (
     <>
       <div
-        className={`flex flex-col md:flex-row rounded-lg shadow-xl overflow-hidden w-full max-w-full cursor-pointer 
+        className={`flex flex-col xl:flex-row rounded-lg shadow-xl overflow-hidden w-full max-w-full cursor-pointer 
         transition-all duration-300 ease-in-out
         hover:shadow-2xl 
         hover:scale-[1.02] 
@@ -70,14 +70,14 @@ const ProjectCard = ({
             </div>
           </div>
         )}
-        <div className="w-full md:w-1/2 h-64 md:h-96">
+        <div className="w-full h-64 md:h-96">
           <img
             src={baseImage}
             alt={`${title} Project`}
             className="w-full h-full max-h-full object-cover"
           />
         </div>
-        <div className="w-full md:w-1/2 p-6 flex flex-col justify-between">
+        <div className="w-full p-6 flex flex-col justify-between">
           <div>
             <h2 className="text-3xl font-bold mb-4">{title}</h2>
             <p className="mb-4 text-lg">{baseDescription}</p>
@@ -93,36 +93,92 @@ const ProjectCard = ({
             </div>
             <div className="flex space-x-4 items-end">
               {githubLink && (
-                <AnimatedButton
-                  text="GitHub"
-                  icon={faGithub}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(githubLink, "_blank");
-                    if (githubLink2) {
-                      window.open(githubLink2, "_blank");
-                    }
-                  }}
-                />
+                <>
+                  <div className="hidden xs:block">
+                    <AnimatedButton
+                      width={180}
+                      height={60}
+                      text="GitHub"
+                      icon={faGithub}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(githubLink, "_blank");
+                        if (githubLink2) {
+                          window.open(githubLink2, "_blank");
+                        }
+                      }}
+                    />
+                  </div>
+                  <div className="xs:hidden">
+                    <AnimatedButton
+                      width={120}
+                      height={40}
+                      text="GitHub"
+                      icon={faGithub}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(githubLink, "_blank");
+                        if (githubLink2) {
+                          window.open(githubLink2, "_blank");
+                        }
+                      }}
+                    />
+                  </div>
+                </>
               )}
               {liveLink && (
-                <AnimatedButton
-                  text="Live Website"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(liveLink, "_blank");
-                  }}
-                />
+                <>
+                  <div className="hidden xs:block">
+                    <AnimatedButton
+                      width={180}
+                      height={60}
+                      text="Live Website"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(liveLink, "_blank");
+                      }}
+                    />
+                  </div>
+                  <div className="xs:hidden">
+                    <AnimatedButton
+                      width={120}
+                      height={40}
+                      text="Live Website"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(liveLink, "_blank");
+                      }}
+                    />
+                  </div>
+                </>
               )}
               {!liveLink && (
-                <AnimatedButton
-                  text="Live Website"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(liveLink, "_blank");
-                  }}
-                  className="opacity-50 cursor-not-allowed"
-                />
+                <>
+                  <div className="hidden xs:block">
+                    <AnimatedButton
+                      width={180}
+                      height={60}
+                      text="Live Website"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(liveLink, "_blank");
+                      }}
+                      className="opacity-50 cursor-not-allowed"
+                    />
+                  </div>
+                  <div className="xs:hidden">
+                    <AnimatedButton
+                      width={120}
+                      height={40}
+                      text="Live Website"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(liveLink, "_blank");
+                      }}
+                      className="opacity-50 cursor-not-allowed"
+                    />
+                  </div>
+                </>
               )}
             </div>
           </div>
