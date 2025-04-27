@@ -1,18 +1,16 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import GlowingButton from "./GlowingButton";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import MagneticElement from "./MagneticElement";
 import AnimatedButton from "./AnimatedButton";
 
 const Projects = () => {
   const projects = [
     {
       title: "AttireAlley",
-      baseImage: `${process.env.PUBLIC_URL}/attirealleyimage.png`,
+      baseImage: `${process.env.PUBLIC_URL}/attirealley/aalanding.png`,
       baseDescription:
-        "AttireAlley is an e-commerce platform for fashion enthusiasts. It offers a wide range of clothing and accessories, providing a seamless shopping experience for users.",
+        "AttireAlley is an e-commerce platform for fashion enthusiasts. It offers a wide range of clothing and accessories, providing a seamless shopping experience for users. It also features an AI-powered fashion recommendation system to help users find the perfect outfit.",
       tools: ["Next.js", "Tailwind CSS", "MongoDB", "Firebase", "And more"],
       dialectDescription: (
         <>
@@ -56,9 +54,9 @@ const Projects = () => {
         "Stripe API",
       ],
       dialectImages: [
-        `${process.env.PUBLIC_URL}/aapageshow.gif`,
-        `${process.env.PUBLIC_URL}/aalogin.gif`,
-        `${process.env.PUBLIC_URL}/aacheckout.gif`,
+        `${process.env.PUBLIC_URL}/attirealley/aapageshow.gif`,
+        `${process.env.PUBLIC_URL}/attirealley/aalogin.gif`,
+        `${process.env.PUBLIC_URL}/attirealley/aacheckout.gif`,
       ],
       githubLink: "https://github.com/MahirAbrar/AttireAlley",
       liveLink: "https://attirealley.vercel.app/",
@@ -116,7 +114,7 @@ const Projects = () => {
     // 2nd project
     {
       title: "PriceWise M5",
-      baseImage: `${process.env.PUBLIC_URL}/priceopt.png`,
+      baseImage: `${process.env.PUBLIC_URL}/pricewise/pricewise.png`,
       baseDescription:
         "PriceWise M5 is an advanced pricing optimization tool for retail businesses. It integrates price elasticity modeling and predictive analysis through a web application, analyzing historical data from the M5 competition to estimate product demand at different price points.",
       tools: [
@@ -414,7 +412,128 @@ const Projects = () => {
         </>
       ),
     },
-    // 4th project
+    // 4th project (was 5th)
+    {
+      title: "Leetcode AI Assistant Extension",
+      baseImage: `${process.env.PUBLIC_URL}/leetcodeai.jpeg`,
+      baseDescription:
+        "A Chrome extension that provides AI-powered assistance for Leetcode problem-solving without giving direct answers. It helps users improve their problem-solving skills through guided hints and explanations using Groq's high-speed inference models.",
+      tools: ["HTML", "CSS", "JavaScript", "Chrome Extension API", "Groq API"],
+      dialectDescription: (
+        <>
+          <p className="text-gray-800 mb-4">
+            The Leetcode AI Assistant Extension is a comprehensive tool designed to enhance the learning experience on Leetcode. It provides intelligent, context-aware assistance through multiple AI models, helping users develop better algorithmic thinking skills while maintaining control over their learning process.
+          </p>
+
+          <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800">
+            <li>Multiple AI Models Support (Llama 4, Llama 3.3 70B, Qwen QwQ, DeepSeek R1)</li>
+            <li>Three Assistance Modes:
+              <ul className="list-disc pl-5 mt-1">
+                <li>Hints Mode: Subtle guidance without solutions</li>
+                <li>Critical Thinking Mode: Analysis of problem-solving approach</li>
+                <li>Problem Solving Mode: Step-by-step guidance</li>
+              </ul>
+            </li>
+            <li>Real-time coding assistance</li>
+            <li>Customizable assistance levels</li>
+            <li>Time and space complexity analysis</li>
+            <li>Alternative approach suggestions</li>
+            <li>Code optimization tips</li>
+            <li>Edge case identification</li>
+          </ul>
+        </>
+      ),
+      allTools: [
+        "HTML5",
+        "CSS3",
+        "JavaScript (ES6+)",
+        "Chrome Extension API",
+        "Groq API",
+        "Manifest V3",
+        "Chrome Storage API",
+        "Llama 4",
+        "Llama 3.3 70B",
+        "Qwen QwQ",
+        "DeepSeek R1"
+      ],
+      dialectImages: [
+        `${process.env.PUBLIC_URL}/leetcodeai.jpeg`
+      ],
+      githubLink: "https://github.com/MahirAbrar/leetcode-ai-assistant",
+      moreInformation: (
+        <>
+          <p className="text-gray-800">
+            The Leetcode AI Assistant Extension leverages Groq's high-speed inference models to provide intelligent assistance while solving coding problems. The extension integrates seamlessly with Leetcode's interface, offering context-aware help that adapts to the user's current problem and progress.
+          </p>
+
+          <p className="text-gray-800">Technical Implementation:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Chrome Extension architecture using Manifest V3
+            </li>
+            <li className="text-gray-800">
+              Content scripts for LeetCode website integration
+            </li>
+            <li className="text-gray-800">
+              Background service worker for API communication
+            </li>
+            <li className="text-gray-800">
+              Groq API integration with 30 free requests per hour
+            </li>
+            <li className="text-gray-800">
+              Chrome Storage API for secure settings persistence
+            </li>
+            <li className="text-gray-800">
+              Minimal permissions (storage and activeTab)
+            </li>
+            <li className="text-gray-800">
+              Domain-specific activation (LeetCode.com)
+            </li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            User Configuration and Security:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Secure API key management
+            </li>
+            <li className="text-gray-800">
+              Model selection and customization
+            </li>
+            <li className="text-gray-800">
+              Assistance mode preferences
+            </li>
+            <li className="text-gray-800">
+              Settings persistence across sessions
+            </li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            The extension is designed to promote learning and understanding rather than just providing solutions. It helps users:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Develop independent problem-solving skills
+            </li>
+            <li className="text-gray-800">
+              Understand algorithmic concepts and patterns
+            </li>
+            <li className="text-gray-800">
+              Learn optimization strategies
+            </li>
+            <li className="text-gray-800">
+              Identify and handle edge cases effectively
+            </li>
+            <li className="text-gray-800">
+              Improve coding efficiency and best practices
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    // 5th project (was 4th)
     {
       title: "Traffic Collision Problem at New York",
       baseImage: `${process.env.PUBLIC_URL}/trafficimage.png`,

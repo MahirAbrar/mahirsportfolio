@@ -74,7 +74,7 @@ const ProjectCard = ({
           <img
             src={baseImage}
             alt={`${title} Project`}
-            className="w-full h-full max-h-full object-cover"
+            className="w-full h-full max-h-full object-cover max-w-l mx-auto"
           />
         </div>
         <div className="w-full p-6 flex flex-col justify-between">
