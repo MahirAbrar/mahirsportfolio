@@ -111,7 +111,259 @@ const Projects = () => {
         </>
       ),
     },
-    // 2nd project
+    {
+      title: "Leetcode AI Assistant Extension",
+      baseImage: `${process.env.PUBLIC_URL}/leetcodeai.jpeg`,
+      baseDescription:
+        "A Chrome extension that provides AI-powered assistance for Leetcode problem-solving without giving direct answers. It helps users improve their problem-solving skills through guided hints and explanations using Groq's high-speed inference models.",
+      tools: ["HTML", "CSS", "JavaScript", "Chrome Extension API", "Groq API"],
+      dialectDescription: (
+        <>
+          <p className="text-gray-800 mb-4">
+            The Leetcode AI Assistant Extension is a comprehensive tool designed to enhance the learning experience on Leetcode. It provides intelligent, context-aware assistance through multiple AI models, helping users develop better algorithmic thinking skills while maintaining control over their learning process.
+          </p>
+
+          <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800">
+            <li>Multiple AI Models Support (Llama 4, Llama 3.3 70B, Qwen QwQ, DeepSeek R1)</li>
+            <li>Three Assistance Modes:
+              <ul className="list-disc pl-5 mt-1">
+                <li>Hints Mode: Subtle guidance without solutions</li>
+                <li>Critical Thinking Mode: Analysis of problem-solving approach</li>
+                <li>Problem Solving Mode: Step-by-step guidance</li>
+              </ul>
+            </li>
+            <li>Real-time coding assistance</li>
+            <li>Customizable assistance levels</li>
+            <li>Time and space complexity analysis</li>
+            <li>Alternative approach suggestions</li>
+            <li>Code optimization tips</li>
+            <li>Edge case identification</li>
+          </ul>
+        </>
+      ),
+      allTools: [
+        "HTML5",
+        "CSS3",
+        "JavaScript (ES6+)",
+        "Chrome Extension API",
+        "Groq API",
+        "Manifest V3",
+        "Chrome Storage API",
+        "Llama 4",
+        "Llama 3.3 70B",
+        "Qwen QwQ",
+        "DeepSeek R1"
+      ],
+      dialectImages: [
+        `${process.env.PUBLIC_URL}/leetcodeai.jpeg`
+      ],
+      githubLink: "https://github.com/MahirAbrar/leetcode-ai-assistant",
+      moreInformation: (
+        <>
+          <p className="text-gray-800">
+            The Leetcode AI Assistant Extension leverages Groq's high-speed inference models to provide intelligent assistance while solving coding problems. The extension integrates seamlessly with Leetcode's interface, offering context-aware help that adapts to the user's current problem and progress.
+          </p>
+
+          <p className="text-gray-800">Technical Implementation:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Chrome Extension architecture using Manifest V3
+            </li>
+            <li className="text-gray-800">
+              Content scripts for LeetCode website integration
+            </li>
+            <li className="text-gray-800">
+              Background service worker for API communication
+            </li>
+            <li className="text-gray-800">
+              Groq API integration with 30 free requests per hour
+            </li>
+            <li className="text-gray-800">
+              Chrome Storage API for secure settings persistence
+            </li>
+            <li className="text-gray-800">
+              Minimal permissions (storage and activeTab)
+            </li>
+            <li className="text-gray-800">
+              Domain-specific activation (LeetCode.com)
+            </li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            User Configuration and Security:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Secure API key management
+            </li>
+            <li className="text-gray-800">
+              Model selection and customization
+            </li>
+            <li className="text-gray-800">
+              Assistance mode preferences
+            </li>
+            <li className="text-gray-800">
+              Settings persistence across sessions
+            </li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            The extension is designed to promote learning and understanding rather than just providing solutions. It helps users:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Develop independent problem-solving skills
+            </li>
+            <li className="text-gray-800">
+              Understand algorithmic concepts and patterns
+            </li>
+            <li className="text-gray-800">
+              Learn optimization strategies
+            </li>
+            <li className="text-gray-800">
+              Identify and handle edge cases effectively
+            </li>
+            <li className="text-gray-800">
+              Improve coding efficiency and best practices
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: "Max Momentum - AI Calendar & To do list",
+      baseImage: `${process.env.PUBLIC_URL}/maxmomentum/maxmomentum.png`,
+      baseDescription:
+        "Max Momentum is a comprehensive productivity platform that combines AI-powered task management with an interactive calendar system. Built as a SaaS application, it offers intelligent scheduling, daily planning, and productivity insights through advanced AI capabilities. Coming soon on May 20th, 2025.",
+      tools: ["Next.js", "Supabase", "OpenAI API", "TypeScript", "Tailwind CSS"],
+      dialectDescription: (
+        <>
+          <p className="text-gray-800 mb-4">
+            Max Momentum is a modern productivity tool that leverages AI to enhance task management and scheduling. The platform offers a freemium model with AI interaction limits, providing users with intelligent assistance in organizing their daily activities and optimizing their productivity.
+          </p>
+
+          <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800">
+            <li>Secure user authentication and profile management</li>
+            <li>Advanced task management with CRUD operations</li>
+            <li>Interactive calendar with day/week views</li>
+            <li>AI-powered task scheduling and daily planning</li>
+            <li>Intelligent task reordering for missed tasks</li>
+            <li>Productivity score calculation and analytics</li>
+            <li>Relaxation feedback generation</li>
+            <li>Free trial with 20 AI interactions</li>
+            <li>Subscription-based premium features</li>
+            <li>Customizable notification system</li>
+          </ul>
+        </>
+      ),
+      allTools: [
+        "Next.js",
+        "Supabase",
+        "OpenAI API",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Cookies-next",
+        "ESLint",
+        "PostCSS",
+        "React 19"
+      ],
+      dialectImages: [
+        // `${process.env.PUBLIC_URL}/image1.gif`,
+        // `${process.env.PUBLIC_URL}/image2.gif`,
+      ],
+      // githubLink: "https://github.com/MahirAbrar/workerback",
+      // githubLink2: "Frontend is being built",
+      // liveLink: "https://project-demo.com",
+      moreInformation: (
+        <>
+          {/* <p className="text-gray-800">
+            Additional detailed information about the project, including
+            technical details, challenges overcome, and implementation
+            specifics.
+          </p>
+
+          <p className="text-gray-800">Technical Architecture:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">Architecture component 1</li>
+            <li className="text-gray-800">Architecture component 2</li>
+            <li className="text-gray-800">Architecture component 3</li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            Future improvements and potential enhancements:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">Potential improvement 1</li>
+            <li className="text-gray-800">Potential improvement 2</li>
+            <li className="text-gray-800">Potential improvement 3</li>
+          </ul> */}
+        </>
+      ),
+    },
+    {
+      title: "FitSync",
+      baseImage: `${process.env.PUBLIC_URL}/fitsync.png`,
+      baseDescription:
+        "FitSync is a workout tracking app designed for fitness enthusiasts. Currently under development, it will offer customizable exercise templates, progress tracking, and support for various training styles including weights, bodyweight, cardio and yoga workouts.",
+      tools: ["Django", "PostgreSQL", "React", "TypeScript"],
+      dialectDescription: (
+        <>
+          <p className="text-gray-800 mb-4">
+            FitSync is currently in active development. The backend
+            infrastructure has been largely completed using Django and
+            PostgreSQL, providing a robust foundation for the application. The
+            frontend development in React and TypeScript will commence shortly,
+            focusing on creating an intuitive and responsive user interface.
+          </p>
+
+          <p className="text-gray-800 font-semibold mb-2">Planned Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800">
+            <li>Customizable workout templates and exercise logging</li>
+            <li>Progress tracking with visual analytics</li>
+            <li>Personal record management and milestone tracking</li>
+            <li>Support for multiple exercise types and training styles</li>
+            <li>Rest timer and workout scheduling</li>
+            <li>AI Agent to help with workout</li>
+          </ul>
+        </>
+      ),
+      allTools: ["Django", "PostgreSQL", "React", "TypeScript"],
+      dialectImages: [
+        // `${process.env.PUBLIC_URL}/image1.gif`,
+        // `${process.env.PUBLIC_URL}/image2.gif`,
+      ],
+      githubLink: "https://github.com/MahirAbrar/workerback",
+      // githubLink2: "Frontend is being built",
+      // liveLink: "https://project-demo.com",
+      moreInformation: (
+        <>
+          {/* <p className="text-gray-800">
+            Additional detailed information about the project, including
+            technical details, challenges overcome, and implementation
+            specifics.
+          </p>
+
+          <p className="text-gray-800">Technical Architecture:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">Architecture component 1</li>
+            <li className="text-gray-800">Architecture component 2</li>
+            <li className="text-gray-800">Architecture component 3</li>
+          </ul>
+
+          <p className="mt-4 text-gray-800">
+            Future improvements and potential enhancements:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">Potential improvement 1</li>
+            <li className="text-gray-800">Potential improvement 2</li>
+            <li className="text-gray-800">Potential improvement 3</li>
+          </ul> */}
+        </>
+      ),
+    },
     {
       title: "PriceWise M5",
       baseImage: `${process.env.PUBLIC_URL}/pricewise/pricewise.png`,
@@ -185,7 +437,6 @@ const Projects = () => {
       ],
       githubLink: "https://github.com/MahirAbrar/FIT3164-Backend",
       githubLink2: "https://github.com/MahirAbrar/PriceWise.M5",
-      // liveLink: "https://priceopt.com",
       moreInformation: (
         <>
           <p className="text-gray-800">
@@ -350,190 +601,6 @@ const Projects = () => {
         </>
       ),
     },
-    // 3rd project
-    {
-      title: "FitSync",
-      baseImage: `${process.env.PUBLIC_URL}/fitsync.png`,
-      baseDescription:
-        "FitSync is a workout tracking app designed for fitness enthusiasts. Currently under development, it will offer customizable exercise templates, progress tracking, and support for various training styles including weights, bodyweight, cardio and yoga workouts.",
-      tools: ["Django", "PostgreSQL", "React", "TypeScript"],
-      dialectDescription: (
-        <>
-          <p className="text-gray-800 mb-4">
-            FitSync is currently in active development. The backend
-            infrastructure has been largely completed using Django and
-            PostgreSQL, providing a robust foundation for the application. The
-            frontend development in React and TypeScript will commence shortly,
-            focusing on creating an intuitive and responsive user interface.
-          </p>
-
-          <p className="text-gray-800 font-semibold mb-2">Planned Features:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-800">
-            <li>Customizable workout templates and exercise logging</li>
-            <li>Progress tracking with visual analytics</li>
-            <li>Personal record management and milestone tracking</li>
-            <li>Support for multiple exercise types and training styles</li>
-            <li>Rest timer and workout scheduling</li>
-            <li>AI Agent to help with workout</li>
-          </ul>
-        </>
-      ),
-      allTools: ["Django", "PostgreSQL", "React", "TypeScript"],
-      dialectImages: [
-        // `${process.env.PUBLIC_URL}/image1.gif`,
-        // `${process.env.PUBLIC_URL}/image2.gif`,
-      ],
-      githubLink: "https://github.com/MahirAbrar/workerback",
-      // githubLink2: "Frontend is being built",
-      // liveLink: "https://project-demo.com",
-      moreInformation: (
-        <>
-          {/* <p className="text-gray-800">
-            Additional detailed information about the project, including
-            technical details, challenges overcome, and implementation
-            specifics.
-          </p>
-
-          <p className="text-gray-800">Technical Architecture:</p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">Architecture component 1</li>
-            <li className="text-gray-800">Architecture component 2</li>
-            <li className="text-gray-800">Architecture component 3</li>
-          </ul>
-
-          <p className="mt-4 text-gray-800">
-            Future improvements and potential enhancements:
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">Potential improvement 1</li>
-            <li className="text-gray-800">Potential improvement 2</li>
-            <li className="text-gray-800">Potential improvement 3</li>
-          </ul> */}
-        </>
-      ),
-    },
-    // 4th project (was 5th)
-    {
-      title: "Leetcode AI Assistant Extension",
-      baseImage: `${process.env.PUBLIC_URL}/leetcodeai.jpeg`,
-      baseDescription:
-        "A Chrome extension that provides AI-powered assistance for Leetcode problem-solving without giving direct answers. It helps users improve their problem-solving skills through guided hints and explanations using Groq's high-speed inference models.",
-      tools: ["HTML", "CSS", "JavaScript", "Chrome Extension API", "Groq API"],
-      dialectDescription: (
-        <>
-          <p className="text-gray-800 mb-4">
-            The Leetcode AI Assistant Extension is a comprehensive tool designed to enhance the learning experience on Leetcode. It provides intelligent, context-aware assistance through multiple AI models, helping users develop better algorithmic thinking skills while maintaining control over their learning process.
-          </p>
-
-          <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-800">
-            <li>Multiple AI Models Support (Llama 4, Llama 3.3 70B, Qwen QwQ, DeepSeek R1)</li>
-            <li>Three Assistance Modes:
-              <ul className="list-disc pl-5 mt-1">
-                <li>Hints Mode: Subtle guidance without solutions</li>
-                <li>Critical Thinking Mode: Analysis of problem-solving approach</li>
-                <li>Problem Solving Mode: Step-by-step guidance</li>
-              </ul>
-            </li>
-            <li>Real-time coding assistance</li>
-            <li>Customizable assistance levels</li>
-            <li>Time and space complexity analysis</li>
-            <li>Alternative approach suggestions</li>
-            <li>Code optimization tips</li>
-            <li>Edge case identification</li>
-          </ul>
-        </>
-      ),
-      allTools: [
-        "HTML5",
-        "CSS3",
-        "JavaScript (ES6+)",
-        "Chrome Extension API",
-        "Groq API",
-        "Manifest V3",
-        "Chrome Storage API",
-        "Llama 4",
-        "Llama 3.3 70B",
-        "Qwen QwQ",
-        "DeepSeek R1"
-      ],
-      dialectImages: [
-        `${process.env.PUBLIC_URL}/leetcodeai.jpeg`
-      ],
-      githubLink: "https://github.com/MahirAbrar/leetcode-ai-assistant",
-      moreInformation: (
-        <>
-          <p className="text-gray-800">
-            The Leetcode AI Assistant Extension leverages Groq's high-speed inference models to provide intelligent assistance while solving coding problems. The extension integrates seamlessly with Leetcode's interface, offering context-aware help that adapts to the user's current problem and progress.
-          </p>
-
-          <p className="text-gray-800">Technical Implementation:</p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">
-              Chrome Extension architecture using Manifest V3
-            </li>
-            <li className="text-gray-800">
-              Content scripts for LeetCode website integration
-            </li>
-            <li className="text-gray-800">
-              Background service worker for API communication
-            </li>
-            <li className="text-gray-800">
-              Groq API integration with 30 free requests per hour
-            </li>
-            <li className="text-gray-800">
-              Chrome Storage API for secure settings persistence
-            </li>
-            <li className="text-gray-800">
-              Minimal permissions (storage and activeTab)
-            </li>
-            <li className="text-gray-800">
-              Domain-specific activation (LeetCode.com)
-            </li>
-          </ul>
-
-          <p className="mt-4 text-gray-800">
-            User Configuration and Security:
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">
-              Secure API key management
-            </li>
-            <li className="text-gray-800">
-              Model selection and customization
-            </li>
-            <li className="text-gray-800">
-              Assistance mode preferences
-            </li>
-            <li className="text-gray-800">
-              Settings persistence across sessions
-            </li>
-          </ul>
-
-          <p className="mt-4 text-gray-800">
-            The extension is designed to promote learning and understanding rather than just providing solutions. It helps users:
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">
-              Develop independent problem-solving skills
-            </li>
-            <li className="text-gray-800">
-              Understand algorithmic concepts and patterns
-            </li>
-            <li className="text-gray-800">
-              Learn optimization strategies
-            </li>
-            <li className="text-gray-800">
-              Identify and handle edge cases effectively
-            </li>
-            <li className="text-gray-800">
-              Improve coding efficiency and best practices
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    // 5th project (was 4th)
     {
       title: "Traffic Collision Problem at New York",
       baseImage: `${process.env.PUBLIC_URL}/trafficimage.png`,
