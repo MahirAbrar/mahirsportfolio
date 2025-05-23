@@ -120,16 +120,26 @@ const Projects = () => {
       dialectDescription: (
         <>
           <p className="text-gray-800 mb-4">
-            The Leetcode AI Assistant Extension is a comprehensive tool designed to enhance the learning experience on Leetcode. It provides intelligent, context-aware assistance through multiple AI models, helping users develop better algorithmic thinking skills while maintaining control over their learning process.
+            The Leetcode AI Assistant Extension is a comprehensive tool designed
+            to enhance the learning experience on Leetcode. It provides
+            intelligent, context-aware assistance through multiple AI models,
+            helping users develop better algorithmic thinking skills while
+            maintaining control over their learning process.
           </p>
 
           <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
           <ul className="list-disc pl-5 space-y-1 text-gray-800">
-            <li>Multiple AI Models Support (Llama 4, Llama 3.3 70B, Qwen QwQ, DeepSeek R1)</li>
-            <li>Three Assistance Modes:
+            <li>
+              Multiple AI Models Support (Llama 4, Llama 3.3 70B, Qwen QwQ,
+              DeepSeek R1)
+            </li>
+            <li>
+              Three Assistance Modes:
               <ul className="list-disc pl-5 mt-1">
                 <li>Hints Mode: Subtle guidance without solutions</li>
-                <li>Critical Thinking Mode: Analysis of problem-solving approach</li>
+                <li>
+                  Critical Thinking Mode: Analysis of problem-solving approach
+                </li>
                 <li>Problem Solving Mode: Step-by-step guidance</li>
               </ul>
             </li>
@@ -153,16 +163,18 @@ const Projects = () => {
         "Llama 4",
         "Llama 3.3 70B",
         "Qwen QwQ",
-        "DeepSeek R1"
+        "DeepSeek R1",
       ],
-      dialectImages: [
-        `${process.env.PUBLIC_URL}/leetcodeai.jpeg`
-      ],
+      dialectImages: [`${process.env.PUBLIC_URL}/leetcodeai.jpeg`],
       githubLink: "https://github.com/MahirAbrar/leetcode-ai-assistant",
       moreInformation: (
         <>
           <p className="text-gray-800">
-            The Leetcode AI Assistant Extension leverages Groq's high-speed inference models to provide intelligent assistance while solving coding problems. The extension integrates seamlessly with Leetcode's interface, offering context-aware help that adapts to the user's current problem and progress.
+            The Leetcode AI Assistant Extension leverages Groq's high-speed
+            inference models to provide intelligent assistance while solving
+            coding problems. The extension integrates seamlessly with Leetcode's
+            interface, offering context-aware help that adapts to the user's
+            current problem and progress.
           </p>
 
           <p className="text-gray-800">Technical Implementation:</p>
@@ -190,26 +202,19 @@ const Projects = () => {
             </li>
           </ul>
 
-          <p className="mt-4 text-gray-800">
-            User Configuration and Security:
-          </p>
+          <p className="mt-4 text-gray-800">User Configuration and Security:</p>
           <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">
-              Secure API key management
-            </li>
-            <li className="text-gray-800">
-              Model selection and customization
-            </li>
-            <li className="text-gray-800">
-              Assistance mode preferences
-            </li>
+            <li className="text-gray-800">Secure API key management</li>
+            <li className="text-gray-800">Model selection and customization</li>
+            <li className="text-gray-800">Assistance mode preferences</li>
             <li className="text-gray-800">
               Settings persistence across sessions
             </li>
           </ul>
 
           <p className="mt-4 text-gray-800">
-            The extension is designed to promote learning and understanding rather than just providing solutions. It helps users:
+            The extension is designed to promote learning and understanding
+            rather than just providing solutions. It helps users:
           </p>
           <ul className="list-disc pl-5 space-y-1">
             <li className="text-gray-800">
@@ -218,9 +223,7 @@ const Projects = () => {
             <li className="text-gray-800">
               Understand algorithmic concepts and patterns
             </li>
-            <li className="text-gray-800">
-              Learn optimization strategies
-            </li>
+            <li className="text-gray-800">Learn optimization strategies</li>
             <li className="text-gray-800">
               Identify and handle edge cases effectively
             </li>
@@ -235,12 +238,22 @@ const Projects = () => {
       title: "Max Momentum - AI Calendar & To do list",
       baseImage: `${process.env.PUBLIC_URL}/maxmomentum/maxmomentum.png`,
       baseDescription:
-        "Max Momentum is a comprehensive productivity platform that combines AI-powered task management with an interactive calendar system. Built as a SaaS application, it offers intelligent scheduling, daily planning, and productivity insights through advanced AI capabilities. Coming soon on May 20th, 2025.",
-      tools: ["Next.js", "Supabase", "OpenAI API", "TypeScript", "Tailwind CSS"],
+        "Max Momentum is a comprehensive productivity platform that combines AI-powered task management with an interactive calendar system. Built as a SaaS application, it offers intelligent scheduling, daily planning, and productivity insights through advanced AI capabilities. Coming soon on May 25th, 2025.",
+      tools: [
+        "Next.js",
+        "Supabase",
+        "OpenAI API",
+        "TypeScript",
+        "Tailwind CSS",
+      ],
       dialectDescription: (
         <>
           <p className="text-gray-800 mb-4">
-            Max Momentum is a modern productivity tool that leverages AI to enhance task management and scheduling. The platform offers a freemium model with AI interaction limits, providing users with intelligent assistance in organizing their daily activities and optimizing their productivity.
+            Max Momentum is a modern productivity tool that leverages AI to
+            enhance task management and scheduling. The platform offers a
+            freemium model with AI interaction limits, providing users with
+            intelligent assistance in organizing their daily activities and
+            optimizing their productivity.
           </p>
 
           <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
@@ -268,7 +281,7 @@ const Projects = () => {
         "Cookies-next",
         "ESLint",
         "PostCSS",
-        "React 19"
+        "React 19",
       ],
       dialectImages: [
         // `${process.env.PUBLIC_URL}/image1.gif`,
