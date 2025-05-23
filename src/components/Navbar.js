@@ -1,20 +1,22 @@
 import React, { useState, useEffect, useCallback } from "react";
 import GlowingButton from "./GlowingButton";
 
-const Navbar = ({ theme, handleToggle }) => {
+const Navbar = ({ theme, handleToggle, scrollY }) => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = useCallback(() => {
     if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
+      if (scrollY < 20) {
+        setShow(true);
+      } else if (window.scrollY > lastScrollY) {
         setShow(false);
       } else {
         setShow(true);
       }
       setLastScrollY(window.scrollY);
     }
-  }, [lastScrollY]);
+  }, [lastScrollY, scrollY]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -32,8 +34,15 @@ const Navbar = ({ theme, handleToggle }) => {
       } bg-base-100 text-base-content`}
     >
       <div className="navbar-start">
-        <a href="#top" className="btn btn-ghost text-xl sm:text-3xl flex items-center">
-          <img src="/favicon.ico" alt="Portfolio Icon" className="w-6 h-6 sm:w-10 sm:h-10" />
+        <a
+          href="#top"
+          className="btn btn-ghost text-xl sm:text-3xl flex items-center"
+        >
+          <img
+            src="/favicon.ico"
+            alt="Portfolio Icon"
+            className="w-6 h-6 sm:w-10 sm:h-10"
+          />
           Mahir's Portfolio
         </a>
       </div>
@@ -67,12 +76,12 @@ const Navbar = ({ theme, handleToggle }) => {
         <GlowingButton
           className="btn btn-primary h-8 sm:h-10"
           borderRadius="lg"
-          onClick={() => window.location.href = '#contact'}
+          onClick={() => (window.location.href = "#contact")}
         >
           <span className="text-sm  font-semibold">Contact Me</span>
         </GlowingButton>
       </div>
-        {/* 
+      {/* 
           Other Tailwind border-radius options you can use:
           - "none" - No border radius (0px)
           - "sm" - Small border radius (0.125rem)
@@ -85,7 +94,6 @@ const Navbar = ({ theme, handleToggle }) => {
         */}
     </div>
   );
-
 };
 
 export default Navbar;

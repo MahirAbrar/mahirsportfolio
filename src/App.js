@@ -13,6 +13,7 @@ const App = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
+  const [scrollY, setScrollY] = useState(0);
 
   const handleToggle = (e) => {
     if (e.target.checked) {
@@ -28,9 +29,21 @@ const App = () => {
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <Navbar theme={theme} handleToggle={handleToggle} />
+      <Navbar theme={theme} handleToggle={handleToggle} scrollY={scrollY} />
       <main className="flex flex-col px-4 sm:px-6 lg:px-8">
         <div className="w-full">
           <About />
