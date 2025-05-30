@@ -95,6 +95,8 @@ const Skills = () => {
         "PostgreSQL",
         "SQLite",
         "MongoDB",
+        "Langchain",
+        "Flowise",
       ],
     },
     {

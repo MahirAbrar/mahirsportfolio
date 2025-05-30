@@ -227,6 +227,12 @@ const ProjectCard = ({
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                     className="w-full mb-6 relative"
+                    style={{
+                      maxHeight: "68vh",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
                     {!imagesLoaded[featuredImage] && (
                       <div className="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg">
@@ -238,7 +244,11 @@ const ProjectCard = ({
                       alt={title}
                       className="w-full rounded-lg shadow-md"
                       onLoad={() => handleImageLoad(featuredImage)}
-                      style={{ minHeight: "200px" }}
+                      style={{
+                        minHeight: "200px",
+                        maxHeight: "400px",
+                        objectFit: "contain",
+                      }}
                     />
                   </motion.div>
                 )}

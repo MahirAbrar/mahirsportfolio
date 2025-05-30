@@ -165,7 +165,12 @@ const Projects = () => {
         "Qwen QwQ",
         "DeepSeek R1",
       ],
-      dialectImages: [`${process.env.PUBLIC_URL}/leetcodeai.jpeg`],
+      dialectImages: [
+        `${process.env.PUBLIC_URL}/leetcode/lcgif.gif`,
+        `${process.env.PUBLIC_URL}/leetcode/lcfullsettings.png`,
+        `${process.env.PUBLIC_URL}/leetcode/lcmetaphor.png`,
+        `${process.env.PUBLIC_URL}/leetcode/lcpopup.png`,
+      ],
       githubLink: "https://github.com/MahirAbrar/leetcode-ai-assistant",
       moreInformation: (
         <>
