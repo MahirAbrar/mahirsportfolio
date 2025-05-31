@@ -243,7 +243,7 @@ const Projects = () => {
       title: "Max Momentum - AI Calendar & To do list",
       baseImage: `${process.env.PUBLIC_URL}/maxmomentum/maxmomentum.png`,
       baseDescription:
-        "Max Momentum is a comprehensive productivity platform that combines AI-powered task management with an interactive calendar system. Built as a SaaS application, it offers intelligent scheduling, daily planning, and productivity insights through advanced AI capabilities. Coming soon on May 30th, 2025.",
+        "Max Momentum is a comprehensive productivity platform that combines AI-powered task management with an interactive calendar system. Built as a SaaS application, it offers intelligent scheduling, daily planning, and productivity insights through advanced AI capabilities. Coming soon in Mid 2025.",
       tools: [
         "Next.js",
         "Supabase",
