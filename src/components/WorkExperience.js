@@ -141,7 +141,7 @@ const WorkExperience = () => {
     {
       title: "Tier 2 Coder: AI Model Trainer - Independent Contractor",
       company: "Outlier AI",
-      location: "Melbourne, Victoria",
+      location: "Melbourne, Victoria, Australia",
       date: "Oct 2024 – Current",
       responsibilities: [
         "Built and optimized full-stack web applications (React, Next.js, Node.js, Tailwind CSS) for Fortune 500 clients, enabling scalable data pipelines to enhance LLM training and fine-tuning.",
@@ -151,7 +151,18 @@ const WorkExperience = () => {
         "Conducted in-depth reviews of mathematical models using comprehensive Python ecosystem including SymPy, NumPy, Matplotlib, scikit-learn, PyTorch and other machine learning/deep learning libraries for validation of complex calculations and data analysis.",
       ],
     },
-
+    {
+      title: "Independent Contractor",
+      company: "Alignerr AI",
+      location: "Melbourne, Victoria, Australia",
+      date: "Jan 2025 – Current",
+      responsibilities: [
+        "Annotate and label diverse datasets for training advanced AI models, specializing in technical domains including software development, mathematics, and data science",
+        "Evaluate and rank AI-generated outputs using RLHF techniques, directly contributing to model alignment and performance improvements for leading AI companies",
+        "Conduct red teaming exercises to identify model vulnerabilities and biases, particularly in code generation and technical problem-solving scenarios",
+        "Provide expert feedback on AI responses leveraging proficiency in Python, JavaScript, TypeScript, and ML/DL frameworks to enhance model accuracy and capabilities",
+      ],
+    },
     {
       title: "Data Analyst & UI Design Internship",
       company: "BDTax",
