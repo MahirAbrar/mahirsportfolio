@@ -20,7 +20,7 @@ const AnimatedTitle = ({ strings }) => {
     return () => {
       typed.destroy();
     };
-  }, [strings]);
+  }, []);
 
   return (
     <div className="overflow-hidden ">
