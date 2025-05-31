@@ -57,6 +57,7 @@ const Projects = () => {
         `${process.env.PUBLIC_URL}/attirealley/aapageshow.gif`,
         `${process.env.PUBLIC_URL}/attirealley/aalogin.gif`,
         `${process.env.PUBLIC_URL}/attirealley/aacheckout.gif`,
+        `${process.env.PUBLIC_URL}/attirealley/aaai.gif`,
       ],
       githubLink: "https://github.com/MahirAbrar/AttireAlley",
       liveLink: "https://attirealley.vercel.app/",
