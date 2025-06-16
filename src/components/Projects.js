@@ -295,7 +295,7 @@ const Projects = () => {
       ],
       // githubLink: "https://github.com/MahirAbrar/workerback",
       // githubLink2: "Frontend is being built",
-      // liveLink: "https://project-demo.com",
+      liveLink: "https://maxmomentum.vercel.app/",
       moreInformation: (
         <>
           {/* <p className="text-gray-800">
