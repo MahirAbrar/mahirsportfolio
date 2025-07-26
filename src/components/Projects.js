@@ -10,48 +10,54 @@ const Projects = () => {
       title: "AttireAlley",
       baseImage: `${process.env.PUBLIC_URL}/attirealley/aalanding.png`,
       baseDescription:
-        "AttireAlley is an e-commerce platform for fashion enthusiasts. It offers a wide range of clothing and accessories, providing a seamless shopping experience for users. It also features an AI-powered fashion recommendation system to help users find the perfect outfit.",
-      tools: ["Next.js", "Tailwind CSS", "MongoDB", "Firebase", "And more"],
+        "AttireAlley is a production-ready e-commerce platform featuring role-based access (admin/customer), AI-powered outfit suggestions, real-time order tracking, and comprehensive product management. Built with Next.js and MongoDB, it includes Stripe payment integration, JWT authentication, and responsive design.",
+      tools: ["Next.js 14", "MongoDB Atlas", "Stripe", "JWT Auth", "AI Integration"],
       dialectDescription: (
         <>
           <p className="text-gray-800 mb-4">
-            AttireAlley is a comprehensive e-commerce platform with distinct
-            views for admins and customers. Admins have full control over
-            product management, including adding, removing, updating, and
-            deleting products. Customers can browse, search, and purchase
-            products through a user-friendly interface.
+            AttireAlley is a fully-featured e-commerce platform with modern architecture, secure payment processing, and excellent user experience for both customers and administrators.
           </p>
 
-          <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-800 ">
-            <li>User authentication and authorization</li>
-            <li>Product browsing and searching</li>
-            <li>Shopping cart functionality</li>
-            <li>Secure payment processing</li>
-            <li>User profile management</li>
-            <li>Responsive design for mobile and desktop</li>
-            <li>Multiple delivery address options</li>
-            <li>Discount management through admin panel</li>
-            <li>Image storage using Firebase</li>
-            <li>Encrypted user authentication data in MongoDB</li>
+          <p className="text-gray-800 font-semibold mb-2">Customer Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800 mb-4">
+            <li>Secure JWT authentication with httpOnly cookies & auto-refresh</li>
+            <li>Browse products by category (Men, Women, Kids, Everyone)</li>
+            <li>Product galleries with size selection (XS-XXL) & sale indicators</li>
+            <li>Persistent shopping cart with real-time updates</li>
+            <li>Secure Stripe checkout with multiple addresses</li>
+            <li>Order tracking with status timeline (pending → delivered)</li>
+            <li>AI-powered outfit suggestions & color palette recommendations</li>
+            <li>Dark mode toggle & responsive design</li>
+          </ul>
+
+          <p className="text-gray-800 font-semibold mb-2">Admin Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800">
+            <li>Dashboard with statistics (products, orders, users, revenue)</li>
+            <li>Product management with live preview & bulk image upload</li>
+            <li>Order management with advanced filtering & search</li>
+            <li>Update order status with tracking numbers & notes</li>
+            <li>Price drop/sale management & inventory by sizes</li>
+            <li>User management interface (ready for backend integration)</li>
           </ul>
         </>
       ),
       allTools: [
-        "Next.js",
+        "Next.js 14.2.2",
+        "React 18",
         "Tailwind CSS",
-        "daisyUI",
-        "gsap",
-        "MongoDB",
-        "mongoose",
-        "Firebase",
+        "DaisyUI",
+        "GSAP & ScrollTrigger",
+        "Framer Motion",
+        "MongoDB Atlas",
+        "Mongoose",
+        "JWT (jsonwebtoken)",
         "bcryptjs",
-        "passport",
-        "js-cookie",
-        "jsonwebtoken",
-        "joi",
-        "font-awesome",
         "Stripe API",
+        "Firebase Storage",
+        "OpenAI API",
+        "react-toastify",
+        "js-cookie",
+        "Next.js API Routes",
       ],
       dialectImages: [
         `${process.env.PUBLIC_URL}/attirealley/aapageshow.gif`,
@@ -63,52 +69,42 @@ const Projects = () => {
       liveLink: "https://attirealley.vercel.app/",
       moreInformation: (
         <>
-          <p className="text-gray-800">
-            AttireAlley leverages a robust tech stack to deliver a seamless
-            e-commerce experience:
-          </p>
-
-          <ul className="list-disc pl-5 space-y-1 ">
-            <li className="text-gray-800">
-              Next.js provides server-side rendering for improved SEO and faster
-              initial page loads.
-            </li>
-            <li className="text-gray-800">
-              Tailwind CSS and daisyUI create a responsive and visually
-              appealing design.
-            </li>
-            <li className="text-gray-800">
-              MongoDB stores user data and product information, with Mongoose as
-              the ODM.
-            </li>
-            <li className="text-gray-800">
-              Firebase handles image storage for efficient media management.
-            </li>
-            <li className="text-gray-800">
-              User authentication is secured using bcryptjs for password
-              encryption.
-            </li>
-            <li className="text-gray-800">
-              Joi is utilized for data validation, ensuring data integrity and
-              acting as a runtime type checker.
-            </li>
-            <li className="text-gray-800">
-              GSAP (GreenSock Animation Platform) adds smooth animations to
-              enhance user experience.
-            </li>
-            <li className="text-gray-800">
-              Stripe API integration enables secure and reliable payment
-              processing.
-            </li>
+          <p className="text-gray-800 font-semibold mb-2">Security Features:</p>
+          <ul className="list-disc pl-5 space-y-1 mb-4">
+            <li className="text-gray-800">JWT authentication with secure httpOnly cookies</li>
+            <li className="text-gray-800">Password hashing with bcrypt</li>
+            <li className="text-gray-800">API route protection with auth middleware</li>
+            <li className="text-gray-800">Rate limiting on sensitive endpoints</li>
+            <li className="text-gray-800">CORS configuration & environment variable validation</li>
+            <li className="text-gray-800">Secure payment processing with Stripe webhooks</li>
           </ul>
 
-          <p className="mt-4 text-gray-800">
-            The application's architecture supports scalability and performance,
-            with features like lazy loading for optimized resource usage. The
-            admin panel provides powerful tools for inventory and discount
-            management, while customers enjoy a fluid shopping experience with
-            multi-address delivery options and an intuitive cart system.
-          </p>
+          <p className="text-gray-800 font-semibold mb-2">Technical Features:</p>
+          <ul className="list-disc pl-5 space-y-1 mb-4">
+            <li className="text-gray-800">SEO optimization with Next.js</li>
+            <li className="text-gray-800">Image optimization with Next/Image</li>
+            <li className="text-gray-800">Code splitting & lazy loading</li>
+            <li className="text-gray-800">API route caching & optimized bundle size</li>
+            <li className="text-gray-800">Real-time cart updates & order status tracking</li>
+            <li className="text-gray-800">Live product preview for admins</li>
+            <li className="text-gray-800">Dark mode support with smooth transitions</li>
+            <li className="text-gray-800">Toast notifications & confirmation modals</li>
+            <li className="text-gray-800">Empty states & loading skeletons</li>
+            <li className="text-gray-800">Breadcrumb navigation & accessibility features</li>
+          </ul>
+
+          <p className="text-gray-800 font-semibold mb-2">Business Logic:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">Role-based access control (Admin vs Customer)</li>
+            <li className="text-gray-800">Automatic cart clearing after purchase</li>
+            <li className="text-gray-800">Order status progression workflow</li>
+            <li className="text-gray-800">Price calculations with sales/discounts</li>
+            <li className="text-gray-800">Inventory management by size</li>
+            <li className="text-gray-800">Multi-step checkout process</li>
+            <li className="text-gray-800">Order confirmation emails (planned)</li>
+            <li className="text-gray-800">Production-ready error handling</li>
+            <li className="text-gray-800">Optimized for Vercel deployment</li>
+          </ul>
         </>
       ),
     },
