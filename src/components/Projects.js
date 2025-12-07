@@ -7,32 +7,177 @@ import AnimatedButton from "./AnimatedButton";
 const Projects = () => {
   const projects = [
     {
+      title: "Retentive",
+      baseImage: `${process.env.PUBLIC_URL}/retentive/retentive-image.png`,
+      baseDescription:
+        "Retentive is a commercial desktop SaaS application for spaced repetition learning, featuring a 14-day free trial and subscription plans. Uses science-backed algorithms to boost memory retention by 200%, with AI-powered smart scheduling, focus timer with adherence tracking, and four learning modes.",
+      tools: ["Electron", "React", "SQLite", "Supabase", "TypeScript"],
+      dialectDescription: (
+        <>
+          <p className="text-gray-800 mb-4">
+            Retentive is a fully commercial desktop application that transforms
+            how you learn. Built as a SaaS product with Stripe payment
+            integration, it offers a 14-day free trial followed by flexible
+            subscription plans ($5/month, $12/quarter, or $15/semi-annual). The
+            app leverages cognitive science research and spaced repetition
+            algorithms to determine the optimal time to review each item based
+            on your performance.
+          </p>
+
+          <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-800">
+            <li>AI-powered smart scheduling for optimal review timing</li>
+            <li>Four learning modes: Ultra-Cram, Cram, Steady, and Extended</li>
+            <li>Built-in focus timer with real-time adherence tracking</li>
+            <li>Gamified learning with streaks and achievements</li>
+            <li>Progress tracking with beautiful visualizations</li>
+            <li>Organize knowledge into topics and subtopics</li>
+            <li>Offline mode with cloud sync via Supabase</li>
+            <li>Export your data anytime</li>
+          </ul>
+        </>
+      ),
+      allTools: [
+        "Electron",
+        "React 18",
+        "TypeScript",
+        "SQLite (better-sqlite3)",
+        "Supabase",
+        "React Router",
+        "Recharts",
+        "Lucide React",
+        "Node Schedule",
+        "Vite",
+        "Electron Builder",
+      ],
+      dialectImages: [
+        // `${process.env.PUBLIC_URL}/retentive/demo.gif`,
+      ],
+      // githubLink: "https://github.com/MahirAbrar/retentive",
+      liveLink: "https://retentive-learning-app.vercel.app/",
+      moreInformation: (
+        <>
+          <p className="text-gray-800 font-semibold mb-2">Learning Modes:</p>
+          <ul className="list-disc pl-5 space-y-1 mb-4">
+            <li className="text-gray-800">
+              Ultra-Cram (30s → 2h → 1d → 3d): Night before exams, urgent
+              deadlines
+            </li>
+            <li className="text-gray-800">
+              Cram (2h → 1d → 3d → 7d): Presentations, job interviews
+            </li>
+            <li className="text-gray-800">
+              Steady (1d → 3d → 7d → 14d): Regular coursework, professional
+              development
+            </li>
+            <li className="text-gray-800">
+              Extended (3d → 7d → 14d → 30d): Background knowledge, general
+              interest
+            </li>
+          </ul>
+
+          <p className="text-gray-800 font-semibold mb-2">
+            Focus Timer Features:
+          </p>
+          <ul className="list-disc pl-5 space-y-1 mb-4">
+            <li className="text-gray-800">
+              Set custom session goals and durations
+            </li>
+            <li className="text-gray-800">
+              Real-time adherence monitoring with distraction tracking
+            </li>
+            <li className="text-gray-800">
+              Track work/break ratio and focus patterns
+            </li>
+            <li className="text-gray-800">
+              Build better study habits with adherence insights
+            </li>
+          </ul>
+
+          <p className="text-gray-800 font-semibold mb-2">Business Model:</p>
+          <ul className="list-disc pl-5 space-y-1 mb-4">
+            <li className="text-gray-800">
+              14-day free trial with full access, no credit card required
+            </li>
+            <li className="text-gray-800">Monthly: $5/month</li>
+            <li className="text-gray-800">
+              Quarterly: $12/3 months (20% off - $4/month)
+            </li>
+            <li className="text-gray-800">
+              Semi-Annual: $15/6 months (50% off - $2.50/month)
+            </li>
+          </ul>
+
+          <p className="text-gray-800 font-semibold mb-2">
+            Technical Implementation:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-gray-800">
+              Cross-platform desktop app with Electron
+            </li>
+            <li className="text-gray-800">
+              Local-first architecture with SQLite for offline support
+            </li>
+            <li className="text-gray-800">
+              Cloud sync and authentication via Supabase
+            </li>
+            <li className="text-gray-800">
+              Stripe integration for subscription payments
+            </li>
+            <li className="text-gray-800">
+              Scheduled notifications using node-schedule
+            </li>
+            <li className="text-gray-800">
+              Interactive charts and statistics with Recharts
+            </li>
+            <li className="text-gray-800">Apple Silicon optimized for macOS</li>
+          </ul>
+        </>
+      ),
+    },
+    {
       title: "AttireAlley",
       baseImage: `${process.env.PUBLIC_URL}/attirealley/aalanding.png`,
       baseDescription:
         "AttireAlley is a production-ready e-commerce platform featuring role-based access (admin/customer), AI-powered outfit suggestions, real-time order tracking, and comprehensive product management. Built with Next.js and MongoDB, it includes Stripe payment integration, JWT authentication, and responsive design.",
-      tools: ["Next.js 14", "MongoDB Atlas", "Stripe", "JWT Auth", "AI Integration"],
+      tools: [
+        "Next.js 14",
+        "MongoDB Atlas",
+        "Stripe",
+        "JWT Auth",
+        "AI Integration",
+      ],
       dialectDescription: (
         <>
           <p className="text-gray-800 mb-4">
-            AttireAlley is a fully-featured e-commerce platform with modern architecture, secure payment processing, and excellent user experience for both customers and administrators.
+            AttireAlley is a fully-featured e-commerce platform with modern
+            architecture, secure payment processing, and excellent user
+            experience for both customers and administrators.
           </p>
 
           <p className="text-gray-800 font-semibold mb-2">Customer Features:</p>
           <ul className="list-disc pl-5 space-y-1 text-gray-800 mb-4">
-            <li>Secure JWT authentication with httpOnly cookies & auto-refresh</li>
+            <li>
+              Secure JWT authentication with httpOnly cookies & auto-refresh
+            </li>
             <li>Browse products by category (Men, Women, Kids, Everyone)</li>
-            <li>Product galleries with size selection (XS-XXL) & sale indicators</li>
+            <li>
+              Product galleries with size selection (XS-XXL) & sale indicators
+            </li>
             <li>Persistent shopping cart with real-time updates</li>
             <li>Secure Stripe checkout with multiple addresses</li>
             <li>Order tracking with status timeline (pending → delivered)</li>
-            <li>AI-powered outfit suggestions & color palette recommendations</li>
+            <li>
+              AI-powered outfit suggestions & color palette recommendations
+            </li>
             <li>Dark mode toggle & responsive design</li>
           </ul>
 
           <p className="text-gray-800 font-semibold mb-2">Admin Features:</p>
           <ul className="list-disc pl-5 space-y-1 text-gray-800">
-            <li>Dashboard with statistics (products, orders, users, revenue)</li>
+            <li>
+              Dashboard with statistics (products, orders, users, revenue)
+            </li>
             <li>Product management with live preview & bulk image upload</li>
             <li>Order management with advanced filtering & search</li>
             <li>Update order status with tracking numbers & notes</li>
@@ -71,37 +216,69 @@ const Projects = () => {
         <>
           <p className="text-gray-800 font-semibold mb-2">Security Features:</p>
           <ul className="list-disc pl-5 space-y-1 mb-4">
-            <li className="text-gray-800">JWT authentication with secure httpOnly cookies</li>
+            <li className="text-gray-800">
+              JWT authentication with secure httpOnly cookies
+            </li>
             <li className="text-gray-800">Password hashing with bcrypt</li>
-            <li className="text-gray-800">API route protection with auth middleware</li>
-            <li className="text-gray-800">Rate limiting on sensitive endpoints</li>
-            <li className="text-gray-800">CORS configuration & environment variable validation</li>
-            <li className="text-gray-800">Secure payment processing with Stripe webhooks</li>
+            <li className="text-gray-800">
+              API route protection with auth middleware
+            </li>
+            <li className="text-gray-800">
+              Rate limiting on sensitive endpoints
+            </li>
+            <li className="text-gray-800">
+              CORS configuration & environment variable validation
+            </li>
+            <li className="text-gray-800">
+              Secure payment processing with Stripe webhooks
+            </li>
           </ul>
 
-          <p className="text-gray-800 font-semibold mb-2">Technical Features:</p>
+          <p className="text-gray-800 font-semibold mb-2">
+            Technical Features:
+          </p>
           <ul className="list-disc pl-5 space-y-1 mb-4">
             <li className="text-gray-800">SEO optimization with Next.js</li>
-            <li className="text-gray-800">Image optimization with Next/Image</li>
+            <li className="text-gray-800">
+              Image optimization with Next/Image
+            </li>
             <li className="text-gray-800">Code splitting & lazy loading</li>
-            <li className="text-gray-800">API route caching & optimized bundle size</li>
-            <li className="text-gray-800">Real-time cart updates & order status tracking</li>
+            <li className="text-gray-800">
+              API route caching & optimized bundle size
+            </li>
+            <li className="text-gray-800">
+              Real-time cart updates & order status tracking
+            </li>
             <li className="text-gray-800">Live product preview for admins</li>
-            <li className="text-gray-800">Dark mode support with smooth transitions</li>
-            <li className="text-gray-800">Toast notifications & confirmation modals</li>
+            <li className="text-gray-800">
+              Dark mode support with smooth transitions
+            </li>
+            <li className="text-gray-800">
+              Toast notifications & confirmation modals
+            </li>
             <li className="text-gray-800">Empty states & loading skeletons</li>
-            <li className="text-gray-800">Breadcrumb navigation & accessibility features</li>
+            <li className="text-gray-800">
+              Breadcrumb navigation & accessibility features
+            </li>
           </ul>
 
           <p className="text-gray-800 font-semibold mb-2">Business Logic:</p>
           <ul className="list-disc pl-5 space-y-1">
-            <li className="text-gray-800">Role-based access control (Admin vs Customer)</li>
-            <li className="text-gray-800">Automatic cart clearing after purchase</li>
+            <li className="text-gray-800">
+              Role-based access control (Admin vs Customer)
+            </li>
+            <li className="text-gray-800">
+              Automatic cart clearing after purchase
+            </li>
             <li className="text-gray-800">Order status progression workflow</li>
-            <li className="text-gray-800">Price calculations with sales/discounts</li>
+            <li className="text-gray-800">
+              Price calculations with sales/discounts
+            </li>
             <li className="text-gray-800">Inventory management by size</li>
             <li className="text-gray-800">Multi-step checkout process</li>
-            <li className="text-gray-800">Order confirmation emails (planned)</li>
+            <li className="text-gray-800">
+              Order confirmation emails (planned)
+            </li>
             <li className="text-gray-800">Production-ready error handling</li>
             <li className="text-gray-800">Optimized for Vercel deployment</li>
           </ul>
