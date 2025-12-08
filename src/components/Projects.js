@@ -51,7 +51,9 @@ const Projects = () => {
         "Electron Builder",
       ],
       dialectImages: [
-        // `${process.env.PUBLIC_URL}/retentive/demo.gif`,
+        `${process.env.PUBLIC_URL}/retentive/main page.gif`,
+        `${process.env.PUBLIC_URL}/retentive/stats page.gif`,
+        `${process.env.PUBLIC_URL}/retentive/topic page.gif`,
       ],
       // githubLink: "https://github.com/MahirAbrar/retentive",
       liveLink: "https://retentive-learning-app.vercel.app/",
