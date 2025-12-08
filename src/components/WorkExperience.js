@@ -157,6 +157,7 @@ const WorkExperience = () => {
       location: "Melbourne, Victoria, Australia",
       date: "Jan 2025 – Current",
       responsibilities: [
+        "Selected for Anthropic's Claude Code Human Preferences project, iterating on Claude's code generation in real-world codebases to achieve production-ready quality through expert PR-style reviews and RLHF feedback",
         "Annotate and label diverse datasets for training advanced AI models, specializing in technical domains including software development, mathematics, and data science",
         "Evaluate and rank AI-generated outputs using RLHF techniques, directly contributing to model alignment and performance improvements for leading AI companies",
         "Conduct red teaming exercises to identify model vulnerabilities and biases, particularly in code generation and technical problem-solving scenarios",
