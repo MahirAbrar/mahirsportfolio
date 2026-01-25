@@ -17,6 +17,7 @@ const ProjectCard = ({
   githubLink,
   githubLink2,
   liveLink,
+  appLink,
   moreInformation,
   allTools,
   isFirst,
@@ -147,6 +148,32 @@ const ProjectCard = ({
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(liveLink, "_blank");
+                      }}
+                    />
+                  </div>
+                </>
+              )}
+              {appLink && (
+                <>
+                  <div className="hidden xs:block">
+                    <AnimatedButton
+                      width={180}
+                      height={60}
+                      text="Open App"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(appLink, "_blank");
+                      }}
+                    />
+                  </div>
+                  <div className="xs:hidden">
+                    <AnimatedButton
+                      width={120}
+                      height={40}
+                      text="Open App"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(appLink, "_blank");
                       }}
                     />
                   </div>

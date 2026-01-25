@@ -55,6 +55,7 @@ const Projects = () => {
       ],
       // githubLink: "https://github.com/MahirAbrar/retentive",
       liveLink: "https://retentive-learning-app.vercel.app/",
+      appLink: "https://app-retentive.vercel.app/#/login",
       moreInformation: (
         <>
           <p className="text-gray-800 font-semibold mb-2">Learning Modes:</p>
