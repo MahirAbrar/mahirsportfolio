@@ -64,7 +64,6 @@ const SkillCategory = ({ title, skills, Icon, index }) => {
 
 const Skills = () => {
   const skillsRef = useRef(null);
-  const [isHovering, setIsHovering] = React.useState(false);
 
   const skillCategories = [
     {
@@ -160,8 +159,6 @@ const Skills = () => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skillCategories.map((category, index) => (

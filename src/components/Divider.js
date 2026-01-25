@@ -24,13 +24,14 @@ const Divider = ({ title, note }) => {
       { threshold: 0.1 }
     );
 
-    if (dividerRef.current) {
-      observer.observe(dividerRef.current);
+    const currentRef = dividerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (dividerRef.current) {
-        observer.unobserve(dividerRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
