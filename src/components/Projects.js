@@ -10,45 +10,43 @@ const Projects = () => {
       title: "Retentive",
       baseImage: `${process.env.PUBLIC_URL}/retentive/retentive-image.png`,
       baseDescription:
-        "Retentive is a commercial desktop SaaS application for spaced repetition learning, featuring a 14-day free trial and subscription plans. Uses science-backed algorithms to boost memory retention by 200%, with AI-powered smart scheduling, focus timer with adherence tracking, and four learning modes.",
-      tools: ["Electron", "React", "SQLite", "Supabase", "TypeScript"],
+        "Retentive is a commercial web-based SaaS application for spaced repetition learning, featuring a 14-day free trial and subscription plans. Uses science-backed spaced repetition algorithms with four learning modes, a focus timer with adherence tracking, and gamification to keep you motivated.",
+      tools: ["React", "TypeScript", "Vite", "Supabase", "PWA"],
       dialectDescription: (
         <>
           <p className="text-gray-800 mb-4">
-            Retentive is a fully commercial desktop application that transforms
-            how you learn. Built as a SaaS product with Stripe payment
-            integration, it offers a 14-day free trial followed by flexible
-            subscription plans ($5/month, $12/quarter, or $15/semi-annual). The
-            app leverages cognitive science research and spaced repetition
-            algorithms to determine the optimal time to review each item based
-            on your performance.
+            Retentive is a fully commercial web application that transforms how
+            you learn. Built as a SaaS product with Stripe payment integration,
+            it offers a 14-day free trial followed by flexible subscription
+            plans ($5/month, $12/quarter, or $15/semi-annual). The app leverages
+            cognitive science research and spaced repetition algorithms to
+            determine the optimal time to review each item based on your
+            learning mode.
           </p>
 
           <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
           <ul className="list-disc pl-5 space-y-1 text-gray-800">
-            <li>AI-powered smart scheduling for optimal review timing</li>
+            <li>Spaced repetition scheduling for optimal review timing</li>
             <li>Four learning modes: Ultra-Cram, Cram, Steady, and Extended</li>
             <li>Built-in focus timer with real-time adherence tracking</li>
-            <li>Gamified learning with streaks and achievements</li>
-            <li>Progress tracking with beautiful visualizations</li>
+            <li>Gamified learning with points, levels, streaks, and achievements</li>
+            <li>Progress tracking with interactive charts and statistics</li>
             <li>Organize knowledge into topics and subtopics</li>
-            <li>Offline mode with cloud sync via Supabase</li>
+            <li>Offline support with cloud sync via Supabase</li>
             <li>Export your data anytime</li>
           </ul>
         </>
       ),
       allTools: [
-        "Electron",
         "React 18",
         "TypeScript",
-        "SQLite (better-sqlite3)",
+        "Vite",
         "Supabase",
         "React Router",
         "Recharts",
         "Lucide React",
-        "Node Schedule",
-        "Vite",
-        "Electron Builder",
+        "PWA (Service Worker)",
+        "Stripe",
       ],
       dialectImages: [
         `${process.env.PUBLIC_URL}/retentive/main page.gif`,
@@ -62,18 +60,18 @@ const Projects = () => {
           <p className="text-gray-800 font-semibold mb-2">Learning Modes:</p>
           <ul className="list-disc pl-5 space-y-1 mb-4">
             <li className="text-gray-800">
-              Ultra-Cram (30s → 2h → 1d → 3d): Night before exams, urgent
+              Ultra-Cram (30s → 2h → 1d → 3d → 7d): Night before exams, urgent
               deadlines
             </li>
             <li className="text-gray-800">
-              Cram (2h → 1d → 3d → 7d): Presentations, job interviews
+              Cram (2h → 1d → 3d → 7d → 14d): Presentations, job interviews
             </li>
             <li className="text-gray-800">
-              Steady (1d → 3d → 7d → 14d): Regular coursework, professional
+              Steady (1d → 3d → 7d → 14d → 30d): Regular coursework, professional
               development
             </li>
             <li className="text-gray-800">
-              Extended (3d → 7d → 14d → 30d): Background knowledge, general
+              Extended (3d → 7d → 14d → 30d → 60d): Background knowledge, general
               interest
             </li>
           </ul>
@@ -86,13 +84,13 @@ const Projects = () => {
               Set custom session goals and durations
             </li>
             <li className="text-gray-800">
-              Real-time adherence monitoring with distraction tracking
+              Real-time adherence monitoring (work vs break time ratio)
             </li>
             <li className="text-gray-800">
-              Track work/break ratio and focus patterns
+              Points awarded based on adherence percentage
             </li>
             <li className="text-gray-800">
-              Build better study habits with adherence insights
+              Session history and performance tracking
             </li>
           </ul>
 
@@ -115,24 +113,23 @@ const Projects = () => {
           </p>
           <ul className="list-disc pl-5 space-y-1">
             <li className="text-gray-800">
-              Cross-platform desktop app with Electron
+              Progressive Web App (PWA) with offline support
             </li>
             <li className="text-gray-800">
-              Local-first architecture with SQLite for offline support
-            </li>
-            <li className="text-gray-800">
-              Cloud sync and authentication via Supabase
+              Cloud database and authentication via Supabase
             </li>
             <li className="text-gray-800">
               Stripe integration for subscription payments
             </li>
             <li className="text-gray-800">
-              Scheduled notifications using node-schedule
-            </li>
-            <li className="text-gray-800">
               Interactive charts and statistics with Recharts
             </li>
-            <li className="text-gray-800">Apple Silicon optimized for macOS</li>
+            <li className="text-gray-800">
+              Gamification system with levels, streaks, and 10+ achievements
+            </li>
+            <li className="text-gray-800">
+              Auto-sync with offline queue for interrupted sessions
+            </li>
           </ul>
         </>
       ),
