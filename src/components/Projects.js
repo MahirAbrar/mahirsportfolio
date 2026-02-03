@@ -54,8 +54,8 @@ const Projects = () => {
         `${process.env.PUBLIC_URL}/retentive/topic page.gif`,
       ],
       // githubLink: "https://github.com/MahirAbrar/retentive",
-      liveLink: "https://retentive-learning-app.vercel.app/",
-      appLink: "https://app-retentive.vercel.app/#/login",
+      liveLink: "https://retentive.site/",
+      appLink: "https://app.retentive.site",
       moreInformation: (
         <>
           <p className="text-gray-800 font-semibold mb-2">Learning Modes:</p>
