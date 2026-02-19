@@ -139,7 +139,7 @@ const WorkExperienceItem = ({
 const WorkExperience = () => {
   const experience = [
     {
-      title: "Tier 2 Coder: AI Model Trainer - Independent Contractor",
+      title: "Software Engineer - Independent Contractor",
       company: "Outlier AI",
       location: "Melbourne, Victoria, Australia",
       date: "Oct 2024 – Current",
@@ -162,6 +162,18 @@ const WorkExperience = () => {
         "Evaluate and rank AI-generated outputs using RLHF techniques, directly contributing to model alignment and performance improvements for leading AI companies",
         "Conduct red teaming exercises to identify model vulnerabilities and biases, particularly in code generation and technical problem-solving scenarios",
         "Provide expert feedback on AI responses leveraging proficiency in Python, JavaScript, TypeScript, and ML/DL frameworks to enhance model accuracy and capabilities",
+      ],
+    },
+    {
+      title: "Contact Centre Operator",
+      company: "13cabs (a2b Australia)",
+      location: "Melbourne, VIC",
+      date: "Aug 2025 – Present",
+      responsibilities: [
+        "Manage real-time dispatch operations coordinating between drivers and passengers, overseeing trip completion and resolving service disruptions across high-volume call channels.",
+        "Lead response to critical safety incidents including duress alarms and emergencies, making rapid decisions under pressure while maintaining clear and calm communication with all stakeholders.",
+        "Resolve complex conflicts between passengers and drivers with diverse communication needs, consistently recognized by management for patience, professionalism, and service quality.",
+        "Efficiently navigate internal systems and protocols to process requests and uphold service standards, demonstrating strong organizational and time-management skills in a fast-paced environment.",
       ],
     },
     {
