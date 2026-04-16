@@ -10,18 +10,37 @@ const Projects = () => {
       title: "Retentive",
       baseImage: `${process.env.PUBLIC_URL}/retentive/retentive-image.png`,
       baseDescription:
-        "Retentive is a commercial web-based SaaS application for spaced repetition learning, featuring a 14-day free trial and subscription plans. Uses science-backed spaced repetition algorithms with four learning modes, a focus timer with adherence tracking, and gamification to keep you motivated.",
+        "Struggling to remember what you study? Retentive solves the forgetting problem — a commercial SaaS that uses science-backed spaced repetition to make learning stick. With four learning modes, a focus timer with adherence tracking, and gamification to keep you motivated, it turns cramming into durable knowledge. Try it free for 14 days at retentive.site — no credit card required.",
       tools: ["React", "TypeScript", "Vite", "Supabase", "PWA"],
       dialectDescription: (
         <>
           <p className="text-gray-800 mb-4">
-            Retentive is a fully commercial web application that transforms how
-            you learn. Built as a SaaS product with Stripe payment integration,
-            it offers a 14-day free trial followed by flexible subscription
-            plans ($5/month, $12/quarter, or $15/semi-annual). The app leverages
-            cognitive science research and spaced repetition algorithms to
-            determine the optimal time to review each item based on your
-            learning mode.
+            <span className="font-semibold">The problem:</span> most studying
+            doesn't stick. We cram, review once, and forget within days. The
+            forgetting curve is brutal — and traditional note-taking apps do
+            nothing to fight it.
+          </p>
+          <p className="text-gray-800 mb-4">
+            <span className="font-semibold">The solution:</span> Retentive is a
+            fully commercial SaaS that transforms how you learn by scheduling
+            reviews at the scientifically-optimal moment — right before you'd
+            forget. Built with Stripe payments, it offers a 14-day free trial
+            followed by flexible plans ($5/month, $12/quarter, or $15/semi-annual).
+            The app leverages cognitive science research and spaced repetition
+            algorithms to determine the optimal review time for each item based
+            on your learning mode.
+          </p>
+          <p className="text-gray-800 mb-4">
+            <span className="font-semibold">Try it yourself:</span> head to{" "}
+            <a
+              href="https://retentive.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              retentive.site
+            </a>{" "}
+            and start your 14-day free trial — no credit card required.
           </p>
 
           <p className="text-gray-800 font-semibold mb-2">Key Features:</p>
@@ -51,7 +70,10 @@ const Projects = () => {
       dialectImages: [
         `${process.env.PUBLIC_URL}/retentive/main page.gif`,
         `${process.env.PUBLIC_URL}/retentive/stats page.gif`,
-        `${process.env.PUBLIC_URL}/retentive/topic page.gif`,
+        `${process.env.PUBLIC_URL}/retentive/retentive-archive-maintain-mastery.mp4`,
+        `${process.env.PUBLIC_URL}/retentive/retentive-clicking-study.mp4`,
+        `${process.env.PUBLIC_URL}/retentive/retentive-creating-topics.mp4`,
+        `${process.env.PUBLIC_URL}/retentive/retentive-in-review-window.png`,
       ],
       // githubLink: "https://github.com/MahirAbrar/retentive",
       liveLink: "https://retentive.site/",
@@ -114,22 +136,33 @@ const Projects = () => {
           </p>
           <ul className="list-disc pl-5 space-y-1">
             <li className="text-gray-800">
-              Progressive Web App (PWA) with offline support
+              Two-tier cache-aside architecture: L1 in-memory cache (2–5 min
+              TTL) and L2 localStorage cache (6–24 hr TTL) with
+              write-invalidation strategy and optimistic UI updates for data
+              consistency and offline resilience
             </li>
             <li className="text-gray-800">
-              Cloud database and authentication via Supabase
+              Supabase backend (PostgreSQL + Auth) with Row Level Security
+              (RLS) policies enforcing strict per-user data isolation, backed
+              by ACID-compliant transactions for payment and session-critical
+              operations
             </li>
             <li className="text-gray-800">
-              Stripe integration for subscription payments
+              Progressive Web App with Service Worker offline support,
+              real-time data sync, and auto-recovery for interrupted sessions
+              across connectivity states
             </li>
             <li className="text-gray-800">
-              Interactive charts and statistics with Recharts
+              Stripe integration managing recurring subscriptions across three
+              pricing tiers with a 14-day free trial
             </li>
             <li className="text-gray-800">
-              Gamification system with levels, streaks, and 10+ achievements
+              Gamification engine with exponential XP leveling algorithm,
+              streak persistence, 24-achievement unlock system, and focus
+              timer with real-time adherence monitoring
             </li>
             <li className="text-gray-800">
-              Auto-sync with offline queue for interrupted sessions
+              Interactive charts and statistics powered by Recharts
             </li>
           </ul>
         </>

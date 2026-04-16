@@ -39,6 +39,8 @@ const ProjectCard = ({
     setImagesLoaded((prev) => ({ ...prev, [imageUrl]: true }));
   };
 
+  const isVideo = (url) => /\.(mp4|webm|ogg)$/i.test(url);
+
   // Reset loaded state when dialog opens
   useEffect(() => {
     if (isOpen) {
@@ -266,17 +268,36 @@ const ProjectCard = ({
                         <span className="loading loading-spinner loading-lg text-primary"></span>
                       </div>
                     )}
-                    <img
-                      src={featuredImage}
-                      alt={title}
-                      className="w-full rounded-lg shadow-md"
-                      onLoad={() => handleImageLoad(featuredImage)}
-                      style={{
-                        minHeight: "200px",
-                        maxHeight: "400px",
-                        objectFit: "contain",
-                      }}
-                    />
+                    {isVideo(featuredImage) ? (
+                      <video
+                        key={featuredImage}
+                        src={featuredImage}
+                        className="w-full rounded-lg shadow-md"
+                        controls
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        onLoadedData={() => handleImageLoad(featuredImage)}
+                        style={{
+                          minHeight: "200px",
+                          maxHeight: "400px",
+                          objectFit: "contain",
+                        }}
+                      />
+                    ) : (
+                      <img
+                        src={featuredImage}
+                        alt={title}
+                        className="w-full rounded-lg shadow-md"
+                        onLoad={() => handleImageLoad(featuredImage)}
+                        style={{
+                          minHeight: "200px",
+                          maxHeight: "400px",
+                          objectFit: "contain",
+                        }}
+                      />
+                    )}
                   </motion.div>
                 )}
 
@@ -294,17 +315,33 @@ const ProjectCard = ({
                             <span className="loading loading-spinner loading-md text-primary"></span>
                           </div>
                         )}
-                        <img
-                          src={image}
-                          alt={`${title} ${index + 1}`}
-                          className={`w-full h-24 object-cover rounded-lg shadow-md cursor-pointer ${
-                            image === featuredImage
-                              ? "ring-2 ring-blue-500"
-                              : ""
-                          }`}
-                          onClick={() => setFeaturedImage(image)}
-                          onLoad={() => handleImageLoad(image)}
-                        />
+                        {isVideo(image) ? (
+                          <video
+                            src={image}
+                            muted
+                            playsInline
+                            preload="metadata"
+                            className={`w-full h-24 object-cover rounded-lg shadow-md cursor-pointer ${
+                              image === featuredImage
+                                ? "ring-2 ring-blue-500"
+                                : ""
+                            }`}
+                            onClick={() => setFeaturedImage(image)}
+                            onLoadedData={() => handleImageLoad(image)}
+                          />
+                        ) : (
+                          <img
+                            src={image}
+                            alt={`${title} ${index + 1}`}
+                            className={`w-full h-24 object-cover rounded-lg shadow-md cursor-pointer ${
+                              image === featuredImage
+                                ? "ring-2 ring-blue-500"
+                                : ""
+                            }`}
+                            onClick={() => setFeaturedImage(image)}
+                            onLoad={() => handleImageLoad(image)}
+                          />
+                        )}
                       </div>
                     ))}
                   </motion.div>
