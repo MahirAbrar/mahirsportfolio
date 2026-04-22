@@ -139,15 +139,16 @@ const WorkExperienceItem = ({
 const WorkExperience = () => {
   const experience = [
     {
-      title: "Software Engineer - Independent Contractor",
+      title: "Software Engineer – Independent Contractor",
       company: "Outlier AI",
-      location: "Melbourne, Victoria, Australia",
-      date: "Oct 2024 – Current",
+      location: "Remote",
+      date: "Oct 2024 – Present",
       responsibilities: [
-        "Built and optimized full-stack web applications (React, Next.js, Node.js, Tailwind CSS) for Fortune 500 clients, enabling scalable data pipelines for LLM training, evaluation, and fine-tuning workflows.",
-        "Conducted comprehensive RLHF and SFT across multiple projects, directly contributing to model alignment and response quality improvements for clients including Meta, OpenAI, and other enterprise clients.",
-        "Evaluated AI-generated solutions to system design problems, assessing scalability, caching strategies, database architecture, and distributed systems trade-offs across varying complexity levels.",
-        "Performed thorough testing and quality assurance of annotation platforms and model evaluation dashboards built with JavaScript, React, and Next.js, ensuring consistent feedback collection for model improvement pipelines.",
+        "Contribute to LLM training and evaluation pipelines for frontier model labs across multiple projects; promoted to reviewer role on multiple projects.",
+        "Evaluate AI-generated responses against structured rubrics covering truthfulness, instruction-following (explicit and implicit), hallucination detection, verbosity, tone and format compliance, and writing quality — producing justified scoring used in SFT and RLHF pipelines.",
+        "Analyse and improve AI outputs on software engineering tasks (React, TypeScript, Next.js, Python — often in unfamiliar libraries), system design problems (scalability, caching, database architecture, distributed systems), and math/logic reasoning.",
+        "Author prompts and develop rubrics that match training-data quality standards; identify explicit and implicit requirements from prompts and system instructions to define correctness criteria.",
+        "Evaluate multi-tool AI agent outputs, assessing tool-use correctness across document retrieval, editing, and multi-step workflows.",
       ],
     },
     {
@@ -164,17 +165,16 @@ const WorkExperience = () => {
       ],
     },
     {
-      title: "Helpdesk Operator",
+      title: "Contact Centre Operator",
       company: "13cabs (A2B Australia)",
       location: "Melbourne, VIC",
       date: "Aug 2025 – Present",
       responsibilities: [
-        "Triaged and resolved driver-facing technical issues across booking systems, navigation tools, and payment terminals, maintaining high first-call resolution rates across high-volume inbound support channels.",
-        "Utilised proprietary CRM system (MTI) to manage end-to-end customer booking lifecycle including trip allocation, driver coordination, and payment processing, ensuring accurate and up-to-date records across all interactions.",
-        "Simultaneously navigated multiple internal platforms and databases during live calls, capturing and interpreting customer data accurately while maintaining call handling time KPIs.",
-        "Maintained accurate database records and email correspondence for every interaction, ensuring compliance with organisational security procedures and documentation standards.",
-        "Handled critical safety incidents including duress alarms and emergency situations, making rapid decisions under pressure while maintaining clear communication with all stakeholders across internal and external channels.",
-        "Diagnosed and escalated complex account, system, and integration issues by collaborating with team leaders and cross-functional staff, consistently receiving positive performance feedback for professionalism and technical accuracy.",
+        "Take passenger bookings via the proprietary MTI platform and dispatch to drivers; manage bookings across multiple regulated account types (TAC, WorkSafe, DVA, and others) with distinct compliance rules that vary by state.",
+        "Operate the supervisor screen monitoring all active trips across the fleet in real time; identify service breaches and coordinate resolution by dispatching drivers, sending fleet-wide messages, and reallocating coverage.",
+        "Coordinate driver-side operations in helpdesk: issue nojobs and recalls, respond to duress alarms, and resolve payment exceptions in real time under tight call-handling KPIs.",
+        "Manually test MTI platform updates from the development team, reproduce issues, and provide structured feedback used to refine releases before rollout.",
+        "Resolve complex conflicts between passengers and drivers with varying language and communication abilities, translating between parties to de-escalate and complete trip delivery; provide structured driver and agent performance feedback and suggest process improvements.",
       ],
     },
     {

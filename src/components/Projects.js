@@ -10,7 +10,7 @@ const Projects = () => {
       title: "Retentive",
       baseImage: `${process.env.PUBLIC_URL}/retentive/retentive-image.png`,
       baseDescription:
-        "Struggling to remember what you study? Retentive solves the forgetting problem — a commercial SaaS that uses science-backed spaced repetition to make learning stick. With four learning modes, a focus timer with adherence tracking, and gamification to keep you motivated, it turns cramming into durable knowledge. Try it free for 14 days at retentive.site — no credit card required.",
+        "Struggling to remember what you study? Retentive is a deployed spaced repetition learning app that fights the forgetting curve, serving organic users at retentive.site. Four review modes (Ultra-Cram, Cram, Steady, Extended), a focus timer with adherence tracking, and gamification turn cramming into durable knowledge. A native iOS version is currently being rebuilt in SwiftUI. Try it free for 14 days — no credit card required.",
       tools: ["React", "TypeScript", "Vite", "Supabase", "PWA"],
       dialectDescription: (
         <>
@@ -22,13 +22,13 @@ const Projects = () => {
           </p>
           <p className="text-gray-800 mb-4">
             <span className="font-semibold">The solution:</span> Retentive is a
-            fully commercial SaaS that transforms how you learn by scheduling
-            reviews at the scientifically-optimal moment — right before you'd
-            forget. Built with Stripe payments, it offers a 14-day free trial
-            followed by flexible plans ($5/month, $12/quarter, or $15/semi-annual).
-            The app leverages cognitive science research and spaced repetition
-            algorithms to determine the optimal review time for each item based
-            on your learning mode.
+            deployed spaced repetition learning app that schedules reviews at
+            the scientifically-optimal moment — right before you'd forget.
+            Four review modes (Ultra-Cram, Cram, Steady, Extended) adapt the
+            interval cadence to how you need to learn, from night-before
+            cramming to long-term retention. The app is live at retentive.site
+            serving organic users, with a native iOS version currently being
+            rebuilt in SwiftUI.
           </p>
           <p className="text-gray-800 mb-4">
             <span className="font-semibold">Try it yourself:</span> head to{" "}
@@ -66,6 +66,7 @@ const Projects = () => {
         "Lucide React",
         "PWA (Service Worker)",
         "Stripe",
+        "SwiftUI (iOS, in progress)",
       ],
       dialectImages: [
         `${process.env.PUBLIC_URL}/retentive/main page.gif`,
@@ -117,7 +118,7 @@ const Projects = () => {
             </li>
           </ul>
 
-          <p className="text-gray-800 font-semibold mb-2">Business Model:</p>
+          <p className="text-gray-800 font-semibold mb-2">Pricing & Trial:</p>
           <ul className="list-disc pl-5 space-y-1 mb-4">
             <li className="text-gray-800">
               14-day free trial with full access, no credit card required
