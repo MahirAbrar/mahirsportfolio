@@ -24,9 +24,9 @@ const AnimatedTitle = ({ strings }) => {
 
   return (
     <div className="overflow-hidden ">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold h-[60px] mb-4">
+      <p className="text-2xl sm:text-3xl md:text-4xl font-bold h-[60px] mb-4">
         <span ref={el} />
-      </h1>
+      </p>
     </div>
   );
 };

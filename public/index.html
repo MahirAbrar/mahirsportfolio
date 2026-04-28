@@ -4,47 +4,53 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+    <!-- Google Search Console verification — replace VALUE with the token from search.google.com/search-console -->
+    <!-- <meta name="google-site-verification" content="REPLACE_WITH_TOKEN" /> -->
     <meta
       name="description"
-      content="Hamid Abrar Mahir - Full Stack Developer & Data Scientist. Graduate from Monash University with a Bachelor's in Computer Science specializing in Data Science. Expertise in problem-solving, leadership, and emerging technologies."
-    />
-    <meta
-      name="keywords"
-      content="Full Stack Developer, Data Scientist, React, Next.js, Python, Machine Learning, Data Analysis, Monash University"
+      content="Hamid Abrar Mahir — Software Engineer and Data Scientist based in Melbourne, Australia. Full-stack work in React, Next.js, TypeScript and Python; LLM evaluation and RLHF for frontier AI labs. Monash University, Bachelor of Computer Science (Data Science)."
     />
     <meta name="author" content="Hamid Abrar Mahir" />
 
-    <!-- Open Graph / Facebook -->
+    <link rel="canonical" href="https://mahirabrar.net/" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.yourdomain.com/" />
+    <meta property="og:site_name" content="Hamid Abrar Mahir" />
+    <meta property="og:url" content="https://mahirabrar.net/" />
     <meta
       property="og:title"
-      content="Hamid Abrar Mahir - Full Stack Developer & Data Scientist"
+      content="Hamid Abrar Mahir — Software Engineer & Data Scientist (Melbourne)"
     />
     <meta
       property="og:description"
-      content="Monash University graduate specializing in Data Science. Expertise in problem-solving, leadership, and emerging technologies."
+      content="Software Engineer and Data Scientist in Melbourne. Building full-stack web apps with React, Next.js, TypeScript and Python; LLM evaluation and RLHF for frontier AI labs."
     />
     <meta
       property="og:image"
-      content="https://www.yourdomain.com/og-image.jpg"
+      content="https://mahirabrar.net/IMG_2631.jpg"
     />
+    <meta property="og:image:alt" content="Hamid Abrar Mahir headshot" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.yourdomain.com/" />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@CodingLifts" />
+    <meta name="twitter:creator" content="@CodingLifts" />
+    <meta name="twitter:url" content="https://mahirabrar.net/" />
     <meta
-      property="twitter:title"
-      content="Hamid Abrar Mahir - Full Stack Developer & Data Scientist"
+      name="twitter:title"
+      content="Hamid Abrar Mahir — Software Engineer & Data Scientist (Melbourne)"
     />
     <meta
-      property="twitter:description"
-      content="Monash University graduate specializing in Data Science. Expertise in problem-solving, leadership, and emerging technologies."
+      name="twitter:description"
+      content="Software Engineer and Data Scientist in Melbourne. Building full-stack web apps with React, Next.js, TypeScript and Python; LLM evaluation and RLHF for frontier AI labs."
     />
     <meta
-      property="twitter:image"
-      content="https://www.yourdomain.com/twitter-image.jpg"
+      name="twitter:image"
+      content="https://mahirabrar.net/IMG_2631.jpg"
     />
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
@@ -52,6 +58,60 @@
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <!-- JSON-LD: Person schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hamid Abrar Mahir",
+        "url": "https://mahirabrar.net/",
+        "image": "https://mahirabrar.net/IMG_2631.jpg",
+        "jobTitle": "Software Engineer",
+        "description": "Software Engineer and Data Scientist working across full-stack web development, LLM evaluation and RLHF for frontier AI labs.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Melbourne",
+          "addressRegion": "VIC",
+          "addressCountry": "AU"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Monash University"
+        },
+        "knowsAbout": [
+          "Software Engineering",
+          "Full-Stack Web Development",
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Python",
+          "Data Science",
+          "Machine Learning",
+          "RLHF",
+          "LLM Evaluation"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/hamid-abrar-mahir/",
+          "https://github.com/MahirAbrar",
+          "https://x.com/CodingLifts"
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD: WebSite schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Hamid Abrar Mahir — Portfolio",
+        "url": "https://mahirabrar.net/",
+        "author": {
+          "@type": "Person",
+          "name": "Hamid Abrar Mahir"
+        }
+      }
+    </script>
 
     <!-- Load critical CSS inline -->
     <style>
@@ -63,7 +123,7 @@
       }
     </style>
 
-    <title>Mahirs Portfolio</title>
+    <title>Hamid Abrar Mahir — Software Engineer & Data Scientist | Melbourne</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

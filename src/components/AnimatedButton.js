@@ -2,13 +2,14 @@ import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 
-const AnimatedButton = ({ 
-  text = "HOVER ME", 
-  onClick, 
-  icon, 
+const AnimatedButton = ({
+  text = "HOVER ME",
+  onClick,
+  icon,
   className = "",
   width = 180,
-  height = 60
+  height = 60,
+  ariaLabel,
 }) => {
   const [hovering, setHovering] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -89,6 +90,7 @@ const AnimatedButton = ({
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
           onMouseMove={handleMouseMove}
+          aria-label={ariaLabel || text}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

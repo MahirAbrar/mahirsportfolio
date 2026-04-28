@@ -8,6 +8,7 @@ import "./App.css";
 import Education from "./components/Education";
 import ContactMe from "./components/ContactMe";
 import Skills from "./components/Skills";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [theme, setTheme] = useState(
@@ -44,24 +45,43 @@ const App = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar theme={theme} handleToggle={handleToggle} scrollY={scrollY} />
-      <main className="flex flex-col px-4 sm:px-6 lg:px-8">
+      <main id="top" className="flex flex-col px-4 sm:px-6 lg:px-8">
         <div className="w-full">
-          <About />
-          <Divider title="Skills" />
-          <Skills />
-          <Divider
-            title="Key Projects"
-            note="Click below to learn more about each project."
-          />
-          <Projects />
-          <Divider title="Work Experience" />
-          <WorkExperience theme={theme} />
-          <Divider title="Education" />
-          <Education />
-          <Divider title="Contact Me" />
-          <ContactMe />
+          <section id="about" aria-label="About Hamid Abrar Mahir">
+            <About />
+          </section>
+
+          <section id="skills" aria-labelledby="skills-heading">
+            <Divider title="Skills" headingId="skills-heading" />
+            <Skills />
+          </section>
+
+          <section id="projects" aria-labelledby="projects-heading">
+            <Divider
+              title="Key Projects"
+              note="Click below to learn more about each project."
+              headingId="projects-heading"
+            />
+            <Projects />
+          </section>
+
+          <section id="experience" aria-labelledby="experience-heading">
+            <Divider title="Work Experience" headingId="experience-heading" />
+            <WorkExperience theme={theme} />
+          </section>
+
+          <section id="education" aria-labelledby="education-heading">
+            <Divider title="Education" headingId="education-heading" />
+            <Education />
+          </section>
+
+          <section id="contact" aria-labelledby="contact-heading">
+            <Divider title="Contact Me" headingId="contact-heading" />
+            <ContactMe />
+          </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

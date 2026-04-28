@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Mahir Portfolio",
+  "name": "Hamid Abrar Mahir — Software Engineer & Data Scientist",
+  "description": "Portfolio of Hamid Abrar Mahir — Software Engineer and Data Scientist based in Melbourne. Full-stack web development, LLM evaluation and RLHF.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#0f172a",
   "background_color": "#ffffff"
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Divider = ({ title, note }) => {
+const Divider = ({ title, note, headingId }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const dividerRef = useRef(null);
@@ -50,9 +50,12 @@ const Divider = ({ title, note }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="border-black dark:border-gray-500 border-y-2 pb-2 relative">
-        <h3 className="text-center text-3xl md:text-5xl font-bold text-con w-full py-2">
+        <h2
+          id={headingId}
+          className="text-center text-3xl md:text-5xl font-bold text-con w-full py-2"
+        >
           {title}
-        </h3>
+        </h2>
         {note && (
           <p
             className={`text-center md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2 text-base italic transition-opacity duration-300 mt-2 md:mt-0 ${

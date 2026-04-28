@@ -76,13 +76,15 @@ const ProjectCard = ({
         <div className="w-full h-64 md:h-96">
           <img
             src={baseImage}
-            alt={`${title} Project`}
+            alt={`${title} project preview`}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full max-h-full object-cover max-w-l mx-auto"
           />
         </div>
         <div className="w-full p-6 flex flex-col justify-between">
           <div>
-            <h2 className="text-3xl font-bold mb-4">{title}</h2>
+            <h3 className="text-3xl font-bold mb-4">{title}</h3>
             <p className="mb-4 text-lg">{baseDescription}</p>
           </div>
           <div className="flex flex-col sm:flex-row justify-between">
@@ -103,6 +105,7 @@ const ProjectCard = ({
                       height={60}
                       text="GitHub"
                       icon={faGithub}
+                      ariaLabel={`Open ${title} GitHub repository`}
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(githubLink, "_blank");
@@ -118,6 +121,7 @@ const ProjectCard = ({
                       height={40}
                       text="GitHub"
                       icon={faGithub}
+                      ariaLabel={`Open ${title} GitHub repository`}
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(githubLink, "_blank");
@@ -136,6 +140,7 @@ const ProjectCard = ({
                       width={180}
                       height={60}
                       text="Live Website"
+                      ariaLabel={`Open ${title} live website`}
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(liveLink, "_blank");
@@ -147,6 +152,7 @@ const ProjectCard = ({
                       width={120}
                       height={40}
                       text="Live Website"
+                      ariaLabel={`Open ${title} live website`}
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(liveLink, "_blank");
@@ -162,6 +168,7 @@ const ProjectCard = ({
                       width={180}
                       height={60}
                       text="Open App"
+                      ariaLabel={`Open ${title} app`}
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(appLink, "_blank");
@@ -173,6 +180,7 @@ const ProjectCard = ({
                       width={120}
                       height={40}
                       text="Open App"
+                      ariaLabel={`Open ${title} app`}
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(appLink, "_blank");
@@ -278,6 +286,7 @@ const ProjectCard = ({
                         muted
                         loop
                         playsInline
+                        aria-label={`${title} screen capture demo`}
                         onLoadedData={() => handleImageLoad(featuredImage)}
                         style={{
                           minHeight: "200px",
@@ -288,7 +297,9 @@ const ProjectCard = ({
                     ) : (
                       <img
                         src={featuredImage}
-                        alt={title}
+                        alt={`${title} featured screenshot`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full rounded-lg shadow-md"
                         onLoad={() => handleImageLoad(featuredImage)}
                         style={{
@@ -321,6 +332,7 @@ const ProjectCard = ({
                             muted
                             playsInline
                             preload="metadata"
+                            aria-label={`${title} demo thumbnail ${index + 1}`}
                             className={`w-full h-24 object-cover rounded-lg shadow-md cursor-pointer ${
                               image === featuredImage
                                 ? "ring-2 ring-blue-500"
@@ -332,7 +344,9 @@ const ProjectCard = ({
                         ) : (
                           <img
                             src={image}
-                            alt={`${title} ${index + 1}`}
+                            alt={`${title} screenshot ${index + 1}`}
+                            loading="lazy"
+                            decoding="async"
                             className={`w-full h-24 object-cover rounded-lg shadow-md cursor-pointer ${
                               image === featuredImage
                                 ? "ring-2 ring-blue-500"

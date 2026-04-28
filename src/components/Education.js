@@ -93,7 +93,7 @@ const CategoryCard = ({ category, unitCodes, index, position, opacity }) => {
 
         {/* Card Content */}
         <div className="relative z-10">
-          <h3 className="text-lg font-semibold mb-2">{category}</h3>
+          <h4 className="text-lg font-semibold mb-2">{category}</h4>
           <ul className="space-y-1">
             {unitCodes.map((unitCode) => (
               <li key={unitCode} className="text-sm">
@@ -134,16 +134,16 @@ const Education = () => {
         <div className="flex flex-rowitems-start sm:items-center mb-2">
           <BookOpen className="mb-2 sm:mb-2 mr-4" size={48} />
           <div>
-            <h2 className="text-md sm:text-xl md:text-4xl font-bold leading-tight">
+            <h3 className="text-md sm:text-xl md:text-4xl font-bold leading-tight">
               Bachelor of Computer Science in Data Science
-            </h2>
+            </h3>
             <p className="text-lg sm:text-xl mt-1 font-semibold">
               Monash University Australia
             </p>
           </div>
         </div>
         <div className="ml-0 sm:ml-16">
-          <h3 className="text-md sm:text-xl">Minor: Mobile Apps Development</h3>
+          <h4 className="text-md sm:text-xl">Minor: Mobile Apps Development</h4>
         </div>
       </div>
 
