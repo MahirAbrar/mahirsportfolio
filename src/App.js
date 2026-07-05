@@ -1,87 +1,46 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Divider from "./components/Divider";
-import Projects from "./components/Projects";
+import TitleBar from "./components/TitleBar";
+import Gutters from "./components/Gutters";
+import Hero from "./components/Hero";
+import Products from "./components/Products";
 import WorkExperience from "./components/WorkExperience";
-import "./App.css";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 import Education from "./components/Education";
 import ContactMe from "./components/ContactMe";
-import Skills from "./components/Skills";
-import Footer from "./components/Footer";
+import StatusBar from "./components/StatusBar";
 
 const App = () => {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    () => localStorage.getItem("theme") || "dark"
   );
-  const [scrollY, setScrollY] = useState(0);
-
-  const handleToggle = (e) => {
-    if (e.target.checked) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const toggleTheme = () =>
+    setTheme((t) => (t === "dark" ? "light" : "dark"));
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Navbar theme={theme} handleToggle={handleToggle} scrollY={scrollY} />
-      <main id="top" className="flex flex-col px-4 sm:px-6 lg:px-8">
-        <div className="w-full">
-          <section id="about" aria-label="About Hamid Abrar Mahir">
-            <About />
-          </section>
-
-          <section id="skills" aria-labelledby="skills-heading">
-            <Divider title="Skills" headingId="skills-heading" />
-            <Skills />
-          </section>
-
-          <section id="projects" aria-labelledby="projects-heading">
-            <Divider
-              title="Key Projects"
-              note="Click below to learn more about each project."
-              headingId="projects-heading"
-            />
-            <Projects />
-          </section>
-
-          <section id="experience" aria-labelledby="experience-heading">
-            <Divider title="Work Experience" headingId="experience-heading" />
-            <WorkExperience theme={theme} />
-          </section>
-
-          <section id="education" aria-labelledby="education-heading">
-            <Divider title="Education" headingId="education-heading" />
-            <Education />
-          </section>
-
-          <section id="contact" aria-labelledby="contact-heading">
-            <Divider title="Contact Me" headingId="contact-heading" />
-            <ContactMe />
-          </section>
-        </div>
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-desk desk-grid px-2 py-2.5 dt:px-6 dt:py-10 text-body font-sans">
+      <Gutters />
+      <div className="max-w-[1240px] mx-auto bg-page border border-line rounded-[14px] shadow-[0_48px_100px_-48px_rgba(0,0,0,0.55)]">
+        <TitleBar />
+        <Navbar theme={theme} onToggleTheme={toggleTheme} />
+        <main id="top" className="max-w-[1060px] mx-auto px-[18px] dt:px-10">
+          <Hero />
+          <Products />
+          <WorkExperience />
+          <Projects />
+          <Skills />
+          <Education />
+          <ContactMe />
+        </main>
+        <StatusBar />
+      </div>
     </div>
   );
 };
