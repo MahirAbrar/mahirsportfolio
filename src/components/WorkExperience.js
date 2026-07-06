@@ -98,19 +98,35 @@ const WorkExperience = () => {
             <div>
               <div className={`${blockLabel} text-mut`}>WHAT I DO</div>
               <div className="text-[15px] leading-[1.65] text-dim">
-                Create RLHF preference data, write gold-standard SFT
+                Create RLHF preference data and gold-standard SFT
                 demonstrations, and evaluate reasoning, coding and safety
-                outputs of frontier LLMs against structured rubrics.
+                outputs of frontier LLMs and AI agents against structured
+                rubrics I help design.
               </div>
             </div>
             <div>
-              <div className={`${blockLabel} text-mut`}>FOR WHOM</div>
+              <div className={`${blockLabel} text-mut`}>SPECIALTY</div>
               <div className="text-[15px] leading-[1.65] text-dim">
-                Frontier models at{" "}
-                <strong className="text-strong font-semibold">Meta</strong>,{" "}
-                <strong className="text-strong font-semibold">OpenAI</strong>{" "}
-                and{" "}
-                <strong className="text-green font-semibold">Anthropic</strong>.
+                Software-engineering tasks (React, TypeScript, Next.js,
+                Python), system-design problems (scalability, caching, database
+                architecture, distributed systems), and multi-tool agent
+                workflows — pinpointing failures in tool-use correctness and
+                reasoning chains.
+              </div>
+            </div>
+            <div>
+              <div className={`${blockLabel} text-mut`}>SCALE</div>
+              <div className="text-[15px] leading-[1.65] text-dim">
+                <strong className="text-strong font-semibold">
+                  200+ evaluations
+                </strong>{" "}
+                across{" "}
+                <strong className="text-strong font-semibold">
+                  12+ projects
+                </strong>
+                ; promoted to reviewer on{" "}
+                <strong className="text-strong font-semibold">2 of 3</strong>{" "}
+                frontend coding-evaluation projects.
               </div>
             </div>
             <div>
@@ -129,7 +145,6 @@ const WorkExperience = () => {
                 </strong>{" "}
                 project — iterating on Claude's code generation in real-world
                 codebases through expert PR-style reviews and RLHF feedback.
-                Promoted to reviewer across multiple Outlier projects.
               </div>
             </div>
           </div>
@@ -147,8 +162,8 @@ const WorkExperience = () => {
           }
           meta={
             <div className="text-[13px] leading-normal text-dim">
-              Live bookings, dispatch &amp; driver ops for one of Australia's
-              largest taxi networks. · Aug 2025 — now
+              Live bookings, dispatch &amp; driver ops for Australia's largest
+              taxi company. · Aug 2025 — now
             </div>
           }
         >
