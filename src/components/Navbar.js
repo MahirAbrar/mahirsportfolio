@@ -27,14 +27,16 @@ const Navbar = ({ theme, onToggleTheme }) => (
         <rect x="26" y="27" width="12" height="10" rx="2" />
         <rect x="45" y="10" width="12" height="44" rx="2" />
       </svg>
-      mahir<span className="text-green">@</span>melbourne
+      <span className="hidden xs:inline">
+        mahir<span className="text-green">@</span>melbourne
+      </span>
     </a>
-    <div className="flex items-center gap-4 dt:gap-[22px] min-w-0 overflow-x-auto no-scrollbar whitespace-nowrap font-mono font-medium text-[13px] leading-none">
+    <div className="flex items-center gap-3.5 dt:gap-[22px] font-mono font-medium text-[13px] leading-none">
       {links.map(({ label, href }) => (
         <a
           key={label}
           href={href}
-          className="flex-none text-dim hover:text-strong no-underline transition-colors duration-150"
+          className="hidden dt:inline flex-none text-dim hover:text-strong no-underline transition-colors duration-150"
         >
           {label}
         </a>
@@ -43,7 +45,8 @@ const Navbar = ({ theme, onToggleTheme }) => (
         href="#contact"
         className="flex-none text-green no-underline hover:opacity-80 transition-opacity duration-150"
       >
-        ● work with me
+        <span className="dt:hidden">● work</span>
+        <span className="hidden dt:inline">● work with me</span>
       </a>
       <button
         onClick={onToggleTheme}
