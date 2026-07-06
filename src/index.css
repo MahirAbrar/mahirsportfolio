@@ -21,6 +21,8 @@
   --nav: rgba(11, 14, 17, 0.85);
   --desk: #07090c;
   --deskDot: #141a22;
+  --pillBg: rgba(11, 14, 17, 0.92);
+  --arrowBg: rgba(18, 22, 28, 0.92);
   color-scheme: dark;
 }
 
@@ -43,6 +45,8 @@
   --nav: rgba(247, 246, 242, 0.88);
   --desk: #e9e7e1;
   --deskDot: #d6d3ca;
+  --pillBg: rgba(247, 246, 242, 0.92);
+  --arrowBg: rgba(247, 246, 242, 0.92);
   color-scheme: light;
 }
 
