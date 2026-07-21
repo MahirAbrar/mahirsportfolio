@@ -13,8 +13,8 @@ const products = [
     status: "● deployed · paying users",
     name: "Retentive",
     description:
-      "Spaced-repetition learning app with a paying-user pricing model, an installable PWA, and a native SwiftUI iOS rebuild in progress.",
-    chips: ["React", "TypeScript", "PWA", "SwiftUI", "Stripe"],
+      "Spaced-repetition learning app with a paying-user pricing model and an installable PWA, serving organic users at retentive.site.",
+    chips: ["React", "TypeScript", "PWA", "Supabase", "Stripe"],
     live: { label: "retentive.site ↗", href: "https://retentive.site" },
     media: `${pub}/retentive/retentive-image.png`,
     mediaAlt: "Retentive — Unlock Your Superhuman Memory",
@@ -106,8 +106,97 @@ const products = [
         ),
       },
     ],
-    stack: "React 18 · TypeScript · Vite · Supabase · Stripe · PWA · SwiftUI",
-    caseStatus: "live · organic users · iOS in progress",
+    stack: "React 18 · TypeScript · Vite · Supabase · Stripe · PWA",
+    caseStatus: "live · organic users",
+  },
+  {
+    id: "retentive-ios",
+    kicker: "PRODUCT 02",
+    status: "● on the App Store",
+    name: "Retentive for iOS",
+    description:
+      "A native iOS & iPadOS study planner that schedules every review for you — built in SwiftUI and running entirely on-device, with no accounts and no analytics.",
+    chips: ["Swift 6", "SwiftUI", "SwiftData", "StoreKit 2", "Live Activities"],
+    live: {
+      label: "App Store ↗",
+      href: "https://apps.apple.com/au/app/retentive-spaced-repetition/id6788236605",
+    },
+    media: `${pub}/retentive-ios/01-home.png`,
+    mediaAlt: "Retentive for iOS — Today screen",
+    mediaFit: "contain",
+    mediaFirst: false,
+    film: [
+      {
+        src: `${pub}/retentive-ios/01-home.png`,
+        caption: "today dashboard",
+        alt: "Today screen with Study Now, stat tiles and achievements",
+      },
+      {
+        src: `${pub}/retentive-ios/04-studied.png`,
+        caption: "library & review states",
+        alt: "Library with subjects, topics and due/mastered items",
+      },
+      {
+        src: `${pub}/retentive-ios/06-focus.png`,
+        caption: "focus timer",
+        alt: "Focus timer with goal presets suggested by learning mode",
+      },
+      {
+        src: `${pub}/retentive-ios/08-stats.png`,
+        caption: "stats & streaks",
+        alt: "Stats with day streak, performance and daily activity",
+      },
+    ],
+    clipDims: { baseW: 160, baseH: 348, zoomW: 280, zoomH: 609 },
+    blocks: [
+      {
+        label: "WHAT IT IS",
+        content:
+          "Organise what you're learning into subjects, topics and items, pick a learning mode that matches your deadline, and the app builds the entire review schedule for you — answering the one question every student has: what should I review right now?",
+      },
+      {
+        label: "LEARNING ENGINE",
+        content: (
+          <>
+            Pure, unit-testable Swift — no ML, no server. Four tuned interval
+            curves:{" "}
+            <strong className="text-strong font-semibold">Deadline</strong>{" "}
+            (10m → 12h) for exams under a day away,{" "}
+            <strong className="text-strong font-semibold">Sprint</strong> (1h →
+            3d), <strong className="text-strong font-semibold">Steady</strong>{" "}
+            (1d → 35d) and{" "}
+            <strong className="text-strong font-semibold">Evergreen</strong> (1d
+            → 150d). Every review is graded perfect, on-time, late or early
+            against its timing window — early reviews score zero, so the system
+            rewards showing up at the right moment rather than grinding.
+          </>
+        ),
+      },
+      {
+        label: "FEATURES",
+        content:
+          "A Today dashboard with due counts and streaks · a Library of subjects, topics and items with search, filters and drag-to-reorder · a Focus timer whose work and break draw from one wall-clock budget, surfacing live adherence on the Lock Screen and in the Dynamic Island · nine analytics cards including a year-long streak heatmap · 24 achievements · a 16-page skippable onboarding that seeds your first real subject.",
+      },
+      {
+        label: "ENGINEERING",
+        green: true,
+        content:
+          "~220 Swift files, ~16k lines. Swift 6 strict concurrency with MainActor-by-default isolation · SwiftData with a versioned schema and migration plan from day one, so shipped user data survives every update · five @Observable stores · a token-based design system resolving per-trait for light and dark · accessibility as a feature, with an app-wide Dynamic Type floor, VoiceOver labels across 40+ files and Reduce Motion honored throughout.",
+      },
+      {
+        label: "PRIVACY",
+        content:
+          "100% on-device — no accounts, no analytics, and an App Store privacy label of “Data Not Collected”. Local-first by architecture rather than policy: there is no networking code in the app at all.",
+      },
+      {
+        label: "SHIPPING & PRICING",
+        content:
+          "Free tier of 3 subjects, 8 topics and 40 items, with a single one-time lifetime Pro unlock (StoreKit 2 non-consumable) — no subscription. The cap numbers in the paywall copy are read from the same constants that enforce them. Shipped through a reproducible command-line archive pipeline, TestFlight internal and external testing, and populated-store migration tests before each release.",
+      },
+    ],
+    stack:
+      "Swift 6 · SwiftUI · SwiftData · StoreKit 2 · ActivityKit · UserNotifications",
+    caseStatus: "live on the App Store · universal iOS & iPadOS",
   },
 ];
 
@@ -119,7 +208,7 @@ const Chip = ({ children }) => (
 
 const caseLabel = "font-mono font-semibold text-[10px] leading-none tracking-[.12em] text-mut";
 
-const ProductPanel = ({ product, open, onToggle }) => {
+const ProductPanel = ({ product, open, onToggle, isLast }) => {
   const reduceMotion = useReducedMotion();
   const groupStyle = (delay) => ({
     opacity: open ? 1 : 0,
@@ -153,31 +242,43 @@ const ProductPanel = ({ product, open, onToggle }) => {
         >
           {open ? "− close case" : "read case →"}
         </button>
-        <a
-          href={product.live.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-mono font-semibold text-[13px] leading-none text-dim no-underline hover:text-strong transition-colors duration-150"
-        >
-          {product.live.label}
-        </a>
+        {product.live && (
+          <a
+            href={product.live.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono font-semibold text-[13px] leading-none text-dim no-underline hover:text-strong transition-colors duration-150"
+          >
+            {product.live.label}
+          </a>
+        )}
       </div>
     </div>
   );
 
-  const mediaSide = (
-    <div className="min-h-[220px] sm:min-h-[280px] bg-panel2 overflow-hidden">
-      <Media
-        src={product.media}
-        alt={product.mediaAlt}
-        poster={product.mediaPoster}
-        className="w-full h-full object-cover object-top"
-      />
-    </div>
-  );
+  const mediaSide =
+    product.mediaFit === "contain" ? (
+      <div className="min-h-[300px] sm:min-h-[380px] bg-panel2 overflow-hidden flex items-center justify-center p-7">
+        <img
+          src={product.media}
+          alt={product.mediaAlt}
+          loading="lazy"
+          className="max-h-[260px] sm:max-h-[330px] w-auto object-contain rounded-[18px] border border-line"
+        />
+      </div>
+    ) : (
+      <div className="min-h-[220px] sm:min-h-[280px] bg-panel2 overflow-hidden">
+        <Media
+          src={product.media}
+          alt={product.mediaAlt}
+          poster={product.mediaPoster}
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+    );
 
   return (
-    <div className={product.id === "retentive" ? "mb-[22px]" : ""}>
+    <div className={isLast ? "" : "mb-[22px]"}>
       <div
         className={`grid grid-cols-1 ${
           product.mediaFirst
@@ -208,11 +309,17 @@ const ProductPanel = ({ product, open, onToggle }) => {
       >
         <div className="overflow-hidden min-h-0">
             <div className="border border-line border-t-0 rounded-b-2xl bg-panel px-6 sm:px-[34px] pt-[26px] pb-[30px]">
-              {product.film ? (
+              {product.blocks ? (
                 <>
-                  <div style={groupStyle(0.15)} className="mb-5">
-                    <ClipStrip clips={product.film} active={open} />
-                  </div>
+                  {product.film && (
+                    <div style={groupStyle(0.15)} className="mb-5">
+                      <ClipStrip
+                        clips={product.film}
+                        active={open}
+                        {...(product.clipDims || {})}
+                      />
+                    </div>
+                  )}
                   <div
                     style={groupStyle(0.28)}
                     className="grid grid-cols-1 dt:grid-cols-2 gap-y-[18px] gap-x-8 mb-5"
@@ -291,10 +398,11 @@ const Products = () => {
         comment="live · with real users"
         sub="Things I built, shipped, and still run."
       />
-      {products.map((product) => (
+      {products.map((product, i) => (
         <ProductPanel
           key={product.id}
           product={product}
+          isLast={i === products.length - 1}
           open={openId === product.id}
           onToggle={() =>
             setOpenId((id) => (id === product.id ? null : product.id))
